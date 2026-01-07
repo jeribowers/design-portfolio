@@ -63,51 +63,121 @@
       <div class="eight offset-by-two columns">
         <h3>The Shift to Automation</h3>
         <p>Recognizing the inefficiencies of the existing system, I took the lead in shifting from incremental improvements to an automation-first, task-based approach. While I set the strategic direction for this transformation, I worked closely with engineers, product managers, and business stakeholders to define priorities and ensure alignment with both technical feasibility and business objectives.</p>
+        <h4>Key Challenges</h4>
+        <ul>
+          <li><strong>Importer-Specific Requirements</strong> - Client settings were scattered across Confluence, SOPs, and other tools, making automation difficult and leading to inconsistencies in service quality.</li>
+          <li><strong>Data Trust Issues</strong> - Brokers frequently encountered incorrect or missing data in the core platform, requiring them to cross-check multiple sources.</li>
+          <li><strong>Inefficient Workflows</strong> - Brokers had to navigate multiple tools and websites to complete filings, slowing processes and reducing efficiency.</li>
+          <li><strong>Lack of Work Prioritization</strong> - Customs managers lacked tools to effectively assign and manage work, leading to wasted time as brokers manually sorted through a queue.</li>
+          <li><strong>Slow System Performance</strong> - Delays in the core platform disrupted productivity, impacting entry filing completion and eroding trust with importers and brokers.</li>
+        </ul>
       </div> 
 
-      <figure class="twelve columns">
-        <img src="images/watson/nlc_style-tile.png" alt="">
-        <figcaption>Style tile explorations</figcaption>
-      </figure>
-
       <div class="eight offset-by-two columns">
-        <p>Two things that needed to be followed during the design process:</p>
-        <ol>
-          <li>Align with the IBM Design Language</li>
-          <li>Follow the WCAG and 508 accessibility requirements</li>
-        </ol>
-        <p>The <a href="https://www.ibm.com/design/language/">IBM Design Language</a> was launched in 2014. It included best practices, resources, and inspiration to help designers achieve a consistent visual language across their products that aligned with the IBM brand. In order to achieve this, getting continuous feedback from other designers was crucial. I was fortunate enough to sit next next to my design team, so I was able to get continual feedback on a daily basis. We also had weekly touchpoints with the development lead and offering manager to make sure we were aligned on requirements and priorities.</p>
-        <p>Making software accessible to all users requires special considerations. For example, content that conveys meaning needs to follow the WCAG 2.0 level AA minimum requirements of a 4.5:1 contrast ratio. This includes items such as text, buttons, graphs, and tooltips. A couple online tools that I found useful were the <a href="https://accessibility.oit.ncsu.edu/tools/color-contrast/index.php?">NSCU color palette accessibility evaluator</a> and the <a href="http://webaim.org/resources/contrastchecker">WebAIM color contrast checker</a>.</p>
+        <h3>Solution: Automating Customs Clearance with a Task-Based System</h3>
+        <h4>From Milestones to Task-Based Automation</h4>
+        <p>Initially, the system relied on milestones and checklists. However, after extensive research and stakeholder discussions, I determined that prioritizing automation and leveraging a task-based escalation system would be the most effective approach. This ensured brokers received the right information at the right time, streamlining workflows and improving efficiency.</p>
       </div>
 
       <figure class="twelve columns">
-        <img src="images/watson/nlc_color-variations.png" alt="">
-        <figcaption>Exploration of color combinations on light and dark UI</figcaption>
+        <img src="images/placeholder.jpeg" alt="">
+        <figcaption>The “task list” has evolved into today's more focused Task Manager.</figcaption>
       </figure>
 
       <div class="eight offset-by-two columns">
-        <p>One issue we oftentimes ran into was not being able to use light colors for important information. It either lacked the necessary contrast ratio or the color already had implied meaning (think of red denoting an error). An upside we found when exploring dark UI’s was that it allowed greater freedom to use bright, saturated colors.</p>
-        <h4>Hi-fidelity designs</h4>
-        <p>I worked closely with the UX designer on my team to translate the existing wireframes into hi-fidelity designs. Each user flow would address a specific use case that the user would want to perform. For example, I  designed a flow for first-time use, adding content, searching, filtering, etc.</p>
+        <h4>Approach & Key Innovations</h4>
+        <p>I established the guiding principles for the new Task Manager while collaborating with engineers, product managers, and business stakeholders to define priorities and introduce key innovations that drove efficiency:</p>
+        <ul>
+          <li><strong>Automation-First Approach</strong> - Continuous validation reduced manual entry and ensured accuracy by collecting structured data via EDI or API and standardizing inputs for automation. Manual intervention occurred only when system confidence was low.</li>
+          <li><strong>Make Tasks Easy to Understand and Complete</strong> - The issue should be immediately clear, with all necessary information included to resolve the task efficiently.</li>
+          <li><strong>Prioritize Tasks by Urgency with Intelligent Task Routing</strong> Tasks were dynamically assigned and prioritized, reducing bottlenecks.</li>
+          <li><strong>Establish Feedback Loops</strong> - Continuously refine tasks to improve efficiency, with the goal of reducing or automating them over time.</li>
+          <li><strong>Implement Business Rules</strong> - Tailor data rules to individual client needs, ensuring compliance and consistency across processes.</li>
+          <li><strong>AI-Driven Data Validation</strong> - Ensures compliance before submission, reducing errors.</li>
+          <li><strong>Commercial Invoice Digitization</strong> - Automates data extraction and processing using LLMs, minimizing manual input.</li>
+        </ul>
+      </div>
+
+      <div class="eight offset-by-two columns">
+        <h4>Defining UX Principles to Improve Trust and Ease of Use</h4>
+        <p>Early in the project, I established trust and ease of use as the core user experience principles, ensuring the system provided accurate, reliable data while maintaining a simple and predictable workflow. To measure the effectiveness of feature changes, we used quantitative metrics, including time on task, task completion rate, task success rate, adoption rate, number of interactions and qualitative feedback.</p>
       </div>
 
       <figure class="twelve columns">
-        <img src="images/watson/nlc_onboarding.png" alt="">
-        <figcaption>First-time use modal</figcaption>
+        <img src="images/placeholder.jpeg" alt="">
+        <figcaption>Examples of Task Manager tasks escalated due to validation failures, each highlighting a specific issue to focus user attention.</figcaption>
       </figure>
 
-      <figure class="twelve columns">
-        <img src="images/watson/nlc_ui.png" alt="">
-        <figcaption>Training data screen that shows mapped classes and texts</figcaption>
-      </figure> 
-
       <div class="eight offset-by-two columns">
-        <h4>User testing</h4>
-        <p>Working closely with the UX designer and user researcher, we ran initial tests with proxy users in the studio. Sitting one-on-one with a designer, we tested interaction patterns, information architecture, microcopy, and gathered general feedback.</p>
-        <p>Testing with users and getting continuous feedback allowed us to quickly improve the designs and make refinements.</p>
-        <h4>Prototyping</h4>
-        <p>During this time, we began developing a pattern library. (You can read about that next in the <a href="nlc-pattern-library.html">NLC pattern library</a> section.) Having the elements and patterns easily accessible, enabled me to quickly <a href="http://jeribowers.github.io/nlc/">prototype the tool</a> using the pattern library as a starting point. This was a valuable asset for the development team too as they began building the front-end. They were able to see the exact styles that were being applied to each element. This drastically cut-down on the need for red-lining documents or tedious back and forth communication between design and development.</p>        
+        <h3>Impact & Outcomes</h3>
+        <h4>Key Metrics</h4>
+        <ul>
+          <li><strong>50% cost reduction per entry</strong> ($114 to $43) in 2024 through Task Manager automation and operational improvements.</li>
+          <li><strong>25% of Importer Security Filings (ISF) now processed automatically.</strong> 100% of ISFs expected to be processed via the Task Manager by 2025.</li>
+          <li><strong>80% of US entry volume</strong> expected to be processed via the Task Manager by 2025.</li>
+          <li><strong>20% efficiency increase</strong> in commercial document transcription.</li>                              
+        </ul>
+        <h4>Real-World Benefits</h4>
+        <ul>
+          <li><strong>Reduced Cost to Serve</strong> - Automated task routing significantly improves efficiency, minimizes manual workload, and directly reduces the cost to serve, our primary metric for evaluating operational improvements.</li>
+          <li><strong>Scalability</strong> - Supports 2K-24K entries per year, enabling growth.</li>
+          <li><strong>Improved Compliance</strong> - AI-powered validation reduces errors.</li>          
+        </ul>
+        <p>By defining the vision and execution strategy for automation while working cross-functionally to implement and refine it, I successfully delivered the Task Manager, significantly improving speed and accuracy for customs filings.</p>
       </div>      
+
+      <div class="eight offset-by-two columns">
+        <h3>Customs Pattern Library: Scaling Design Consistency</h3>
+        <p>To ensure consistency, scalability, and efficiency, I designed and maintained the Customs Pattern Library, a centralized design system that streamlined collaboration between designers and engineers.</p>
+        <h4>Key Contributions & Impact</h4>
+        <ul>
+          <li>Developed a reusable Figma component library, ensuring uniform design patterns and increasing design efficiency while reducing redundant UI work.</li>
+          <li>Established comprehensive design guidelines for typography, layout, and behavior.</li>
+          <li>Collaborated with engineers to integrate components in Storybook, ensuring design-development parity and accelerating development cycles with pre-built UI components.</li>
+        </ul>
+
+      <figure class="twelve columns">
+        <img src="images/placeholder.jpeg" alt="">
+        <figcaption>The Figma file I created acts as an effective communication tool between me and the engineering team, ensuring a clear understanding of the desired user experience. We engaged in ongoing discussions throughout the implementation process.</figcaption>
+      </figure>
+
+      <div class="eight offset-by-two columns">
+        <h3>Design Leadership & Organizational Impact</h3>
+        <h4>Embedding Design Thinking & Strategy</h4>
+        <p>I worked closely with leadership, engineers, and product managers to integrate design thinking into daily workflows:</p>
+        <ul>
+          <li><strong>Partnering with engineers</strong> to develop user-friendly solutions and improve iterative development.</li>
+          <li><strong>Training engineers on user research,</strong> covering usability testing, feedback documentation, and applying insights to enhance design.</li>
+          <li><strong>Collaborating with product managers</strong> to define strategy and prioritize features based on user and business needs.</li>
+        </ul>
+        <h4>Leading User Acceptance Testing (UAT)</h4>
+        <p>During the launch of Customs V2, I led User Acceptance Testing (UAT) to ensure a smooth transition. Key efforts included:</p>
+        <ul>
+          <li>Coordinating <strong>structured testing sessions</strong> with stakeholders onsite for an intensive week of testing.</li>
+          <li>Defining workflows to <strong>validate critical tasks</strong> and scenarios.</li>
+          <li>Collaborating with engineers to prioritize and <strong>resolve high-impact issues</strong> efficiently.</li>
+        </ul>
+        <p>By driving cross-functional collaboration and strategic alignment, I ensured design became a core driver of product success and business impact.</p>
+      </div>      
+
+      <div class="eight offset-by-two columns">
+        <h3>Final Thoughts</h3>
+        <p>The Task Manager transformed an outdated, manual-heavy process into an automated, efficient, and scalable system. By prioritizing UX, automation, and real-time insights, I created a platform that significantly improved cost-efficiency and user experience.</p>
+        <h4>Key Challenges</h4>
+        <ul>
+          <li><strong>Navigating Complexity</strong> - Customs regulations are ambiguous and continuously evolving, requiring deep domain expertise to define problems accurately.</li>
+          <li><strong>Balancing Design Quality & Execution</strong> - As a 0-1 project, we had to prioritize releasing functional features to support scale over refining visual design and deeper ideation.</li>
+          <li><strong>Managing Priorities as the Sole Designer</strong> - Juggling research, user testing, stakeholder management, design, and execution while meeting tight deadlines was a significant challenge.</li>
+        </ul>
+        <h4>Key Takeaways</h4>
+        <ul>
+          <li><strong>Automation Enhances UX</strong> - A seamless, automated workflow simplifies operations and improves accuracy.</li>
+          <li><strong>Scalability is Critical</strong> - A modular, API-driven system ensures long-term growth and adaptability.</li>
+          <li><strong>Data-Driven Decisions Matter</strong> - Real-time insights empower smarter business choices.</li>
+        </ul>
+        <p>Let’s connect to discuss further refinements or insights!</p>
+      </div>
+
     </div><!-- /.row -->
 
     <div class="row">
