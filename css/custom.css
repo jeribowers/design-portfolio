@@ -8,6 +8,15 @@ header {padding: 1em 0; margin-bottom: 3em; background-color: #363F48; color: #f
 	header a.active, header a.active:hover {color: #fff; border-bottom: 2px solid #fff; cursor: default;}
 
 
+
+/* Headings */
+h3 {
+  	margin-top: 1rem;
+	padding-top: 3rem;
+  	border-top: 1px solid #E1E1E1; 
+}
+
+/* Pagination */
 .previous, .next {display: inline-block; margin: 2em 0 4em; border: none;}
 .previous {float: left;}
 .next {float: right;}
@@ -19,6 +28,28 @@ header {padding: 1em 0; margin-bottom: 3em; background-color: #363F48; color: #f
 	.katherine {background: url(../images/watson/katherine.png) no-repeat 0 0; background-size: cover;}
 	.theodore {background: url(../images/theodore.jpg) no-repeat 0 0; background-size: cover;}
 	.zilker {background: url(../images/zilker.jpg) no-repeat 0 0; background-size: cover;}
+
+/* Lists */
+ul {
+  /* Aligns the bullets closer to the left edge of the heading */
+  padding-left: 1.25rem; 
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+  list-style-position: outside; /* Keeps bullets in the margin */
+}
+
+li {
+  /* Creates the vertical gap between the three challenge points */
+  margin-bottom: 1.25rem; 
+  
+  /* Ensures text is left-aligned and readable */
+  text-align: left;
+  line-height: 1.5;
+  color: #333; /* Dark grey similar to screenshot */
+}
+
+
 
 /* Home */
 .home {background-color: #363F48; padding-bottom: 3em;}
