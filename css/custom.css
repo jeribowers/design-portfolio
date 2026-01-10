@@ -51,6 +51,13 @@ header a.active:hover {
   letter-spacing: -0.08rem;
 }
 
+.round-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* This creates the circle */
+  object-fit: cover; /* Ensures the image doesn't stretch */
+}
+
 /* Pagination */
 .previous,
 .next {
@@ -63,18 +70,6 @@ header a.active:hover {
 }
 .next {
   float: right;
-}
-
-.role {
-  font-weight: 400;
-  font-size: 0.9em;
-  font-style: italic;
-}
-.role span {
-  font-style: normal;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  letter-spacing: 0.1rem;
 }
 
 .circle {
@@ -162,7 +157,10 @@ li {
   font-weight: 400;
 }
 .intro p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
+}
+.intro p strong {
+  color: #fff;
 }
 @media (max-width: 950px) {
   .intro h1 {
@@ -221,6 +219,11 @@ figcaption {
 		.screenshot:hover img {margin-left: 0; cursor: default;}
 	}*/
 
+.role {
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
 /* Base Badge Styling */
 .badge {
   display: inline-flex;
@@ -240,7 +243,7 @@ figcaption {
 
 /* Modifier: Neutral/Default */
 .badge-neutral {
-  background-color: #f3f4f6;
+  background-color: rgb(69, 70, 70, 0.1);
   color: #374151;
 }
 
