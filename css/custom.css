@@ -51,6 +51,10 @@ header a.active:hover {
   letter-spacing: -0.08rem;
 }
 
+.profile-photo {
+  margin-top: 0;
+}
+
 .round-photo {
   width: 200px;
   height: 200px;
