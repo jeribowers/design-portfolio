@@ -17,25 +17,21 @@ header nav a {
   margin-left: 1.5em;
 }
 header a {
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  border: 0;
+  display: inline-block;
+  padding-bottom: 4px; /* Space for the "border" to live */
+  transition: box-shadow 0.2s ease;
+  color: #fff;
+  border-color: transparent;
 }
 header a:hover {
-  color: #fff;
-  border-bottom: 2px dotted #fff;
+  color: #69fbc8;
+  border-bottom: 2px dotted #69fbc8;
   background-color: transparent;
 }
 header a.active,
 header a.active:hover {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-  cursor: default;
+box-shadow: inset 0 -2px 0 0 #000;
 }
 
 /* Headings */
@@ -256,5 +252,136 @@ figcaption {
   color: #374151;
   margin-bottom: 2.5em;
   padding: 1.5em 2em;
+}
 
+
+/* The speech Bubble */
+.testimonial-container {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.quote-bubble {
+  background-color: rgb(69, 70, 70);
+  color: #69fbc8;
+  padding: 25px;
+  border-radius: 8px;
+  line-height: 1.5;
+  font-style: italic;
+  font-family: "Georgia", serif; /* Matching the serif look in your image */
+  position: relative; /* Required for the arrow positioning */
+  margin-bottom: 25px; /* Space for the arrow */
+}
+.quote-bubble p {
+  margin-bottom: 0;
+}
+
+/* The Arrow/Pointer */
+.quote-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: -15px; /* Pulls arrow below the box */
+  left: 40px;    /* Positions arrow above the image */
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid rgb(69, 70, 70); /* Matches bubble color */
+}
+
+/* User Section Layout */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  line-height: 2rem;
+}
+
+/* Circular Avatar */
+.user-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* Name and Title Typography */
+.user-name {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #333;
+}
+
+.user-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.user-title-former {
+  font-style: italic;
+  color: #666;
+}
+
+/* Container for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the "My work" link */
+.dropbtn {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6); 
+  display: inline-block;
+}
+
+/* The hidden dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Subtle shadow */
+  z-index: 100;
+  border-radius: 4px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #FE0A7D;
+  padding: 10px 1.5em;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  margin-left: 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* Hover effect for items in the dropdown */
+.dropdown-content a:hover {
+  background-color: #69fbc8;
+  color: rgb(69, 70, 70);
+  border-bottom: 1px solid #e1e1e1;
+
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.carat {
+  font-size: 10px;      /* Adjust this to change the "largeness" */
+  display: inline-block;
+  margin-left: 6px;     /* Space between text and arrow */
+  vertical-align: middle;
+  transition: transform 0.3s ease; /* Smooth rotation on hover */
+  color: #999;          /* Slightly lighter than text for a subtle look */
+}
+
+/* Optional: Rotate the carat 180 degrees when you hover over the menu */
+.dropdown:hover .carat {
+  transform: rotate(180deg);
 }
