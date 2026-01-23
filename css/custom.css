@@ -48,27 +48,36 @@ box-shadow: inset 0 -2px 0 0 #000;
 }
 
 .profile-container {
-    position: relative;
-    width: 300px; /* Adjust based on your photo size */
-    height: 300px;
-    margin: 0 auto;
+    display: inline-block; /* Forces the box to be only as wide as the image */
+    position: relative;    /* Keeps the circle anchored to this box */
+    line-height: 0;        /* Removes tiny ghost spacing at the bottom */
+    max-width: 200px;
+    max-height: 200px;
 }
-
 .profile-image {
     width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Makes your photo a perfect circle */
+    aspect-ratio: 1 / 1; /* Forces the height to always match the width */
+    border-radius: 50%;
     object-fit: cover;
 }
 
 .circle-overlay {
     position: absolute;
-    top: -10px;    /* Pulls the circle slightly outside the photo */
-    left: -10px;   /* Adjust these to center the "hand-drawn" look */
-    width: 110%;   /* Make the overlay slightly larger than the photo */
-    height: 110%;
-    pointer-events: none; /* Allows users to still click/right-click the photo underneath */
-    z-index: 2;    /* Ensures it stays on top */
+    
+    /* 1. Move the top-left corner to the exact center of the container */
+    top: 50%;
+    left: 50%;
+    
+    /* 2. Pull the image back by half its own width/height to perfectly center it */
+    transform: translate(-50%, -50%);
+    
+    /* 3. Keep your sizing and ratio */
+    width: 115%; /* Made it slightly larger to give that "frame" look */
+    aspect-ratio: 1 / 1;
+    height: auto;
+    
+    pointer-events: none;
+    z-index: 2;
 }
 
 /* Pagination */
