@@ -96,7 +96,7 @@ box-shadow: inset 0 -2px 0 0 #000;
 /* Lists */
 ul {
   /* Aligns the bullets closer to the left edge of the heading */
-  padding-left: 1.25rem;
+  padding-left: 2rem;
   margin-top: 1rem;
   list-style-type: disc;
   list-style-position: outside; /* Keeps bullets in the margin */
@@ -104,7 +104,7 @@ ul {
 
 li {
   /* Creates the vertical gap between the three challenge points */
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   /* Ensures text is left-aligned and readable */
   text-align: left;
@@ -119,7 +119,7 @@ li {
 }
 .portfolio a {
   display: inline-block;
-  margin: 0 0 0.1em;
+  margin: 0 0 0.2em;
   padding: 0.1em 0.5em;
   background-color: rgba(0, 0, 0, 0.3);
   color: #69fbc8;
