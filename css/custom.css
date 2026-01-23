@@ -180,9 +180,6 @@ figure {
   margin: 1em 0 2em;
 }
 
-figure img {
-  border-radius: 10px;
-}
 img {
   width: 100%;
 }
@@ -192,6 +189,9 @@ figcaption {
   font-style: italic;
   text-align: center;
   color: rgba(69, 70, 70, 0.6);
+  max-width: 600px;
+  margin: 10px auto 0;
+  text-align: center;
 }
 
 /* Ratings */
@@ -259,6 +259,14 @@ figcaption {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px -2px;
 }
 
+.card-disclaimer {
+  background-color: #FFF9E5;
+  font-size: 14px;
+  font-style: italic;
+}
+.card p:last-of-type {
+  margin-bottom: 0;
+}
 
 /* The speech Bubble */
 .testimonial-container {
