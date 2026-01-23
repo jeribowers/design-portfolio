@@ -47,15 +47,28 @@ box-shadow: inset 0 -2px 0 0 #000;
   letter-spacing: -0.08rem;
 }
 
-.profile-photo {
-  margin-top: 0;
+.profile-container {
+    position: relative;
+    width: 300px; /* Adjust based on your photo size */
+    height: 300px;
+    margin: 0 auto;
 }
 
-.round-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* This creates the circle */
-  object-fit: cover; /* Ensures the image doesn't stretch */
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Makes your photo a perfect circle */
+    object-fit: cover;
+}
+
+.circle-overlay {
+    position: absolute;
+    top: -10px;    /* Pulls the circle slightly outside the photo */
+    left: -10px;   /* Adjust these to center the "hand-drawn" look */
+    width: 110%;   /* Make the overlay slightly larger than the photo */
+    height: 110%;
+    pointer-events: none; /* Allows users to still click/right-click the photo underneath */
+    z-index: 2;    /* Ensures it stays on top */
 }
 
 /* Pagination */
@@ -145,9 +158,22 @@ li {
     font-size: 2.4rem;
   }
 }
+.intro {
+  margin-bottom: 2em;
+}
 .intro h1 {
   font-size: 3.6rem;
   color: #fff;
+  margin-top: 0;
+  padding-top: 0;
+}
+.intro h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 0;
+  padding-top: 0;
+  letter-spacing: 0;
 }
 .intro p {
   color: rgba(255, 255, 255, 0.6);
@@ -155,6 +181,10 @@ li {
 .intro p strong {
   color: #fff;
 }
+.intro .eight {
+  padding-right: 2em;
+}
+
 @media (max-width: 950px) {
   .intro h1 {
     font-size: 3rem;
