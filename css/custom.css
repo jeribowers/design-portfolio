@@ -72,7 +72,7 @@ box-shadow: inset 0 -2px 0 0 #000;
     transform: translate(-50%, -50%);
     
     /* 3. Keep your sizing and ratio */
-    width: 115%; /* Made it slightly larger to give that "frame" look */
+    width: 110%; /* Made it slightly larger to give that "frame" look */
     aspect-ratio: 1 / 1;
     height: auto;
     
@@ -167,9 +167,6 @@ li {
     font-size: 2.4rem;
   }
 }
-.intro {
-  margin-bottom: 2em;
-}
 .intro h1 {
   font-size: 3.6rem;
   color: #fff;
@@ -177,8 +174,8 @@ li {
   padding-top: 0;
 }
 .intro h2 {
-  font-size: 2.5rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 200;
   color: #fff;
   margin-top: 0;
   padding-top: 0;
@@ -193,6 +190,19 @@ li {
 .intro .eight {
   padding-right: 2em;
 }
+.check-out-my-work {
+  position: relative; /* This creates the "boundary" for the image */
+  width: 180px;
+  height: 60px;       /* Give the wrapper a size */
+}
+
+.check-out-my-work img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;       /* Now 100% means 100% of the wrapper, not the screen */
+}
+
 
 @media (max-width: 950px) {
   .intro h1 {
