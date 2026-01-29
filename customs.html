@@ -79,27 +79,21 @@
       <div class="row">
         <div class="eight offset-by-two columns card">
           <h3>Project at a Glance</h3>
-          <p><strong>The Problem:</strong> Flexport's customs brokerage operation relied on fragmented legacy workflows, with client requirements trapped in static documents. This forced brokers to manually cross-check every data point, resulting in a high &#34;cost-to-serve&#34; &#40;&#65284;114 per entry&#41; that made scaling for enterprise clients impossible.</p>
-          <p><strong>The Action:</strong> As the Lead Designer, I spearheaded the 0 &rarr; 1 transition from manual checklists to an automation-first Task Manager. I designed a modular system that utilized LLMs for document digitization and prioritized tasks based on system confidence levels. To accelerate delivery, I developed a reusable component architecture that allowed engineers to deploy new task types without high-fidelity mocks for every iteration, drastically increasing velocity. I also led deep UAT and change management initiatives to build trust with a skeptical broker workforce, shifting their mindset from manual verification to &ldquo;exception-based&rdquo; oversight.</p>
+          <p><strong>The Problem:</strong> Flexport's customs brokerage operation relied on fragmented workflows that were inefficient and required multiple workarounds to understand, assign, prioritize, and complete work. This forced brokers to manually cross-check every data point, resulting in a high &#34;cost-to-serve&#34; &#40;&#65284;114 per entry&#41; that made scaling for enterprise clients impossible.</p>
+          <p><strong>The Action:</strong> As the Lead Designer, I spearheaded the 0 &rarr; 1 transition from a legacy platform to an automation-first approach. I designed a modular system that automated processes, utilized LLMs for document digitization, and automatically prioritized tasks based on system confidence levels. To accelerate delivery, I developed a reusable component architecture that allowed engineers to deploy new task types without high-fidelity mocks for every iteration, drastically increasing velocity. I also led deep UAT and change management initiatives to build trust with a skeptical broker workforce, shifting their mindset from manual verification to &ldquo;exception-based&rdquo; oversight.</p>
           <p><strong>The Result:</strong> The transformation achieved a 50&#37; reduction in cost-to-serve &#40;dropping to &#36;43 per entry&#41; and a 20&#37; efficiency gain in document transcription. By automating 25&#37; of Importer Security Filings &#40;ISF&#41; and creating a scalable framework, we built the foundation to handle 80&#37; of US entry volume through automation by 2025, turning a labor-heavy service into a high-margin product.</p>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns card card-disclaimer">      
-          <p class="disclaimer">💡 <strong>A quick note on privacy:</strong> I've obscured some of the visuals here to protect company IP. My goal is to keep the focus on the systems and the design process.</p>
-        </div>        
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
           <h2>The Shift to Automation</h2>
           <h3>Business Objective</h3>
-          <p><strong>Customs clearance is essential for global trade</strong>, ensuring goods move efficiently across borders while complying with import and export regulations. A customs import filing is the documentation required to legally bring goods into a country. Customs brokers handle product classification, duty calculation, and compliance to ensure smooth, penalty-free imports.</p>
-          <p>At Flexport, our Customs brokers relied on an inefficient system that required multiple workarounds to prioritize and complete work. <strong>This lack of automation led to delays, increased costs, and operational bottlenecks.</strong> To scale and service more enterprise clients while reducing filing costs by 80&#37;, we needed to completely rethink customs processing.</p>
+          <p>Customs clearance is a critical step in global trade, requiring accurate documentation to ensure goods move across borders compliantly and on time. At Flexport, customs brokers relied on a legacy system to manage, edit, and file import entries. The platform lacked automation and clear prioritization, forcing brokers to rely on manual workarounds to understand, verify, and submit filings.</p>
+          <p>These inefficiencies led to delays, higher operational costs, and limited scalability. To support growth into enterprise customers and reduce filing costs by 80%, we needed to fundamentally redesign how customs processing worked which led the shift from a manual, broker-dependent workflow to a scalable, automated system.</p>
 
           <h3>Defining the Vision</h3>
-          <p>Recognizing the inefficiencies of the system, I took the lead in shifting from minor fixes to an automation-first, task-based approach. While I collaborated with two other designers on the initial high-level vision, I owned the end-to-end execution working cross-functionally with engineers and stakeholders to ensure our strategic direction aligned with both technical feasibility and business goals.</p>
+          <p>Recognizing the inefficiencies of the system, I took the lead in transitioning from minor fixes of the existing platform to an automation-first, task-based approach. While I collaborated with two other designers on the initial high-level vision, I owned the end-to-end execution working cross-functionally with engineers and stakeholders to ensure our strategic direction aligned with both technical feasibility and business goals.</p>
           <h4>Key Challenges</h4>
           <ul>
             <li><strong>Importer-Specific Requirements</strong>: Client settings were scattered across Confluence, SOPs &#40;standard operating procedures&#41;, and other tools, making automation difficult and leading to inconsistencies in service quality.</li>
@@ -114,27 +108,21 @@
       <div class="row">
         <figure class="twelve columns">
           <img src="images/customs/v2-process-flow.png" alt="" />
-          <figcaption>A diagram of the &#34;To-Be&#34; state, illustrating the shift from a massive manual process to a lean, efficient solution.</em></figcaption>
+          <figcaption>I diagrammed the future-state system to map key user flows and roles, clarifying how the automated platform would eliminate manual work and scale. 
+          <span class="tooltip">
+            <span class="icon">ⓘ</span>
+            <span class="tooltip-text">Visual has been obscurred to protect company IP.
+              <span class="tooltip-arrow"></span>
+            </span>
+          </span>
+        </figcaption>
         </figure>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
           <h2>Automating Customs Clearance with a Task-Based System</h2>
-          <h3>From Milestones to Task-Based Automation</h3>
-          <p>Initially, the system relied on milestones and checklists. However, after extensive research and stakeholder discussions, I determined that prioritizing automation and leveraging a task-based escalation system would be the most effective approach. This ensured brokers received the right information at the right time, streamlining workflows and improving efficiency.</p>
-        </div>
-      </div>
 
-      <div class="row">
-        <figure class="twelve columns">
-          <img src="images/customs/3-versions.png" alt="The “task list” has evolved into today's more focused Task Manager" />
-          <figcaption>The &#34;task list&#34; has evolved into today's more focused Task Manager.</figcaption>
-        </figure>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns">
           <h3>Approach &#38; Key Innovations</h3>
           <p>I established the guiding principles for the new Task Manager while collaborating with engineers, product managers, and business stakeholders to define priorities and introduce key innovations that drove efficiency.</p>
           <ul>
@@ -152,7 +140,14 @@
       <div class="row">
         <figure class="twelve columns">
           <img src="images/customs/example-tasks.png" alt="Examples of Task Manager tasks escalated due to validation failures, each highlighting a specific issue to focus user attention." />
-          <figcaption>Examples of Task Manager tasks escalated due to validation failures, each highlighting a specific issue to focus user attention.</figcaption>
+          <figcaption>Examples of Task Manager tasks escalated due to validation failures, each highlighting a specific issue to focus user attention.
+            <span class="tooltip">
+              <span class="icon">ⓘ</span>
+              <span class="tooltip-text">Visual has been obscurred to protect company IP.
+                <span class="tooltip-arrow"></span>
+              </span>
+            </span>            
+          </figcaption>
         </figure>
       </div>
 
@@ -206,7 +201,14 @@
       <div class="row">
         <figure class="twelve columns">
           <img src="images/customs/figma-file.png" alt="" />
-          <figcaption>The Figma file I created acts as an effective communication tool between me and the engineering team, ensuring a clear understanding of the desired user experience. We engaged in ongoing discussions throughout the implementation process.</figcaption>
+          <figcaption>The Figma file I created acts as an effective communication tool between me and the engineering team, ensuring a clear understanding of the desired user experience. We engaged in ongoing discussions throughout the implementation process.
+            <span class="tooltip">
+              <span class="icon">ⓘ</span>
+              <span class="tooltip-text">Visual has been obscurred to protect company IP.
+                <span class="tooltip-arrow"></span>
+              </span>
+            </span>            
+          </figcaption>
         </figure>
       </div>
 
