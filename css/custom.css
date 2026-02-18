@@ -161,17 +161,6 @@ ul.list-plain {
   color: #363f48;
   font-weight: 700;
 }
-@media (max-width: 950px) {
-  .portfolio a {
-    font-size: 3.7rem;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio a {
-    display: block;
-    font-size: 2.4rem;
-  }
-}
 .intro h1 {
   font-size: 3.6rem;
   color: #fff;
@@ -211,21 +200,34 @@ ul.list-plain {
 @media (max-width: 950px) {
   .intro h1 {
     font-size: 3rem;
+  }   
+  .name { 
+    font-size: 0; /* Hides the original "Jeri Bowers" text */
+  }
+  .name::before {
+    content: "Jeri";
+    font-size: 1.7rem; /* Set this to match your original font size */
+    visibility: visible;
+  }  
+  .portfolio a {
+    font-size: 3.7rem;
   }
 }
 @media (max-width: 660px) {
-  .intro h1 {
+  .portfolio a {
+    display: block;
     font-size: 2.4rem;
-  }
-}
-
-.subtitle {
-  font-weight: 400;
+  }  
 }
 @media (max-width: 550px) {
   .subtitle {
     font-size: 2.5rem;
   }
+}
+
+
+.subtitle {
+  font-weight: 400;
 }
 
 /* Images */
