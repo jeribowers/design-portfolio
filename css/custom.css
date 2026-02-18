@@ -120,27 +120,22 @@ box-shadow: inset 0 -2px 0 0 #000;
 }
 
 /* Lists */
-ul  {
-  /* Aligns the bullets closer to the left edge of the heading */
+ul, ol  {
   padding-left: 2rem;
   margin-top: 1rem;
-  list-style-type: disc;
-  list-style-position: outside; /* Keeps bullets in the margin */
+  list-style-position: outside;
 }
-
+ul {
+    list-style-type: disc;
+}
+ol {
+    list-style-type: decimal; /* This ensures 1, 2, 3 appears */
+}
 li {
-  /* Creates the vertical gap between the three challenge points */
   margin-bottom: 0.5rem;
-
-  /* Ensures text is left-aligned and readable */
   text-align: left;
   line-height: 1.5;
-  color: #333; /* Dark grey similar to screenshot */
-}
-ul.list-plain {
-  list-style-type: none; /* Removes the bullets */
-  padding: 0;            /* Removes the default left indent */
-  margin: 0;             /* Removes default top/bottom spacing */
+  color: #333;
 }
 /* Home */
 .home {
