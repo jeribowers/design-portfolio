@@ -79,90 +79,181 @@
       <div class="row">
         <div class="eight offset-by-two columns card">
           <h3>Project at a Glance</h3>
-          <p><strong>The Problem:</strong> A single administrator was manually managing employee training using spreadsheets and manual follow-ups, leading to high administrative overhead and risks of missed requirements.</p>
-          <p><strong>The Action:</strong> I acted as the solo product lead, designer, and orchestrator to build a custom, automated portal. Using an AI-assisted "vibe coding" workflow, I moved from a Product Requirements Document (PRD) to a fully functional, integrated system.</p>
-          <p><strong>The Result (Estimated):</strong> A 70-80% reduction in administrative time and 100% audit accuracy through automated tracking and notifications.</p>
+          <p><strong>The Problem:</strong> A single administrator was manually managing employee training using spreadsheets and manual follow-ups. This created a significant operational bottleneck, resulting in 12 full workdays of "busy work" annually and a $20,000+ liability risk due to potential gaps in compliance auditing.</p>
+          <p><strong>The Action:</strong> I acted as the solo product lead, designer, and orchestrator to build a custom, automated compliance portal. Using an AI-assisted "vibe coding" workflow, I moved from high-level requirements to a production-ready system that features automated compliance guardrails and a zero-maintenance architecture.</p>
+          <p><strong>The Result (Estimated):</strong> With the system in the final stages before launch, we anticipate a 70-80% reduction in administrative time and 100% audit accuracy through automated tracking. Additionally, the custom build bypassed $2,400 in annual software fees, providing a sustainable, professional tool at $0/month.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
           <h2>The Context</h2>
-          <p>Senior Services of South Sound is a non-profit organization dedicated to improving the lives of seniors through essential services and community connection.</p>
+          <p>Senior Services of South Sound is a non-profit dedicated to improving the lives of seniors through essential services and community connection. Because they operate with a lean staff and no dedicated tech team, their internal processes had to be extremely efficient to keep up with strict state regulations.</p>
 
           <h3>The Challenge: Automating a Manual Training Workflow</h3>
-          <p>I focused on solving a specific operational bottleneck: employee education and compliance. Previously, the organization relied on a manual process where one person tracked progress, managed files, and followed up with staff. I transformed this into a centralized system that removes the need for manual tracking, allowing the administrator to work on more impactful projects while ensuring all staff stay up to date.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <h3>The Role: Solo Product Orchestrator</h3>
-          <p>Transitioning from large-scale tech teams to a solo environment for this project required a fundamental shift in my approach. Without a dedicated squad of engineers or product managers, I took full ownership of the lifecycle — from gathering high-level requirements with the Deputy Executive Director to building the blueprints for how the whole system works.</p>
-          <p>I delivered a dual-sided platform designed to handle the high-stakes needs of compliance while remaining simple for the end-user.</p>
+          <p>I focused on a specific bottleneck: the manual tracking of employee education and compliance. The existing process relied on one person to manage files, update spreadsheets, and manually chase staff for completion records.</p>      
           <ul>
-            <li><strong>Employee Portal:</strong> A streamlined view for staff to access required trainings, track due dates, and complete quizzes.</li>
-            <li><strong>Admin Dashboard:</strong> A direct management interface to oversee the employee roster, assign content, and review real-time progress.</li>  
+            <li><strong>High-Risk Liability:</strong> Without a single "source of truth," the organization risked $20k+ in fines if their records were found incomplete during a state audit.</li>
+            <li><strong>Wasted Capacity:</strong> The HR Director was spending roughly 8 hours a month on manual follow-ups — amounting to 12 workdays a year lost to administrative "busy work."</li>
+            <li><strong>Fragmentation:</strong> Data was scattered across various folders and email threads, making it impossible to get a real-time view of certification status.</li>
           </ul>
         </div>
       </div>
 
       <div class="row">
-        <figure class="twelve columns">
-          <img src="images/senior-services/EmployeeDashboardJohn.png" alt="" class="portfolio-screenshot"/>
-          <figcaption>Employee Portal</figcaption>
-        </figure>
-      </div>     
+        <div class="eight offset-by-two columns">
+          <h2>The Approach: From Large Teams to Solo Ownership</h2>
+          <p>Transitioning from large-scale tech teams to a solo environment required a fundamental shift in my approach. Without a squad of PMs or engineers, I took full ownership of the entire lifecycle—from sitting down with the HR Director to map out their needs, to building the technical blueprints for how the system functions.</p>
+          <p>I delivered a three-part platform designed to balance the compliance requirements with a seamless experience:</p>
+        </div>
+      </div>
 
       <div class="row">
-        <figure class="twelve columns">
-          <img src="images/senior-services/AdminDashboard.png" alt="" class="portfolio-screenshot"/>
-          <figcaption>Administrator Portal</figcaption>
+        <div class="eight offset-by-two columns">      
+          <h3>The Admin "Command Center"</h3>
+          <p>I spent a lot of time on the Admin Dashboard to ensure it functioned as a true command center where the HR Director can see all employees at a glance, assign training, and track progress in real-time. It’s designed to handle the "heavy lifting" of technical architecture and compliance rules in the background so the front-end stays simple.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <figure class="twelve columns image-container" onclick="openModal('images/senior-services/admin-1.webp')" style="cursor: zoom-in;">
+          <img src="images/senior-services/admin-1.webp" alt="Admin Dashboard">
+          <h5 class="helper-title" style="top: 3.5%; left: 28%;">Admin Dashboard: People View</h5>
+          <div class="helper-label line-right" style="top: 65%; left: 28.5%;">
+            <strong>Enforced Viewing:</strong> Mandatory minimum timers ensure regulatory compliance.
+          </div>
+          <h5 class="helper-title" style="top: 90%; left: 49%;">Admin Dashboard: Training View</h5>
+          <div class="helper-label line-left" style="top: 25%; left: 70%;">
+            <strong>Simple Quizzing:</strong> Easily build assessments to verify employee knowledge.
+          </div>
         </figure>
-      </div>     
+      </div>
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+      </div>      
+
+      <div class="row">
+        <div class="eight offset-by-two columns">      
+          <h3>The Compliance Engine</h3>
+          <p>To make the system "audit-proof," I built in automated guardrails that allow the system to essentially audit itself.</p>
+          <ul>
+            <li><strong>Enforced Viewing:</strong> I included mandatory minimum timers that prevent users from clicking through to the end, ensuring they meaningfully engage with the content.</li>
+            <li><strong>Knowledge Verification:</strong> I made it easy for admins to build and add interactive quizzes to the end of any training to verify that staff actually absorbed the information.</li>
+            <li><strong>Audit Defense:</strong> The system creates immutable, time-stamped acknowledgment records for every completed module, providing a solid defense in case of a state audit.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <figure class="twelve columns image-container" onclick="openModal('images/senior-services/admin-2.webp')" style="cursor: zoom-in;">
+          <img src="images/senior-services/admin-2.webp" alt="Admin Dashboard">
+          <h5 class="helper-title" style="top: 64%; left: 23.5%;">Add New Training</h5>
+          <div class="helper-label line-right" style="top: 50%; left: 20%;">
+            <strong>Enforced Viewing:</strong> Mandatory minimum timers ensure regulatory compliance.
+          </div>
+          <h5 class="helper-title" style="top: 86%; left: 57%;">Add Quiz Questions</h5>
+          <div class="helper-label line-left" style="top: 37%; left: 80.5%;">
+            <strong>Simple Quizzing:</strong> Easily build assessments to verify employee knowledge.
+          </div>
+          <figcaption>Admin Dashboard: Compliance Guardrails in Action (Click to enlarge)</figcaption>
+        </figure>
+      </div>
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+      </div>    
+
+      <div class="row">
+        <div class="eight offset-by-two columns">      
+          <h3>The Employee Portal</h3>
+          <p>Because this team is busy caring for seniors, they don't have time to struggle with a confusing interface. I focused on a "frictionless" design with high-accessibility standards (WCAG) and generous tap targets for use on any device.</p>
+          <ul>
+            <li><strong>Clear Visibility:</strong> Staff can instantly see their required quizzes and upcoming due dates.</li>
+            <li><strong>Supportive Micro-copy:</strong> I spent time on the wording to ensure it felt supportive rather than demanding, helping staff get their requirements done fast so they can get back to their actual jobs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <figure class="twelve columns image-container" onclick="openModal('images/senior-services/employee-1.webp')" style="cursor: zoom-in;">
+          <img src="images/senior-services/employee-1.webp" alt="Admin Dashboard">
+          <h5 class="helper-title" style="top: 87%; left: 41%;">Employee Training Dashboard</h5>          
+          <div class="helper-label line-right" style="top: 42%; left: 20%;">
+            <strong>Clear Visibility:</strong> Instantly view due dates and required quizzes.
+          </div>
+          <figcaption>Admin Dashboard: Compliance Guardrails in Action (Click to enlarge)</figcaption>
+        </figure>
+      </div>
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+      </div>    
+
+      <div class="row">
+        <figure class="twelve columns image-container" onclick="openModal('images/senior-services/employee-2.webp')" style="cursor: zoom-in;">
+          <img src="images/senior-services/employee-2.webp" alt="Admin Dashboard">
+          <h5 class="helper-title" style="top: 77%; left: 27%;">Training Module</h5>          
+          <div class="helper-label line-right" style="top: 58%; left: 19%;">
+            <strong>Acknowledgment:</strong> Creates time-stamped records.
+          </div>
+          <div class="helper-label line-right" style="top: 73%; left: 19%;">
+            <strong>Minimum Timer:</strong> Ensures mandatory content engagement.
+          </div>
+          <h5 class="helper-title" style="top: 85%; left: 61%;">Completed Training</h5>
+          <div class="helper-label line-left" style="top: 64%; left: 80.5%;">
+            <strong>Knowledge Verification:</strong> Validates employee comprehension of critical training content.
+          </div>          
+          <figcaption>Admin Dashboard: Compliance Guardrails in Action (Click to enlarge)</figcaption>
+        </figure>
+      </div>
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+      </div>              
+
+      <div class="row">
+        <div class="eight offset-by-two columns">      
+          <h3>The Result</h3>
+          <p>By handling the technical architecture and compliance logic myself, I was able to ensure the system handles the boring stuff in the background. Everything is backed by automatic tracking—the second an employee finishes a quiz, the system updates their records instantly, removing the need for any manual data entry or human follow-up.</p>
+        </div>
+      </div>   
 
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
           <h2>The Strategy</h2>
+          <p>While I typically collaborate with engineers to bring a vision to life, this project required me to bridge that gap myself. By treating AI as a high-level technical partner, I moved beyond static designs to engineer a production-ready tool from the ground up.</p>
+
           <h3>Evolution of a New Workflow: "Vibe Coding"</h3>
-          <p>While I typically collaborate with engineers to bring a vision to life, this project required me to bridge that gap myself. By treating AI as a high-level technical partner, I moved beyond static designs to engineer a fully functional tool from the ground up.</p>
-          <h4>3 Stages of Growth</h4>
+          <p>To deliver on my goal of mastering AI-first development, I used a "Vibe Coding" workflow that matured as the complexity of the project grew:</p>          
           <ol>
-            <li><strong>Learning the Patterns:</strong> Initially, I used broad prompts that resulted in inefficient, fragile code that didn't meet my quality standards.</li>
-            <li><strong>Guiding the Strategy:</strong> I shifted to a deep dialogue, using Gemini as a logic partner to vet plans in plain English before providing surgical instructions to the building tool.</li>
-            <li><strong>Driving the Execution:</strong> I developed a comprehensive System Guide that acted as a set of rules for privacy, accessibility, and engineering best practices. As I became more comfortable with the code, I moved from prompting to performing direct edits myself, allowing for much finer control over the final product.</li>
+            <li><strong>Learning the Patterns:</strong> I started with broad prompts, but quickly realized they led to fragile code that didn't meet my standards.</li>
+            <li><strong>Guiding the Strategy:</strong> I shifted to using Gemini as a high-level logic partner—vetting my plans in plain English to ensure the technical architecture was sound before providing instructions to the building tool.</li>
+            <li><strong>Driving the Execution:</strong> Toward the end, I was fully in the driver's seat. I developed a Governance Framework (a set of rules for privacy, accessibility, and engineering best practices) and moved from prompting to performing direct code edits for total control.</li>
           </ol>
         </div>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
-          <h3>Building a People-First Solution</h3>
-          <p>I built this tool from the ground up to streamline administrative workflows and ensure the system was simple and reliable for everyday use. By handling the complex technical and compliance details in the background, I created a smooth experience that reduces the manual burden on admins while letting employees complete their tasks without friction.</p>
+          <h3>Building a People-First, Zero-Maintenance Solution</h3>
+          <p>I didn't just want to build a tool; I wanted to build a sustainable system that could survive without a dedicated tech team. This required a focus on three core technical pillars:</p>
           <ul>
-            <li><strong>Compliance Guardrails:</strong> I built technical "locks" including presentation timers, interactive quizzes, and locked acknowledgments supported by automatic tracking to ensure users meet regulatory standards by default.</li>
-            <li><strong>Inclusive & Clear Design:</strong> I engineered a high-accessibility interface using WCAG standards, generous target sizes, and supportive micro-copy to reduce friction and ensure staff can complete requirements quickly and get back to their day.</li>
-            <li><strong>Reliable & Secure Systems:</strong> I chose professional services like Google Auth and Resend to create a secure, robust, and automated platform that remains stable without a dedicated tech team.</li>
+            <li><strong>Compliance Guardrails:</strong> I engineered technical "locks" like mandatory presentation timers, interactive quizzes, and immutable, time-stamped acknowledgments. This ensures the organization meets regulatory standards by default, removing the risk of human error.</li>
+            <li><strong>Inclusive & Clear Design:</strong> Using WCAG accessibility standards and generous "tap targets" for mobile use, I made sure the interface was frictionless for staff who are busy caring for seniors and don't have time for a steep learning curve.</li>
+            <li><strong>Robust, Zero-Cost Stack:</strong> To ensure long-term sustainability, I chose a professional-grade stack including Supabase (backend/database) and Google Auth (identity). This allows the platform to run with enterprise-level security and zero maintenance for $0/month.</li>
           </ul>
         </div>
       </div>      
 
       <div class="row">
-        <figure class="twelve columns">
-          <img src="images/senior-services/Email.png" alt="" class="portfolio-screenshot" />
-          <figcaption>Automated emails sent through Resend when trainings were assigned</figcaption>
-        </figure>
-      </div>   
-
-      <div class="row">
         <div class="eight offset-by-two columns divider_top">
-          <h2>The Impact</h2>
-          <h3>Estimated Success Metrics</h3>
-          <p>Based on the previous manual workload of around 8 hours a month:</p>
+          <h2>Estimated Success Metrics</h2>
+          <p>We’re in the final steps before launch, and the projected impact is significant. Based on the previous manual workload of around 8 hours a month:</p>
           <ul>
-            <li><strong>70-80% Time Savings:</strong> Calculated by the shift to a system where tracking and notifications happen automatically without human intervention.</li>
+            <li><strong>70-80% Time Savings:</strong> By automating tracking and notifications, I eliminated the 8 hours a month previously spent on manual follow-ups, freeing up 12 workdays a year for high-impact strategic work.</li>
             <li><strong>100% Audit Accuracy:</strong> The system eliminates human error in data entry, ensuring every completion is accurately timestamped and recorded.</li>
-            <li><strong>Zero-Cost Sustainability:</strong> By leveraging professional-grade free tiers, the portal costs the non-profit $0/month to run.</li>
+            <li><strong>Zero-Cost Sustainability:</strong> By leveraging professional-grade free tiers, I managed to bypass the $2,400 annual cost of a typical commercial system. The result is a professional, sustainable tool that costs the non-profit $0/month to run.</li>
           </ul>
         </div>
       </div>     
@@ -178,20 +269,7 @@
             <li><strong>Art of Balance:</strong> I learned to balance feature requests against time, costs, and complexity, ensuring the tool remains easy for the non-profit to manage in the future.</li>
           </ul>
         </div>
-      </div>            
-
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <h4>The Tools I Used</h4>
-          <ul>
-            <li><strong>Build Partner:</strong> Lovable (AI-Assisted Engineering)</li>
-            <li><strong>Logic & Strategy:</strong> Gemini (AI Logic Partner)</li>
-            <li><strong>Data & Security:</strong> Supabase + Google Auth</li>
-            <li><strong>Automated Emails:</strong> Resend</li>
-            <li><strong>Video Hosting:</strong> YouTube</li>
-          </ul>
-        </div>
-      </div>       
+      </div>                
 
       <!-- <div class="row">
         <div class="eight offset-by-two columns">
@@ -220,6 +298,32 @@
     </div>
     <!-- /.container -->
 
+<script>
+function openModal(imgSrc) {
+  const modal = document.getElementById("imageModal");
+  const fullImg = document.getElementById("fullImage");
+  
+  modal.style.display = "flex";
+  fullImg.src = imgSrc;
+  
+  // Force focus to the body so the keyboard listener catches the 'Esc' key
+  document.body.focus();
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+// Global listener: This works even if the modal isn't the "focused" element
+window.addEventListener('keydown', function(event) {
+  if (event.key === "Escape" || event.keyCode === 27) {
+    closeModal();
+  }
+});
+    </script>
+
+  </body>
+</html>   
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
