@@ -629,7 +629,9 @@ header {
   height: auto;
   display: block;
 }
-
+.image-container figcaption {
+  line-height: 1.6;
+}
 .helper-title {
   position: absolute;
   font-size: clamp(8px, 1vw, 15px);
