@@ -636,14 +636,16 @@ header {
   position: absolute;
   font-size: clamp(8px, 1vw, 15px);
   margin: 0;
-  padding: 0;
+  padding: 0.5%;
   z-index: 10;
+  border: 1px solid transparent;
+  text-align: center;
 }
 /* 2. The Label Box: Uses 'vw' for size so it scales with the image width */
 .helper-label {
   position: absolute;
   background: rgb(255,255,255,.8);
-  padding: 0.8vw 1.2vw; /* Proportional padding */
+  padding: 0.8em; /* Proportional padding */
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 10;
@@ -675,8 +677,8 @@ header {
 
 /* The Bullet */
 .helper-label::before {
-  width: 0.4vw;
-  height: 0.4vw;
+  width: 0.2vw;
+  height: 0.2vw;
   min-width: 5px; /* Prevents it from disappearing on tiny screens */
   min-height: 5px;
   border-radius: 50%;
