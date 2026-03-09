@@ -59,7 +59,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h1>RateIntelligence PRO &#40;Booking.com&#41;</h1>
-          <h2 class="subtitle">Driving the UX strategy for a hotel revenue management tool and the critical lessons learned from navigating technical and market-fit barriers.</h2>
+          <h2 class="subtitle">Driving the UX strategy for a B2B hotel revenue management tool and the critical lessons learned.</h2>
           <div class="role">
             My role:
             <span class="badge badge-neutral">UX Stategy Lead</span>
@@ -78,9 +78,9 @@
       <div class="row">
         <div class="eight offset-by-two columns card">
           <h3>Project at a Glance</h3>
-          <p><strong>The Problem:</strong> RateIntelligence was a successful free tool, but Booking.com needed to validate if a &#34;PRO&#34; version was viable, desirable, and feasible. The core challenge was shifting from a tool for casual property owners to a sophisticated, paid solution for professional Revenue Managers who required deeper data, PMS integrations, and actionable market insights.</p>
-          <p><strong>The Action:</strong> As the Lead Designer, I spearheaded a 6-month monetization pilot. I established a bi-weekly research framework to continuously validate concepts with partners and developed a comprehensive 360&deg; view of the professional Revenue Manager through persona development and journey mapping. I led the design of high-density data visualizations, including performance dashboards and guest sentiment trackers. Critically, I facilitated the prioritization of features based on technical effort versus partner value, navigating complex GDPR and legal constraints throughout the process.</p>
-          <p><strong>The Result:</strong> While the pilot achieved high engagement, it ultimately failed to meet its 10&#37; conversion goal due to critical dependencies, specifically the lack of seamless PMS integrations and insufficient cross-channel data. This &#34;successful failure&#34; provided the organization with vital strategic intelligence, proving that technical interoperability was a non-negotiable prerequisite for monetization. The project became a benchmark for &#40;in&#41;validating risky assumptions early, fundamentally changing how our team approached 0 &rarr; 1 product development.</p>
+          <p><strong>The Problem:</strong> Booking.com wanted to see if we could turn a free rate-shopping tool into a paid SaaS product for professional Revenue Managers. The goal was to simplify complex market data into clear pricing suggestions. However, the real challenge was testing if these insights were valuable enough for users to pay for when the tool didn't sync with their existing software.</p>
+          <p><strong>The Action:</strong> As the Lead Designer, I spearheaded a 6-month pilot and created a repeatable research framework to continuously validate concepts with partners. I designed high-information dashboards that prioritized urgent pricing gaps and local market trends, while working through the legal and technical limits of a global platform.</p>
+          <p><strong>The Result:</strong> While the pilot achieved high engagement, it ultimately failed to meet its 10% conversion goal due to critical dependencies, specifically the lack of seamless PMS integrations and insufficient cross-channel data. This taught the organization that for a B2B tool to succeed, it must work seamlessly with a user's entire tech stack. Because of these findings and a broader leadership pivot in company strategy, the team was unable to continue iterating, and the product was eventually sunset.</p>
         </div>        
       </div>
 
@@ -88,70 +88,46 @@
         <div class="eight offset-by-two columns">
           <h2>Overview</h2>
           <p>RateIntelligence was a free rate shopping tool by Booking.com for partners &#40;property owners&#41; to help them predict their occupancy and maintain competitive prices. The tool enabled partners to gain insights into their local market, compare rates with their competitors, and set competitive rates by using market data to forecast trends.</p>
-          <p>In 2018, we adjusted our strategy and set out to validate if a paid offering was desirable, viable, and feasible. My role was to lead the UX strategy and design for RateIntelligence and the new product, RateIntelligence PRO.</p>
+          <p>In 2018, Booking.com adjusted their strategy and my team set out to validate if a paid offering was desirable, viable, and feasible. My role was to lead the UX strategy new product, RateIntelligence PRO.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
-          <h2>Defining the High-Value User</h2>
-          <p>For the free version of RateIntelligence, we needed to better understand the mental model of partners and how they set their rates as part of their revenue strategy. We developed personas and journey maps based on partner research to empathize with our partners' needs and challenges.</p>
-          <h3>Shifting focus to professional Revenue Managers</h3>
-          <p>We put ourselves into the shoes of our partners and created empathy maps. Using the Jobs to Be Done framework &#40;JTBD&#41;, we analyzed existing research to identify the key requirements that partners &#34;hired&#34; our product for. By the end of the session, we had identified 3 primary users: Owner Olivia, Reservation Manager Rebecca, and Revenue Manager Rick.</p>
+          <h2>Strategy: Simplifying Expert Workflows</h2>
+          <p>For this SaaS offering, we shifted focus to professional Revenue Managers. These users don't just look at prices; they manage the financial health of large properties. I mapped their daily journey to find the exact moments where they felt overwhelmed by information.</p>
+          <h3>3 main goals:</h3>
+          <ol>
+            <li><strong>Automating</strong> the move from looking at data to making a price change.</li>
+            <li><strong>Predicting</strong> when a hotel might have empty rooms based on market shifts.</li>
+            <li><strong>Providing proof</strong> so managers could justify their pricing decisions to their bosses.</li>
+          </ol>
         </div>
-      </div>
-
-      <div class="row">
-        <figure class="twelve columns">
-          <img src="images/rate-intelligence/empathy-map.webp" />
-          <figcaption>Empathy mapping exercise with the team</figcaption>
-        </figure>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
-          <h3>Mapping the Revenue Cycle to Identify Friction Points</h3>
-          <p>I organized a 2-day workshop with the team to better understand the partner journey. The intended outcome was to have journey maps that visualized the primary use cases, actions, thoughts, feelings, and opportunities during each stage of their journey.</p>
+          <h3>Execution: Establishing a Research Standard</h3>
+          <p>To keep the team moving fast, I built a bi-weekly research framework — it was a standardized process for the entire team to define who we were talking to, test new designs, and quickly turn feedback into better logic. This allowed us to fix issues—like how to show price changes that happened just minutes ago—without slowing down development.</p>
         </div>
       </div>
 
       <div class="row">
-        <figure class="twelve columns">
-          <img src="images/rate-intelligence/journey-map.webp" />
-          <figcaption>Initial version of Owner Olivia's journey map</figcaption>
-        </figure>
-      </div>
+        <div class="eight offset-by-two columns">
+          <h3>The System: Focus over Information Overload</h3>
+          <p>I worked with Product and Engineering to ensure the UI focused on action rather than just showing more numbers.</p>
+          <ul>
+            <li><strong>Performance Dashboards:</strong> I moved away from standard calendars to a system that highlighted dates needing attention. If a property was priced much lower than its neighbors, the UI signaled an opportunity so the manager didn't have to hunt for it.</li>
+            <li><strong>Contextual Insights:</strong> We added local events and competitor restrictions (like minimum stay requirements) directly into the flow. This explained why prices were shifting, which helped users trust the tool's suggestions.</li>
+            <li><strong>Guest Sentiment:</strong> I designed a way to show how guest reviews were trending. This helped managers see if operational issues were the real reason they couldn't charge higher rates.</li>
+          </ul>
+        </div>
+      </div>      
 
       <div class="row">
         <div class="eight offset-by-two columns">
           <h3>Benchmarking the Ecosystem</h3>
           <p>To understand the current market and primary competitors, I led a UX audit of the top 5 rate shopping tools. We researched the competitor profile &#40;e.g. mission, competitive advantage&#41;, marketing and brand &#40;e.g. traffic, target segment, social media, pricing model, reviews&#41;, UX &#40;e.g. content, information architecture, usability&#41;, and feature set. This data allowed us to establish a baseline and identify where our product fell short, where we held a competitive edge, and where there were potential opportunities.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns divider_top">
-          <h2>Ideation and Testing</h2>
-          <h3>Using Lean Prototyping to Validate Core Value Propositions</h3>
-          <p>We used the personas and journey maps to determine what pain points to prioritize. To generate ideas that would make it easier for partners to set their room rates, we sketched ideas using the Crazy 8's framework.</p>
-          <h3>Storyboarding the Ideal Scenario</h3>
-          <p>After generating a lot of ideas, sharing back to the group, and dot-voting on the best ideas, we switched to storyboarding. This helped create an end-to-end flow from the partners' perspective. We used the best parts of the individual storyboards and added steps that were missing. We played these back to the group and discussed.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <figure class="twelve columns">
-          <img src="images/rate-intelligence/storyboard.webp" />
-          <figcaption>Compiling the strongest ideas into an end-to-end storyboard</figcaption>
-        </figure>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <h3>Rapid Validation</h3>
-          <p>Using the storyboard that each team agreed upon, we spent an hour creating paper prototypes. It wasn't necessary to have high-fidelity designs since the goal was to quickly test and validate with proxy users. Later on, we would iterate upon the prototypes and test them with real partners.</p>
-          <h3>Regular Feedback Loops for Continuous Validation</h3>
-          <p>To quickly test and gather regular feedback, I established a bi-weekly partner research framework for the team. This was a step-by-step guide on defining the audience, managing communication, tools and logistics, best practices for preparing designs, creating the discussion guide, capturing feedback, analyzing, and sharing insights with the team. This framework was continually refined and enabled our team to quickly iterate on concepts and get direct feedback.</p>
         </div>
       </div>
 
