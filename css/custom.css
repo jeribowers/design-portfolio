@@ -1,285 +1,217 @@
-.highlight {
-  background-color: #69fbc8;
-  font-weight: 400;
-  font-style: normal;
+/* =============================================================================
+   CUSTOM STYLES
+   Jeri Bowers Portfolio
+   
+   Table of Contents:
+   1.  CSS Variables
+   2.  Base & Typography
+   3.  Header & Navigation
+   4.  Dropdown Menu
+   5.  Layout & Utilities
+   6.  Badges
+   7.  Cards
+   8.  Images & Figures
+   9.  Lightbox Modal
+   10. Annotated Image Labels
+   11. Home Page
+   12. Testimonial
+   13. Pagination
+   14. Tooltip
+   15. SVG Chevron Diagram
+   16. Animations
+   17. Media Queries
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. CSS Variables
+   ============================================================================= */
+
+:root {
+  --color-brand:       #69fbc8;
+  --color-dark:        #363f48;
+  --color-text:        #333;
+  --color-text-muted:  rgba(69, 70, 70, 0.6);
+  --color-border:      #e1e1e1;
+  --color-bg-neutral:  rgb(107, 107, 107, 0.1);
+
+  /* SVG Chevron phase colors */
+  --phase-1: rgb(11, 94, 215);
+  --phase-2: rgb(11, 94, 215);
+  --phase-3: rgb(11, 94, 215);
+  --phase-4: rgb(11, 94, 215);
+  --phase-5: rgb(11, 94, 215);
+  --phase-6: rgb(11, 94, 215);
+  --chev-divider:   #ffffff;
+  --chev-title:     #ffffff;
+  --chev-subtitle:  rgba(69, 70, 70, 0.6);
 }
 
-header {
-  background-color: #363f48;
-  padding: 1em 0 0.7em;
-  margin-bottom: 2em;
-  color: #fff;
-}
-header nav {
-  float: right;
-}
-header nav a {
-  margin-left: 1.5em;
-}
-header a {
-  text-decoration: none;
-  display: inline-block;
-  padding-bottom: 4px; /* Space for the "border" to live */
-  transition: box-shadow 0.2s ease;
-  color: #fff;
-  border-color: transparent;
-}
-header a:hover {
-  color: #69fbc8;
-  border-bottom: 2px dotted #69fbc8;
-  background-color: transparent;
-}
-header a.active,
-header a.active:hover {
-box-shadow: inset 0 -2px 0 0 #000;
-}
-.home header {
-  background-color: transparent;
-}
-/* Headings */
-.divider_top {
-  display: block;
-  margin-top: 1rem;
-  padding-top: 3rem;
-  border-top: 1px solid #e1e1e1;
-}
-.subtitle {
-  font-size: 22px;
-  letter-spacing: 0;
-  color: #6B6B6B;
-  font-weight: 400;
-  line-height: 28px;
-}
 
-.profile-container {
-    display: inline-block; /* Forces the box to be only as wide as the image */
-    position: relative;    /* Keeps the circle anchored to this box */
-    line-height: 0;        /* Removes tiny ghost spacing at the bottom */
-    max-width: 200px;
-    max-height: 200px;
-}
-.profile-image {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Forces the height to always match the width */
-    border-radius: 50%;
-    object-fit: cover;
-}
+/* =============================================================================
+   2. Base & Typography
+   ============================================================================= */
 
-.circle-overlay {
-    position: absolute;
-    
-    /* 1. Move the top-left corner to the exact center of the container */
-    top: 50%;
-    left: 50%;
-    
-    /* 2. Pull the image back by half its own width/height to perfectly center it */
-    transform: translate(-50%, -50%);
-    
-    /* 3. Keep your sizing and ratio */
-    width: 110%; /* Made it slightly larger to give that "frame" look */
-    aspect-ratio: 1 / 1;
-    height: auto;
-    
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* Pagination */
-.previous,
-.next {
-  display: inline-block;
-  margin: 2em 0 4em;
-  border: none;
-}
-.previous {
-  float: left;
-}
-.next {
-  float: right;
-}
-
-.circle {
-  border-radius: 100%;
-  height: 8em;
-  width: 8em;
-  float: left;
-  margin-right: 2em;
-  text-indent: -999em;
-}
-.katherine {
-  background: url(../images/watson/katherine.png) no-repeat 0 0;
-  background-size: cover;
-}
-.theodore {
-  background: url(../images/theodore.jpg) no-repeat 0 0;
-  background-size: cover;
-}
-.zilker {
-  background: url(../images/zilker.jpg) no-repeat 0 0;
-  background-size: cover;
-}
-
-/* Lists */
-ul, ol  {
+ul,
+ol {
   padding-left: 2rem;
   margin-top: 1rem;
   list-style-position: outside;
 }
-ul {
-    list-style-type: disc;
-}
-ol {
-    list-style-type: decimal; /* This ensures 1, 2, 3 appears */
-}
+
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+
 li {
   margin-bottom: 0.5rem;
-  text-align: left;
   line-height: 1.5;
-  color: #333;
-}
-/* Home */
-.home {
-  background-color: #363f48;
-  padding-bottom: 3em;
-}
-.portfolio a {
-  display: inline-block;
-  margin: 0 0 0.2em;
-  padding: 0.1em 0.5em;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #69fbc8;
-  font-size: 2em;
-  text-decoration: none;
-  font-weight: 700;
-  border: none;
-  transition: 0.3s ease all;
-}
-.portfolio a:hover {
-  background-color: #69fbc8;
-  color: #363f48;
-  font-weight: 700;
-}
-.intro h1 {
-  font-size: 3.6rem;
-  color: #fff;
-  margin-top: 0;
-  padding-top: 0;
-}
-.intro h2 {
-  font-size: 2rem;
-  font-weight: 200;
-  color: #fff;
-  margin-top: 0;
-  padding-top: 0;
-  line-height: 1.5em;
-}
-.intro p {
-  color: rgba(255, 255, 255, 0.6);
-}
-.intro p strong {
-  color: #fff;
-}
-.intro .eight {
-  padding-right: 2em;
-}
-.check-out-my-work {
-  position: relative; /* This creates the "boundary" for the image */
-  width: 180px;
-  height: 60px;       /* Give the wrapper a size */
+  color: var(--color-text);
+  text-align: left;
 }
 
-.check-out-my-work img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;       /* Now 100% means 100% of the wrapper, not the screen */
+.highlight {
+  background-color: var(--color-brand);
+  font-weight: 400;
+  font-style: normal;
 }
-
-
-@media (max-width: 950px) {
-  .intro h1 {
-    font-size: 3rem;
-  }   
-  .name { 
-    font-size: 0; /* Hides the original "Jeri Bowers" text */
-  }
-  .name::before {
-    content: "Jeri";
-    font-size: 1.7rem; /* Set this to match your original font size */
-    visibility: visible;
-  }  
-  .portfolio a {
-    font-size: 3.7rem;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio a {
-    display: block;
-    font-size: 2rem;
-  }  
-}
-@media (max-width: 550px) {
- header nav a {
-  margin-left: 1em;
-  font-size: 0.9em;
- }  
-  .subtitle {
-    font-size: 2.5rem;
-  }
-}
-
 
 .subtitle {
+  font-size: 22px;
   font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #6b6b6b;
 }
-
-/* Images */
-figure {
-  margin: 1em 0 2em;
-}
-
-img {
-  width: 100%;
-}
-figcaption {
-  font-weight: 400;
-  font-size: 0.9em;
-  font-style: italic;
-  text-align: center;
-  color: rgba(69, 70, 70, 0.6);
-  max-width: 600px;
-  margin: 10px auto 0;
-  text-align: center;
-}
-
-/* Ratings */
-.screenshot {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  border: none;
-  border-right: 1px solid rgba(69, 70, 70, 0.2);
-  margin-bottom: 0.5em;
-}
-.screenshot:hover {
-  background-color: transparent;
-  border-right: 1px solid rgba(69, 70, 70, 0.2);
-}
-.screenshot img {
-  display: block;
-  width: 200%; /*border: none;*/
-}
-/*.screenshot:hover img {margin-left: -100%; cursor: pointer;}*/
-/*@media (max-width: 550px) {
-		.screenshot:hover img {margin-left: 0; cursor: default;}
-	}*/
 
 .role {
-  font-weight: 500;
   font-size: 0.9em;
+  font-weight: 500;
 }
 
-/* Base Badge Styling */
+
+/* =============================================================================
+   3. Header & Navigation
+   ============================================================================= */
+
+header {
+  position: relative;
+  z-index: 9999;
+  background-color: var(--color-dark);
+  padding: 1em 0 0.7em;
+  margin-bottom: 2em;
+  color: #fff;
+}
+
+header nav {
+  float: right;
+}
+
+header nav a {
+  margin-left: 1.5em;
+}
+
+header a {
+  display: inline-block;
+  padding-bottom: 4px;
+  color: #fff;
+  text-decoration: none;
+  border-color: transparent;
+  transition: box-shadow 0.2s ease;
+}
+
+header a:hover {
+  color: var(--color-brand);
+  border-bottom: 2px dotted var(--color-brand);
+  background-color: transparent;
+}
+
+header a.active,
+header a.active:hover {
+  box-shadow: inset 0 -2px 0 0 #000;
+}
+
+.home header {
+  background-color: transparent;
+}
+
+
+/* =============================================================================
+   4. Dropdown Menu
+   ============================================================================= */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.carat {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  font-size: 10px;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .carat {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  min-width: 260px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 1.5em;
+  margin-left: 0;
+  color: rgb(69, 70, 70);
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-brand);
+  color: rgb(69, 70, 70);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* =============================================================================
+   5. Layout & Utilities
+   ============================================================================= */
+
+.divider_top {
+  display: block;
+  margin-top: 1rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* =============================================================================
+   6. Badges
+   ============================================================================= */
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -288,28 +220,31 @@ figcaption {
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
+  letter-spacing: 0.5px;
   text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 100px; /* Use a high number for "Pill" shape */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border-radius: 100px;
 }
 
-/* Modifier: Neutral/Default */
 .badge-neutral {
-  background-color: rgb(107, 107, 107, .1);
+  background-color: var(--color-bg-neutral);
   color: #374151;
 }
 
-/* Modifier: Success/Green */
 .badge-success {
   background-color: #dcfce7;
   color: #166534;
 }
 
+
+/* =============================================================================
+   7. Cards
+   ============================================================================= */
+
 .card {
-  background-color: rgb(107, 107, 107, .1);
+  background-color: var(--color-bg-neutral);
   border-radius: 10px;
   color: #374151;
   margin-bottom: 2.5em;
@@ -317,428 +252,130 @@ figcaption {
 }
 
 
-/* The speech Bubble */
-.testimonial-container {
-  margin-top: 1em;
-  margin-bottom: 2em;
+/* =============================================================================
+   8. Images & Figures
+   ============================================================================= */
+
+img {
+  width: 100%;
 }
 
-.quote-bubble {
-  background-color: rgb(69, 70, 70);
-  color: #69fbc8;
-  padding: 25px;
-  border-radius: 8px;
-  line-height: 1.5;
+figure {
+  margin: 1em 0 2em;
+}
+
+figcaption {
+  max-width: 600px;
+  margin: 10px auto 0;
+  font-size: 0.9em;
+  font-weight: 400;
   font-style: italic;
-  font-family: "Georgia", serif; /* Matching the serif look in your image */
-  position: relative; /* Required for the arrow positioning */
-  margin-bottom: 25px; /* Space for the arrow */
-}
-.quote-bubble p {
-  margin-bottom: 0;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  text-align: center;
 }
 
-/* The Arrow/Pointer */
-.quote-bubble:after {
-  content: '';
-  position: absolute;
-  bottom: -15px; /* Pulls arrow below the box */
-  left: 40px;    /* Positions arrow above the image */
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid rgb(69, 70, 70); /* Matches bubble color */
+.figure-tight {
+  margin-top: -1.5em;
 }
-
-/* User Section Layout */
-.user-info {
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  line-height: 2rem;
-}
-
-/* Circular Avatar */
-.user-avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
-  border: 5px solid #e1e1e1;
-}
-
-/* Name and Title Typography */
-.user-name {
-  font-weight: bold;
-  font-size: 1.7rem;
-  color: #333;
-}
-
-.user-title {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.user-title-former {
-  font-style: italic;
-  color: #666;
-}
-
-/* Container for the dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Style for the "My Work" link */
-.dropbtn {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6); 
-  display: inline-block;
-}
-
-/* The hidden dropdown menu */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 260px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Subtle shadow */
-  z-index: 100;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: rgb(69, 70, 70);
-  padding: 10px 1.5em;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-  margin-left: 0;
-  border-bottom: 1px solid #e1e1e1;
-}
-
-/* Hover effect for items in the dropdown */
-.dropdown-content a:hover {
-  background-color: #69fbc8;
-  color: rgb(69, 70, 70);
-  border-bottom: 1px solid #e1e1e1;
-
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.carat {
-  font-size: 10px;      /* Adjust this to change the "largeness" */
-  display: inline-block;
-  margin-left: 6px;     /* Space between text and arrow */
-  vertical-align: middle;
-  transition: transform 0.3s ease; /* Smooth rotation on hover */
-  color: #999;          /* Slightly lighter than text for a subtle look */
-}
-
-/* Optional: Rotate the carat 180 degrees when you hover over the menu */
-.dropdown:hover .carat {
-  transform: rotate(180deg);
-}
-
-
-
-/* Chevron graphi */
-  
-    /* Change these to recolor each phase */
-    :root{
-      --phase-1: rgb(11, 94, 215); /* Discovery */
-      --phase-2: rgb(11, 94, 215); /* Deciding */
-      --phase-3: rgb(11, 94, 215); /* Committing */
-      --phase-4: rgb(11, 94, 215); /* Preparing */
-      --phase-5: rgb(11, 94, 215); /* Traveling */
-      --phase-6: rgb(11, 94, 215); /* Reminiscing */
-
-      --divider: #ffffff;       /* chevron separators */
-      --title-color: #ffffff;   /* top text */
-      --subtitle-color: rgba(69, 70, 70, 0.6);/* bottom text */
-    }
-
-    /* Responsive svg */
-    .stages {
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      display: block;
-    }
-
-    /* Phase fills */
-    #phase-1 { fill: var(--phase-1); }
-    #phase-2 { fill: var(--phase-2); }
-    #phase-3 { fill: var(--phase-3); }
-    #phase-4 { fill: var(--phase-4); }
-    #phase-5 { fill: var(--phase-5); }
-    #phase-6 { fill: var(--phase-6); }
-
-    /* Chevron styling */
-    .chev {
-      stroke: var(--divider);
-      stroke-width: 6;
-      stroke-linejoin: miter;
-    }
-
-    /* Typography */
-    .chev-title {
-      fill: var(--title-color);
-      font: 500 34px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      text-anchor: middle;
-      dominant-baseline: middle;
-      font-size: 1.5em
-    }
-    .chev-subtitle {
-      fill: var(--subtitle-color);
-      font: 600 22px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      text-anchor: middle;
-      dominant-baseline: hanging;
-      font-size: 1.5em;
-    }
-
-
-..tooltip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.icon {
-  cursor: pointer;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.icon {
-  cursor: pointer;
-}
-
-/* Tooltip box */
-.tooltip-text {
-  position: absolute;
-  bottom: 140%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  color: #fff;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease;
-  z-index: 10;
-}
-
-/* Arrow */
-.tooltip-arrow {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #111;
-}
-.tooltip .icon {
-  font-style: normal;
-}
-
-/* Show on hover */
-.tooltip:hover .tooltip-text {
-  opacity: 1;
-  visibility: visible;
-}
-
 
 .portfolio-screenshot {
-  /* Forces the browser to keep edges sharp */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  
-  /* Ensure the image doesn't upscale beyond its natural width */
   max-width: 100%;
   height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-
-/* 1. Force the header to the very top layer */
-header {
+/* Profile image (About page) */
+.profile-container {
+  display: inline-block;
   position: relative;
-  z-index: 9999 !important; /* High number to beat everything else */
+  line-height: 0;
+  max-width: 200px;
+  max-height: 200px;
 }
 
-.background-gradient {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  background-color: #2c333a; 
-  background-image: 
-    /* Increased opacity from 0.1 to 0.3-0.4 for punchier colors */
-    radial-gradient(at 15% 15%, rgba(44, 204, 150, 0.35) 0px, transparent 50%), 
-    radial-gradient(at 85% 85%, rgba(0, 163, 136, 0.3) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(0, 102, 204, 0.2) 0px, transparent 60%);
-  /* Reduced blur from 100px to 60px so the shapes are more defined */
-  filter: blur(60px);
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.circle-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
   pointer-events: none;
-  animation: breathe 6s ease-in-out infinite alternate;
+  z-index: 2;
 }
 
-@keyframes breathe {
-  0% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
-
-/* 1. The Container: Must have line-height 0 to stop 'ghost' spacing at the bottom */
+/* Zoomable image container */
 .image-container {
   position: relative;
-  width: 100%;
   display: block;
-  line-height: 0; 
+  width: 100%;
+  line-height: 0;
   cursor: zoom-in;
 }
 
 .image-container img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
+
 .image-container figcaption {
   line-height: 1.6;
 }
-.helper-title {
+
+/* Photo border */
+.polaroid {
+  display: inline-block;
+  background-color: #fff;
+  margin-bottom: 3em;
+  padding: 12px 12px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: rotate(-2deg);
+}
+
+.polaroid::after {
+  content: "UAT session in progress";
   position: absolute;
-  font-size: clamp(8px, 1vw, 15px);
-  margin: 0;
-  padding: 0.5%;
-  z-index: 10;
-  border: 1px solid transparent;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
   text-align: center;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  color: #555;
 }
-/* 2. The Label Box: Uses 'vw' for size so it scales with the image width */
-.helper-label {
-  position: absolute;
-  background: rgb(255,255,255,.8);
-  padding: 0.8em; /* Proportional padding */
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 10;
-  pointer-events: none;
-  
-  /* Fluid font-size: grows/shrinks with screen width */
-  font-size: clamp(8px, 1vw, 15px);
-  width: 14vw; 
-  line-height: 1.4;
-  
-  /* Vertical centering on the coordinate */
-  transform: translateY(-50%);
-}
+/* =============================================================================
+   9. Lightbox Modal
+   ============================================================================= */
 
-/* 3. The Line and Bullet: Using 'vw' to keep lengths proportional */
-.helper-label::after,
-.helper-label::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  background: rgb(69, 70, 70);
-}
-
-/* The Line */
-.helper-label::after {
-  height: 1px;
-  width: 2vw; /* Scales with screen width */
-}
-
-/* The Bullet */
-.helper-label::before {
-  width: 0.2vw;
-  height: 0.2vw;
-  min-width: 5px; /* Prevents it from disappearing on tiny screens */
-  min-height: 5px;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  z-index: 11;
-}
-
-/* 4. Directional Logic: Pushes the box away from the target point */
-/* Labels on the LEFT (Line points RIGHT to the target) */
-.line-right {
-  transform: translateY(-50%) translateX(-118%); /* Shifts box left of the point */
-}
-.line-right::after { left: 100%; }
-.line-right::before { left: calc(100% + 2vw); }
-
-/* Labels on the RIGHT (Line points LEFT to the target) */
-.line-left {
-  /* Box naturally sits to the right of the 'left' coordinate */
-  margin-left: 3.5vw; 
-}
-.line-left::after { right: 100%; }
-.line-left::before { right: calc(100% + 2vw); }
-
-/* 5. Mobile Polish: Hides lines/bullets on small screens to prevent overlap */
-@media (max-width: 600px) {
-  .helper-label {
-    position: relative;
-    width: 100% !important;
-    max-width: none;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    margin: 10px 0 !important;
-    font-size: 14px;
-    padding: 15px;
-  }
-  .helper-label::before, .helper-label::after {
-    display: none;
-  }
-}
-
-/* 6. Lightbox Modal Styles */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  cursor: zoom-out;
+  background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
+  cursor: zoom-out;
 }
 
 .modal-content {
   max-width: 95%;
   max-height: 90vh;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   animation: zoom 0.3s ease;
 }
 
@@ -751,7 +388,403 @@ header {
   cursor: pointer;
 }
 
+
+/* =============================================================================
+   10. Annotated Image Labels
+   ============================================================================= */
+
+.helper-title {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  padding: 0.5%;
+  font-size: clamp(8px, 1vw, 15px);
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.helper-label {
+  position: absolute;
+  z-index: 10;
+  width: 14vw;
+  padding: 0.8em;
+  font-size: clamp(8px, 1vw, 15px);
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Shared line and bullet styles */
+.helper-label::after,
+.helper-label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background: rgb(69, 70, 70);
+}
+
+/* Line */
+.helper-label::after {
+  height: 1px;
+  width: 2vw;
+}
+
+/* Bullet */
+.helper-label::before {
+  width: 0.2vw;
+  height: 0.2vw;
+  min-width: 5px;
+  min-height: 5px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+
+/* Label on the left, line points right */
+.line-right {
+  transform: translateY(-50%) translateX(-118%);
+}
+.line-right::after  { left: 100%; }
+.line-right::before { left: calc(100% + 2vw); }
+
+/* Label on the right, line points left */
+.line-left {
+  margin-left: 3.5vw;
+}
+.line-left::after  { right: 100%; }
+.line-left::before { right: calc(100% + 2vw); }
+
+
+/* =============================================================================
+   11. Home Page
+   ============================================================================= */
+
+.home {
+  background-color: var(--color-dark);
+  padding-bottom: 3em;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c333a;
+  background-image:
+    radial-gradient(at 15% 15%, rgba(44, 204, 150, 0.35) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(0, 163, 136, 0.3)  0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(0, 102, 204, 0.2)  0px, transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: breathe 6s ease-in-out infinite alternate;
+}
+
+.intro h1 {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 3.6rem;
+  color: #fff;
+}
+
+.intro h2 {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1.5em;
+  color: #fff;
+}
+
+.intro p       { color: rgba(255, 255, 255, 0.6); }
+.intro p strong { color: #fff; }
+
+.intro .eight {
+  padding-right: 2em;
+}
+
+.portfolio a {
+  display: inline-block;
+  margin: 0 0 0.2em;
+  padding: 0.1em 0.5em;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--color-brand);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio a:hover {
+  background-color: var(--color-brand);
+  color: var(--color-dark);
+}
+
+.check-out-my-work {
+  position: relative;
+  width: 180px;
+  height: 60px;
+}
+
+.check-out-my-work img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+/* =============================================================================
+   12. Testimonial
+   ============================================================================= */
+
+.testimonial-container {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.quote-bubble {
+  position: relative;
+  padding: 25px;
+  margin-bottom: 25px;
+  background-color: rgb(69, 70, 70);
+  border-radius: 8px;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-brand);
+}
+
+.quote-bubble p {
+  margin-bottom: 0;
+}
+
+.quote-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 40px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid rgb(69, 70, 70);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  line-height: 2rem;
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+  border: 5px solid var(--color-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.user-title {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.user-title-former {
+  font-style: italic;
+  color: #666;
+}
+
+
+/* =============================================================================
+   13. Pagination
+   ============================================================================= */
+
+.previous,
+.next {
+  display: inline-block;
+  margin: 2em 0 4em;
+  border: none;
+}
+
+.previous { float: left; }
+.next      { float: right; }
+
+
+/* =============================================================================
+   14. Tooltip
+   ============================================================================= */
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip .icon {
+  font-style: normal;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  z-index: 10;
+  padding: 6px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #fff;
+  background: #111;
+  border-radius: 6px;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #111;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =============================================================================
+   15. SVG Chevron Diagram
+   ============================================================================= */
+
+.stages {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+}
+
+#phase-1 { fill: var(--phase-1); }
+#phase-2 { fill: var(--phase-2); }
+#phase-3 { fill: var(--phase-3); }
+#phase-4 { fill: var(--phase-4); }
+#phase-5 { fill: var(--phase-5); }
+#phase-6 { fill: var(--phase-6); }
+
+.chev {
+  stroke: var(--chev-divider);
+  stroke-width: 6;
+  stroke-linejoin: miter;
+}
+
+.chev-title {
+  fill: var(--chev-title);
+  font: 500 34px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.5em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.chev-subtitle {
+  fill: var(--chev-subtitle);
+  font: 600 22px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.5em;
+  text-anchor: middle;
+  dominant-baseline: hanging;
+}
+
+
+/* =============================================================================
+   16. Animations
+   ============================================================================= */
+
+@keyframes breathe {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.1); }
+}
+
 @keyframes zoom {
-  from {transform:scale(0.9); opacity:0} 
-  to {transform:scale(1); opacity:1}
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+
+/* =============================================================================
+   17. Media Queries
+   ============================================================================= */
+
+@media (max-width: 950px) {
+  .intro h1 {
+    font-size: 3rem;
+  }
+
+  .name {
+    font-size: 0;
+  }
+
+  .name::before {
+    content: "Jeri";
+    font-size: 1.7rem;
+    visibility: visible;
+  }
+
+  .portfolio a {
+    font-size: 3.7rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .portfolio a {
+    display: block;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .helper-label {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: none;
+    margin: 10px 0 !important;
+    padding: 15px;
+    font-size: 14px;
+    transform: none !important;
+  }
+
+  .helper-label::before,
+  .helper-label::after {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  header nav a {
+    margin-left: 1em;
+    font-size: 0.9em;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
 }
