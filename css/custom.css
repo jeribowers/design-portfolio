@@ -507,6 +507,16 @@ figcaption {
   padding-right: 2em;
 }
 
+.intro a {
+  color: var(--color-brand);
+  border-bottom: 2px dotted var(--color-brand);
+}
+
+.intro a:hover {
+  color: var(--color-dark);
+  background-color: var(--color-brand);
+}
+
 .portfolio a {
   display: inline-block;
   margin: 0 0 0.2em;
@@ -525,18 +535,6 @@ figcaption {
   color: var(--color-dark);
 }
 
-.check-out-my-work {
-  position: relative;
-  width: 180px;
-  height: 60px;
-}
-
-.check-out-my-work img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
 
 
 /* =============================================================================
@@ -616,10 +614,25 @@ figcaption {
   display: inline-block;
   margin: 2em 0 4em;
   border: none;
+  width: 48%;
 }
 
 .previous { float: left; }
-.next      { float: right; }
+.next {
+  float: right;
+  text-align: right;
+}
+
+@media (max-width: 400px) {
+  .previous,
+  .next {
+    display: block;
+    width: 100%;
+    text-align: left;
+    float: none;
+    margin: 0.5em 0;
+  }
+}
 
 
 /* =============================================================================
