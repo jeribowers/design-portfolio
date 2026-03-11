@@ -397,8 +397,10 @@ figcaption {
   position: absolute;
   z-index: 10;
   margin: 0;
-  padding: 0.5%;
-  font-size: clamp(8px, 1vw, 15px);
+  padding: 1%;
+  font-size: clamp(8px, 2vw, 15px);
+  font-weight: 600;
+  color: var(--color-text);
   text-align: center;
   border: 1px solid transparent;
 }
@@ -417,28 +419,28 @@ figcaption {
   transform: translateY(-50%);
 }
 
-/* Shared line and bullet styles */
+/* Shared line and dot styles */
 .helper-label::after,
 .helper-label::before {
   content: "";
   position: absolute;
   top: 50%;
-  background: rgb(69, 70, 70);
 }
 
 /* Line */
 .helper-label::after {
   height: 1px;
   width: 2vw;
+  background: #4B5563;
 }
 
-/* Bullet */
+/* Styled dot */
 .helper-label::before {
-  width: 0.2vw;
-  height: 0.2vw;
-  min-width: 5px;
-  min-height: 5px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background: #4B5563;
+  box-shadow: 0 0 0 6px rgba(75, 85, 99, 0.25);
   transform: translateY(-50%);
   z-index: 11;
 }
@@ -590,7 +592,7 @@ figcaption {
 
 .user-name {
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--color-text);
 }
 
@@ -772,22 +774,64 @@ figcaption {
   }
 }
 
-@media (max-width: 600px) {
-  .helper-label {
-    position: relative;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    max-width: none;
-    margin: 10px 0 !important;
-    padding: 15px;
-    font-size: 14px;
-    transform: none !important;
+/* Mobile callout system */
+.mobile-dot {
+  display: none;
+}
+
+.mobile-legend {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .helper-label,
+  .helper-title {
+    display: none !important;
   }
 
-  .helper-label::before,
-  .helper-label::after {
-    display: none;
+  .mobile-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4B5563;
+    box-shadow: 0 0 0 5px rgba(75, 85, 99, 0.25);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  figure.has-mobile-legend {
+    margin-bottom: 1rem;
+  }
+
+  figure.has-mobile-legend figcaption {
+    margin-bottom: 0.0;
+  }
+
+  .mobile-legend {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    padding: 0 1em;
+  }
+
+  .mobile-legend ol {
+    margin-bottom: 0;
+    padding-left: 1.5em;
+  }
+
+  .mobile-legend li {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
   }
 }
 
