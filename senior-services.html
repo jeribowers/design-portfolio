@@ -79,32 +79,32 @@
       <div class="row">
         <div class="eight offset-by-two columns card">
           <h3>Project at a Glance</h3>
-          <p><strong>Problem:</strong> Manual training management created 12 workdays of unnecessary overhead annually and a $20,000+ compliance liability. The solution had to meet regulatory compliance standards, run at zero cost, and remain fully self-maintaining for a non-technical team.</p>
+          <p><strong>Problem:</strong> Manual training management created 12 workdays of unnecessary overhead annually and a real compliance liability with no centralized system to demonstrate audit readiness. The solution had to meet compliance standards, run at zero cost, and be maintainable by a non-technical team.</p>
           <p><strong>My Role:</strong> Solo product lead, designer, and engineer across the full lifecycle, from requirements to production launch.</p>
-          <p><strong>Action:</strong> Built a custom training portal with AI-assisted development, featuring automated compliance guardrails and a zero-maintenance architecture.</p>
-          <p><strong>Result (Projected):</strong> 70-80% reduction in administrative time, 100% audit accuracy, and $0/month operating cost.</p>
+          <p><strong>Action:</strong> Built a custom training portal with AI-assisted development, featuring automated compliance guardrails and a handover-ready architecture.</p>
+          <p><strong>Result (Projected):</strong> 70-80% reduction in administrative time, full compliance record available for export at any time, and $0/month operating cost.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
           <h2>The Context</h2>
-          <p>Senior Services of South Sound is a non-profit dedicated to improving the lives of seniors through essential services and community connection. Because they operate with a lean staff and no dedicated tech team, their internal processes had to be extremely efficient to keep up with strict state regulations.</p>
+          <p>Senior Services of South Sound is a non-profit dedicated to improving the lives of seniors through essential services and community connection. With a lean staff and no dedicated tech team, internal processes have to be efficient and largely self-sufficient.</p>
 
           <h3>The Challenge</h3>
-          <p>The real challenge was designing a single system that worked for three very different audiences: regulators, staff, and a non-technical admin team.</p>
+          <p>Managing staff training manually had created two compounding problems: wasted administrative capacity and real compliance risk.</p>
           <ul>
-            <li><strong>Wasted Capacity:</strong> A single administrator managed all employee training manually, averaging 8 hours a month of unnecessary overhead for an HR Director who wears many hats.</li>
-            <li><strong>Compliance Risk:</strong> Data scattered across folders and email threads made it impossible to get a real-time view of certification status, creating a $20k+ liability risk if records were found incomplete during a state audit.</li>
+            <li><strong>Wasted Capacity:</strong> The HR Director, who also serves as Deputy Executive Director, was spending 8 hours a month managing staff training manually, time that could not be justified given her broader responsibilities.</li>
+            <li><strong>Compliance Risk:</strong> Training records were scattered across folders and email threads with no centralized system to demonstrate audit readiness, creating real liability risk if records were found incomplete during a state audit.</li>
           </ul>
 
           <h3>The Constraints</h3>
-          <p>The solution had to work within four non-negotiable boundaries:</p>
+          <p>The solution had to work within four key boundaries:</p>
           <ul>
             <li><strong>Zero budget:</strong> As a lean non-profit, the system had to match professional-grade quality at $0/month.</li>
-            <li><strong>No dedicated tech team:</strong> Fully self-maintaining and handover-ready for a semi-technical operator.</li>
+            <li><strong>No dedicated tech team:</strong> No developer available to support or troubleshoot the system. It had to be stable enough to run without ongoing technical intervention and documented well enough for a non-technical operator to maintain it independently.</li>
             <li><strong>Regulatory accountability:</strong> Real audit risk from funders, accreditors, and regulators, with no centralized system to demonstrate compliance.</li>
-            <li><strong>Non-technical user base:</strong> Staff have demanding jobs. Even mandatory training deserved a frictionless, respectful experience.</li>
+            <li><strong>Non-technical user base:</strong> Staff have demanding jobs. The system had to offer an experience that was easy to use and didn't add to their workload.</li>
           </ul>
         </div>
       </div>
@@ -112,21 +112,26 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h2>The Approach</h2>
-          <p>Transitioning from large-scale tech teams to a solo environment required a fundamental shift in my approach. Without a squad of product managers or engineers, I took full ownership of the entire lifecycle, from sitting down with the HR Director to map out their needs, to building the technical blueprints for how the system functions.</p>
+          <p>The org had no budget for software, which meant off-the-shelf LMS (learning management system) platforms were not an option. Every architectural decision had to work within free-tier limits without compromising on quality or compliance.</p>
+          <p>Supporting multiple training content types, video and slide presentations, turned out to be more complex than expected. My initial approach was to accept any file format and allow direct file uploads to give admins maximum flexibility, but each format behaved differently and made it difficult to apply consistent compliance guardrails across all of them. Delegating hosting to YouTube for video and Google Drive for presentations solved both problems while keeping costs at zero.</p>
 
           <h3>The Build</h3>
-          <p>I used an AI-assisted development workflow that evolved as the project grew. I started in Lovable to move fast on the initial architecture, then transitioned to Claude Code and direct code editing as the compliance requirements grew in complexity.</p>
-          <p>Deliverables extended beyond the UI, including a formal IT handover document covering compliance rationale, troubleshooting procedures, and developer notes to ensure the system could be maintained without me.</p>
+          <p>I used an AI-assisted development workflow, moving from Lovable to Claude Code as the project's complexity grew, and delivered a production-ready system end-to-end.</p>
+          <p>A formal IT handover document was also a core deliverable. It covers the compliance rationale behind each design decision, step-by-step troubleshooting procedures, cost management guidance, and developer notes written for whoever maintains the system next. Building something stable and well-documented was a priority from the start, knowing the system needed to run reliably without me.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">
           <h3>Centralized Administrator Portal</h3>
-          <p>The admin dashboard gives the HR Director a real-time view of every staff member’s training status, with the compliance logic running silently in the background.</p>
+          <p>Before this system, the HR Director, who also serves as Deputy Executive Director, managed all staff training manually. Creating content meant recording herself presenting slideshows across multiple attempts, a time-consuming process for someone with a full executive workload. Assigning training meant sending individual emails or walking up to someone’s desk. Tracking completion meant maintaining spreadsheets. Quizzes were ad hoc and inconsistent. Nothing was automated or centralized.</p>
+          <p>The admin portal replaces all of that with one place to manage everything:</p>
           <ul>
-            <li><strong>Staff Records:</strong> When a staff member leaves, their account is archived rather than deleted. Access is removed immediately, but their full training history is permanently retained for compliance.</li>
-            <li><strong>Data Export:</strong> Admins can download a full record of every staff member’s training history, including completion dates, quiz results, and attestation status, providing a ready-made compliance record for audits and regulatory reviews.</li>
+            <li><strong>Training Management:</strong> Create, edit, and manage all training content and quizzes in one place.</li>
+            <li><strong>Staff Management:</strong> Add staff, assign trainings, and view real-time completion status across the entire team.</li>
+            <li><strong>Automated Notifications:</strong> Staff receive an email when a training is assigned, removing the need for any manual follow-up.</li>
+            <li><strong>Audit-Ready Export:</strong> Admins can download a complete record of every staff member’s training history, including completion status, due dates, completion dates, and quiz results. If a regulator or funder requested proof of compliance tomorrow, that record is ready to hand over.</li>
+            <li><strong>Staff Records:</strong> Accounts are archived rather than deleted when someone leaves. Access is removed immediately but training history is permanently retained. At least one admin must exist at all times and admins cannot remove their own access, ensuring the system stays accessible even if the HR Director leaves the organization.</li>
           </ul>
         </div>
       </div>
@@ -155,13 +160,13 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h3>The Compliance Engine</h3>
-          <p>The system enforces compliance automatically, removing the risk of human error from the audit trail.</p>
+          <p>Washington State nonprofits face real audit risk from funders, accreditors, and regulators, but the regulations don't prescribe exactly how compliance should work in practice. The guardrails below reflect deliberate design decisions about what defensible recordkeeping requires, while keeping the experience straightforward rather than intrusive for staff.</p>
           <ul>
-            <li><strong>Enforced Viewing:</strong> Mandatory minimum timers prevent staff from clicking through to the end, ensuring meaningful engagement with the content.</li>
-            <li><strong>Knowledge Verification:</strong> Admins can build and attach interactive quizzes to any training module to verify staff understanding.</li>
-            <li><strong>Audit Defense:</strong> The system creates immutable, time-stamped acknowledgment records for every completed module, providing a solid defense in case of a state audit.</li>
-            <li><strong>Quiz Versioning:</strong> If quiz questions are updated after a training has already been assigned, the system automatically creates a new version. Existing assignments are preserved as-is, only new assignments receive the updated version. This ensures audit records always reflect the exact questions each person answered.</li>
-            <li><strong>Randomized Question Order:</strong> Questions are presented in a different order for every attempt, discouraging answer-sharing between staff and helping verify genuine understanding of the material.</li>
+            <li><strong>Enforced Viewing:</strong> Videos must be watched to 99% completion before a training can be marked complete. The 99% threshold accounts for browser and device differences near the end of a video while ensuring staff cannot simply open a tab and walk away. Presentations use a minimum timer that enforces how long the content must be open before completion is allowed.</li>
+            <li><strong>Knowledge Verification:</strong> Admins can build and attach a quiz to any training module. Every question must be answered before the training is marked complete, ensuring staff have engaged with and retained the material.</li>
+            <li><strong>Randomized Question Order:</strong> Questions are presented in a different order for every attempt, which supports scenarios where a training needs to be retaken without staff simply recalling the previous answer sequence.</li>
+            <li><strong>Attestation:</strong> Before a training can be marked complete, staff must actively confirm they have finished it. This final acknowledgment step ensures completion is always a deliberate action, not an automatic one.</li>
+            <li><strong>Compliance Export:</strong> Admins can download a full training record for every staff member, including completion status, due dates, completion dates, quiz results, and quiz version. If a regulator or funder requested proof of compliance, that record is ready to hand over immediately.</li>
           </ul>
         </div>
       </div>
@@ -190,12 +195,12 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h3>The Employee Portal</h3>
-          <p>Designed for staff with demanding jobs, the portal prioritizes clarity and accessibility. WCAG standards ensure it works for anyone, on any device.</p>
+          <p>Staff at South Sound Seniors have demanding jobs. The employee portal was designed to be modern, easy-to-use, and highly accessible.</p>
           <ul>
-            <li><strong>Clear Visibility:</strong> Staff can instantly see their required quizzes and upcoming due dates.</li>
-            <li><strong>Supportive Micro-copy:</strong> Wording throughout the portal is intentionally supportive rather than demanding, helping staff complete their requirements and get back to their work.</li>
-            <li><strong>Assignment Emails:</strong> When a training is assigned, staff receive an automated email notification. This creates a verifiable record that training was communicated, not just assigned in the system.</li>
-            <li><strong>Audit Log:</strong> Every significant staff action, from opening a training to signing an attestation, is automatically recorded in a tamper-evident audit log. No manual entry required.</li>
+            <li><strong>Accessibility:</strong> The portal meets minimum contrast requirements and uses appropriately sized touch targets, so it works well for everyone on any device.</li>
+            <li><strong>Clear Language:</strong> Wording throughout is intentionally simple and easy to understand, helping staff complete their requirements without confusion.</li>
+            <li><strong>Intuitive Dashboard:</strong> Staff can instantly see their assigned trainings, due dates, and completion status without having to dig for anything.</li>
+            <li><strong>Saved Progress:</strong> Progress is saved automatically so staff can leave a training partway through and pick up exactly where they left off.</li>
           </ul>
         </div>
       </div>
@@ -244,11 +249,11 @@
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
           <h2>Projected Impact</h2>
-          <p>Based on the previous manual workload of 8 hours a month:</p>
+          <p>The system is pre-launch. These projections are based on the HR Director's previous manual workload of 8 hours a month.</p>
           <ul>
-            <li><strong>70-80% reduction in administrative time:</strong> Automating tracking and notifications eliminates the manual follow-up cycle, freeing up an estimated 12 workdays a year for higher-impact work.</li>
-            <li><strong>100% audit accuracy:</strong> Every completion is automatically timestamped and recorded, eliminating human error from the compliance trail.</li>
-            <li><strong>$0/month operating cost:</strong> By building on professional-grade free tiers, the system bypasses $2,400 in annual software fees with no compromise on security or reliability.</li>
+            <li><strong>70-80% reduction in administrative time:</strong> Automating tracking, notifications, and record-keeping eliminates the manual follow-up cycle, freeing up an estimated 12 workdays a year for higher-impact work.</li>
+            <li><strong>Improved audit readiness:</strong> Every completion is automatically recorded with a timestamp, date, and quiz result. A full compliance report can be exported at any time, replacing a process that previously relied on scattered spreadsheets and email threads.</li>
+            <li><strong>$0/month operating cost:</strong> The system runs entirely on free tiers, bypassing the ongoing software fees that a comparable off-the-shelf LMS would require.</li>
           </ul>
         </div>
       </div>     
@@ -256,7 +261,7 @@
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
           <h2>Final Reflection</h2>
-          <p>This project represents a shift in what’s possible for a product designer working solo. By leveraging AI-assisted development, I was able to design, build, and launch a production-ready system end-to-end, something that would have required an entire engineering team in a traditional workflow.</p>
+          <p>This project represents a shift in what’s possible for a product designer working solo. By embracing AI-assisted development, I was able to design, build, and ship a production-ready system end-to-end, something that would have required an entire engineering team in a traditional workflow.</p>
         </div>
       </div>                
 
