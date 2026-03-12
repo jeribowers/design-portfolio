@@ -128,19 +128,22 @@
             <li><strong>Reference Panel:</strong> Provides upstream source data and additional context, including external data iframed directly into the panel, so brokers have everything they need in one place.</li>
           </ul>
 
-          <figure>
-            <img src="images/customs/task_layout.png" alt="" />
-            <figcaption>           
-              The two-panel layout that structures every task in the system. Action panel on the left, reference panel on the right.
-            </figcaption>
-          </figure>
-
           <p>Each concept started with the minimum amount of information and expanded only when feedback justified it. Qualitative sessions with brokers and quantitative signals around task completion rate, time on task, and number of interactions drove each iteration, always with the same long-term goal: reduce the need for human intervention and move closer to a zero-touch filing process.</p>
 
           <h3>Defining the Framework</h3>
           <p>Before any grouping or prioritization logic could be designed, the team needed a shared language. Without it, conversations would break down. I led the effort to align engineers, product, and stakeholders on a common conceptual framework, defining how tasks are structured, how related tasks are grouped, how ordering works, and how claiming removes the overhead of manual queue sorting. That shared vocabulary unblocked design and engineering to move in the same direction.</p>
-          <p>Working closely with engineering, I also mapped the full exception lifecycle: how tasks are generated, claimed, escalated to third parties, and closed. This included edge cases like browser tab closures, inactivity timeouts, and closed escalation tasks that still require a broker's review. Customs declarations have real filing deadlines, and an unclaimed or stalled task is a compliance risk.</p>
 
+          <figure class="twelve columns">
+            <img src="images/customs/chaining_independent.png" alt="Diagram comparing independent task chaining models." />
+            <figcaption>Independent chaining: tasks for the same entry queue in succession, with no dependency between them.</figcaption>
+          </figure>
+
+          <figure class="twelve columns">
+            <img src="images/customs/chaining_sequential.png" alt="Diagram comparing sequential task chaining models." />
+            <figcaption>Sequential chaining: order is enforced when earlier task data affects what comes next.</figcaption>
+          </figure>   
+
+          <p>Working closely with engineering, I also mapped the full exception lifecycle: how tasks are generated, claimed, escalated to third parties, and closed. This included edge cases like browser tab closures, inactivity timeouts, and closed escalation tasks that still require a broker's review. Customs declarations have real filing deadlines, and an unclaimed or stalled task is a compliance risk.</p>          
         </div>
       </div>
 
@@ -148,49 +151,61 @@
         <div class="eight offset-by-two columns divider_top">
           <h2>The Tasks</h2>
           <p>Each task type represents a distinct validation failure that automation could not resolve on its own. The task framework had to accommodate a wide range of failure modes, from missing data to conflicting sources to regulatory determinations that require client-specific judgment. The examples below show four task types, each with a different interaction pattern, selected to illustrate the range of complexity the system had to handle.</p>
-          <p><strong>CMQ Mismatch:</strong> This task surfaces when shipment route data in the entry conflicts with carrier tracking data. Rather than blocking the broker, the system flags the specific fields in conflict and keeps Save active, allowing the broker to make an informed decision on how to proceed.</p>      
+          <h4>CMQ Mismatch Task</h4>
+          <p>This surfaces when shipment route data in the entry conflicts with carrier tracking data. Rather than blocking the broker, the system flags the specific fields in conflict and keeps Save active, allowing the broker to make an informed decision on how to proceed.</p>      
         </div>
       </div>
 
       <div class="row">
-        <figure class="twelve columns figure-tight">
-          <img src="images/customs/portfolio_route.png" alt="CMQ mismatch task showing conflicting shipment route data with inline field-level warnings." />
+        <figure class="twelve columns">
+          <div class="screenshot-panel screenshot-panel--bottom-right">
+            <img src="images/customs/portfolio_CMQ.png" class="screenshot-panel__img" alt="CMQ mismatch task showing conflicting shipment route data with inline field-level warnings." />
+          </div>
         </figure>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">      
-          <p><strong>Manufacturer Matching:</strong> This task surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
+          <h4>Manufacturer Matching Task</h4>
+          <p>This surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
         </div>            
       </div>
             
       <div class="row">
-        <figure class="twelve columns figure-tight">
-          <img src="images/customs/portfolio_network.png" alt="Manufacturer matching task showing source data alongside ranked network matches." />
+        <figure class="twelve columns">
+          <div class="screenshot-panel screenshot-panel--bottom-right">
+            <img src="images/customs/portfolio_network.png" class="screenshot-panel__img" alt="Manufacturer matching task showing source data alongside ranked network matches." />
+          </div>
         </figure>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">      
-          <p><strong>ISF Missing Data:</strong> This task surfaces when required Importer Security Filing data is missing or incomplete. The action panel surfaces only the fields that need resolving, while the reference panel surfaces an active exception thread where the broker can communicate directly with a third party to request the missing information without leaving the task.</p>
+          <h4>ISF Missing Data Task</h4>
+          <p>This surfaces when required Importer Security Filing data is missing or incomplete. The action panel surfaces only the fields that need resolving, while the reference panel surfaces an exception thread where the broker can communicate directly with a third party to request the missing information without leaving the task.</p>
         </div>            
       </div>
 
       <div class="row">
-        <figure class="twelve columns figure-tight">
-          <img src="images/customs/portfolio_ISF.png" alt="ISF missing data task showing form inputs alongside an active exception thread." />
+        <figure class="twelve columns">
+          <div class="screenshot-panel screenshot-panel--bottom-center">
+            <img src="images/customs/portfolio_ISF.png" class="screenshot-panel__img" alt="ISF missing data task showing form inputs alongside an active exception thread." />
+          </div>
         </figure>
       </div>
 
       <div class="row">
         <div class="eight offset-by-two columns">      
-          <p><strong>Special Tariff Selection:</strong> This task groups all SKUs on an entry flagged for special tariff review, surfacing them together so brokers can resolve determinations in a single session. Where multiple special tariffs apply to a product, a determination must be made on each one. Option ordering and grouping reflect real regulatory hierarchy, with the client SOP in the reference panel so brokers have the context they need without leaving the task.</p>
+          <h4>Special Tariff Selection Task</h4>
+          <p>This task groups all SKUs on an entry flagged for special tariff review, surfacing them together so brokers can resolve determinations in a single session. Where multiple special tariffs apply to a product, a determination must be made on each one. Option ordering and grouping reflect real regulatory hierarchy, with the client SOP in the reference panel so brokers have the context they need.</p>
         </div>            
       </div>
 
       <div class="row">
-        <figure class="twelve columns figure-tight">
-          <img src="images/customs/portfolio_tariff.png" alt="Special tariff selection task showing grouped SKUs with tariff and exclusion code options." />
+        <figure class="twelve columns">
+          <div class="screenshot-panel screenshot-panel--bottom-right">
+            <img src="images/customs/portfolio_tariff.png" class="screenshot-panel__img" alt="Special tariff selection task showing grouped SKUs with tariff and exclusion code options." />
+          </div>
         </figure>
       </div>
 
