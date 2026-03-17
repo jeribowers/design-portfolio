@@ -337,11 +337,16 @@ figcaption {
 /* Photo border */
 .polaroid {
   display: inline-block;
+  position: relative;
   background-color: #fff;
   margin-bottom: 3em;
   padding: 12px 12px 40px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   transform: rotate(-2deg);
+}
+
+.polaroid--right {
+  transform: rotate(1deg);
 }
 
 .polaroid::after {
@@ -354,6 +359,10 @@ figcaption {
   font-family: "Courier New", monospace;
   font-size: 16px;
   color: #555;
+}
+
+.polaroid[data-caption]::after {
+  content: attr(data-caption);
 }
 /* =============================================================================
    9. Lightbox Modal
@@ -766,7 +775,7 @@ figcaption {
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 8% 40px 8% 8%;
-  margin-bottom: 2.5em;
+  margin-bottom: 1em;
   display: flex;
   overflow: hidden;
 }
@@ -822,6 +831,10 @@ figcaption {
     0 4px 12px rgba(0, 0, 0, 0.10),
     0 12px 32px rgba(0, 0, 0, 0.14),
     0 24px 64px rgba(0, 0, 0, 0.12);
+}
+
+.screenshot-panel .screenshot-panel__img.screenshot-panel__img--no-shadow {
+  box-shadow: none;
 }
 
 .screenshot-panel--bottom-right .screenshot-panel__img {
