@@ -128,10 +128,10 @@
             <li><strong>Reference Panel:</strong> Provides upstream source data and additional context, including external data iframed directly into the panel, so brokers have everything they need in one place.</li>
           </ul>
 
-          <p>Each concept started with the minimum amount of information and expanded only when feedback justified it. Qualitative sessions with brokers and quantitative signals around task completion rate, time on task, and number of interactions drove each iteration, always with the same long-term goal: reduce the need for human intervention and move closer to a zero-touch filing process.</p>
+          <p>Each concept started with the minimum amount of information and expanded only when feedback justified it. I ran qualitative sessions with brokers throughout, observing how they worked through tasks and where they hesitated, got confused, or looked for information the interface wasn't surfacing. Those sessions were paired with quantitative signals: task completion rate, time on task, and number of interactions per task. Together they drove each iteration, always with the same long-term goal: reduce the need for human intervention and move closer to a zero-touch filing process.</p>
 
           <h3>Defining the Framework</h3>
-          <p>Before any grouping or prioritization logic could be designed, the team needed a shared language. Without it, conversations would break down. I led the effort to align engineers, product, and stakeholders on a common conceptual framework, defining how tasks are structured, how related tasks are grouped, how ordering works, and how claiming removes the overhead of manual queue sorting. That shared vocabulary unblocked design and engineering to move in the same direction.</p>
+          <p>Before any grouping or prioritization logic could be designed, the team needed a shared language. Without it, conversations would break down. I planned and facilitated a series of working sessions with engineers, product, and stakeholders to build that shared framework: defining how tasks are structured, how related tasks are grouped, how ordering works, and how claiming removes the overhead of manual queue sorting. Getting alignment on those concepts as a group, rather than through async back-and-forth, was what unblocked design and engineering to move in the same direction.</p>
 
           <figure class="twelve columns">
             <img src="images/customs/chaining_independent.png" alt="Diagram comparing independent task chaining models." />
@@ -285,15 +285,28 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <a class="previous" href="index.html">&#10094; Home</a>
-          <a class="next" href="senior-services.html">Senior Services Training Portal &#10095;</a>
-        </div>
-      </div>
-      
     </div>
     <!-- /.container -->
+
+    <div style="height: 60px;"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
+    <script>
+    (function() {
+      var btn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.classList.add('is-visible');
+        } else {
+          btn.classList.remove('is-visible');
+        }
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+    </script>
 
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

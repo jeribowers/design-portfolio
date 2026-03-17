@@ -936,3 +936,45 @@ figcaption {
     font-size: 2.5rem;
   }
 }
+
+/* =============================================================================
+   Scroll to Top Button
+   ============================================================================= */
+
+body #scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-neutral, rgba(107,107,107,0.1));
+  color: #374151;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, filter 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+body #scrollTopBtn.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+body #scrollTopBtn:hover {
+  filter: brightness(0.9) drop-shadow(0 0 0 rgba(0,0,0,0.1));
+  background-color: rgba(107, 107, 107, 0.2);
+}

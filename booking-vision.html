@@ -349,15 +349,28 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <a class="previous" href="senior-services.html">&#10094; Senior Services Training Portal</a>
-          <a class="next" href="index.html">Home &#10095;</a>
-        </div>
-      </div>
-      <!-- /.row -->
     </div>
     <!-- /.container -->
+
+    <div style="height: 60px;"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
+    <script>
+    (function() {
+      var btn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.classList.add('is-visible');
+        } else {
+          btn.classList.remove('is-visible');
+        }
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+    </script>
 
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

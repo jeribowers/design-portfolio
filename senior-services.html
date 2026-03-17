@@ -276,15 +276,13 @@
         </div>
       </div> -->
 
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <a class="previous" href="customs.html">&#10094; Customs Clearance Automation</a>
-          <a class="next" href="booking-vision.html">Booking.com North Star &#10095;</a>
-        </div>
-      </div>
-      
     </div>
     <!-- /.container -->
+
+    <div style="height: 60px;"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
 
 <script>
 function openModal(imgSrc) {
@@ -347,6 +345,21 @@ document.querySelectorAll('.image-container').forEach(function(container) {
   figure.classList.add('has-mobile-legend');
   figure.parentNode.insertBefore(legend, figure.nextSibling);
 });
+
+// Scroll to top button
+(function() {
+  var btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
     </script>
 
   </body>
