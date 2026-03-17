@@ -152,7 +152,7 @@
           <h2>The Tasks</h2>
           <p>Each task type represents a distinct validation failure that automation could not resolve on its own. The task framework had to accommodate a wide range of failure modes, from missing data to conflicting sources to regulatory determinations that require client-specific judgment. The examples below show four task types, each with a different interaction pattern, selected to illustrate the range of complexity the system had to handle.</p>
           <h4>CMQ Mismatch Task</h4>
-          <p>This surfaces when shipment route data in the entry conflicts with carrier tracking data. Rather than blocking the broker, the system flags the specific fields in conflict and keeps Save active, allowing the broker to make an informed decision on how to proceed.</p>      
+          <p style="margin-bottom: 0.5rem;">This task is triggered when shipment data conflicts across two or more sources and the system cannot resolve the discrepancy automatically. Brokers are trained to navigate exactly this kind of ambiguity. They review the conflicting fields and make the call. Supply chain data carries enough variability that the correct response isn't always consistent, making this the kind of judgment that's difficult to automate.</p>
         </div>
       </div>
 
@@ -165,9 +165,9 @@
       </div>
 
       <div class="row">
-        <div class="eight offset-by-two columns">      
+        <div class="eight offset-by-two columns">
           <h4>Manufacturer Matching Task</h4>
-          <p>This surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
+          <p style="margin-bottom: 0.5rem;">This surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
         </div>            
       </div>
             
@@ -180,9 +180,9 @@
       </div>
 
       <div class="row">
-        <div class="eight offset-by-two columns">      
+        <div class="eight offset-by-two columns">
           <h4>ISF Missing Data Task</h4>
-          <p>This surfaces when required Importer Security Filing data is missing or incomplete. The action panel surfaces only the fields that need resolving, while the reference panel surfaces an exception thread where the broker can communicate directly with a third party to request the missing information without leaving the task.</p>
+          <p style="margin-bottom: 0.5rem;">This task is triggered when required fields are missing, incomplete, or invalid and cannot be resolved automatically. Brokers sometimes can't resolve these on their own and need to reach out to a third party. The exception thread in the reference panel keeps that communication inside the task. When a response comes in, the task is escalated back to the broker to complete.</p>
         </div>            
       </div>
 
@@ -195,9 +195,9 @@
       </div>
 
       <div class="row">
-        <div class="eight offset-by-two columns">      
+        <div class="eight offset-by-two columns">
           <h4>Special Tariff Selection Task</h4>
-          <p>This task groups all SKUs on an entry flagged for special tariff review, surfacing them together so brokers can resolve determinations in a single session. Where multiple special tariffs apply to a product, a determination must be made on each one. Option ordering and grouping reflect real regulatory hierarchy, with the client SOP in the reference panel so brokers have the context they need.</p>
+          <p style="margin-bottom: 0.5rem;">This task is triggered when the system flags SKUs requiring a tariff determination that cannot be made automatically. In this case the importer makes the final call. The task groups all flagged SKUs together so determinations can be made in a single session, and the client SOP in the reference panel gives brokers the context they need before reaching out.</p>
         </div>            
       </div>
 
@@ -219,13 +219,7 @@
       <div class="row">
         <figure class="twelve columns">
           <img src="images/customs/figma-file.png" alt="" />
-          <figcaption>
-            <span class="tooltip">
-              <span class="icon">ⓘ</span>
-              <span class="tooltip-text">Visual has been obscurred to protect company IP.
-                <span class="tooltip-arrow"></span>
-              </span>
-            </span>              
+          <figcaption>           
             The Figma file I created acts as an effective communication tool between me and the engineering team, ensuring a clear understanding of the desired user experience. We engaged in ongoing discussions throughout the implementation process.          
           </figcaption>
         </figure>
