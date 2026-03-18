@@ -865,7 +865,6 @@ figcaption {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  min-height: 200px;
   object-fit: contain;
   object-position: bottom;
   box-shadow:
@@ -942,6 +941,15 @@ figcaption {
 }
 
 @media (max-width: 768px) {
+  .polaroid {
+    padding-bottom: 32px;
+  }
+
+  .polaroid::after {
+    font-size: 11px;
+    bottom: 8px;
+  }
+
   .helper-label,
   .helper-title {
     display: none !important;
