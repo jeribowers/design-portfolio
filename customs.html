@@ -75,7 +75,7 @@
           <h3>Project at a Glance</h3>
           <p><strong>Problem:</strong> Flexport's customs brokers spent the majority of their time on manual data verification rather than high-value client work. Without automation or prioritization, filings were slow, costly, and dependent on individual broker knowledge. Late or incorrect filings resulted in real consequences for importers.</p>
           <p><strong>My Role:</strong> Design lead across the full lifecycle, from vision and strategy through execution, working cross-functionally with engineers, product, and stakeholders.</p>
-          <p><strong>Action:</strong> Led the 0→1 transition from a legacy platform to an automation-first, task-based system. Designed the core task framework and interaction model that defined how brokers experience every task in the system. Extended the design system to support roughly twenty engineers as the sole designer. Facilitated a week-long onsite UAT in Amsterdam to resolve issues and prepare for scale.</p>
+          <p><strong>Action:</strong> Led the 0→1 transition from a legacy platform to an automation-first, task-based system. Designed the core task framework and interaction model that defined how brokers experience and complete every task in the system. Extended the design system to support a team of roughly twenty engineers as the sole designer. Planned and facilitated a week-long onsite UAT in Amsterdam to resolve issues and prepare for scale.</p>
           <p><strong>Result:</strong> A significant portion of Importer Security Filings are now processed automatically, with a long-term target to automate the majority of US entry volume. Cost-to-serve and document transcription time both saw meaningful reductions, and the system was built to scale from a small pilot to thousands of entries per year.</p>
         </div>
       </div>
@@ -146,7 +146,7 @@
           <h2>The Tasks</h2>
           <p>Each task type represents a distinct validation failure that automation could not resolve on its own. The task framework had to accommodate a wide range of failure modes, from missing data to conflicting sources to regulatory determinations that require client-specific judgment. The examples below show four task types, each with a different interaction pattern, selected to illustrate the range of complexity the system had to handle.</p>
           <h4>CMQ Mismatch Task</h4>
-          <p style="margin-bottom: 0.5rem;">This task is triggered when shipment data conflicts across two or more sources and the system cannot resolve the discrepancy automatically. Brokers are trained to navigate exactly this kind of ambiguity. They review the conflicting fields and make the call. Supply chain data carries enough variability that the correct response isn't always consistent, making this the kind of judgment that's difficult to automate.</p>
+          <p>This task is triggered when shipment data conflicts across two or more sources and the system cannot resolve the discrepancy automatically. Brokers are trained to navigate exactly this kind of ambiguity. They review the conflicting fields and make the call. Supply chain data carries enough variability that the correct response isn't always consistent, making this the kind of judgment that's difficult to automate.</p>
         </div>
       </div>
 
@@ -161,7 +161,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h4>Manufacturer Matching Task</h4>
-          <p style="margin-bottom: 0.5rem;">This surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
+          <p>This surfaces when the manufacturer listed on a commercial document cannot be automatically matched to a verified entity in Flexport's network. The broker sees the source data alongside a ranked list of close matches, with subtle differences in name formatting and address structure that reflect how manufacturer data varies across document sources.</p>
         </div>            
       </div>
             
@@ -176,7 +176,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h4>ISF Missing Data Task</h4>
-          <p style="margin-bottom: 0.5rem;">This task is triggered when required fields are missing, incomplete, or invalid and cannot be resolved automatically. Brokers sometimes can't resolve these on their own and need to reach out to a third party. The exception thread in the reference panel keeps that communication inside the task. When a response comes in, the task is escalated back to the broker to complete.</p>
+          <p>This task is triggered when required fields are missing, incomplete, or invalid and cannot be resolved automatically. Brokers sometimes can't resolve these on their own and need to reach out to a third party. The exception thread in the reference panel keeps that communication inside the task. When a response comes in, the task is escalated back to the broker to complete.</p>
         </div>            
       </div>
 
@@ -191,7 +191,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h4>Special Tariff Selection Task</h4>
-          <p style="margin-bottom: 0.5rem;">This task is triggered when the system flags SKUs requiring a tariff determination that cannot be made automatically. In this case the importer makes the final call. The task groups all flagged SKUs together so determinations can be made in a single session, and the client SOP in the reference panel gives brokers the context they need before reaching out.</p>
+          <p>This task is triggered when the system flags SKUs requiring a tariff determination that cannot be made automatically. In this case the importer makes the final call. The task groups all flagged SKUs together so determinations can be made in a single session, and the client SOP in the reference panel gives brokers the context they need before reaching out.</p>
         </div>            
       </div>
 
