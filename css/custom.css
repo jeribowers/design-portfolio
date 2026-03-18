@@ -345,6 +345,10 @@ figcaption {
   transform: rotate(-2deg);
 }
 
+.polaroid--flat {
+  transform: none;
+}
+
 .polaroid--right {
   transform: rotate(1deg);
 }
