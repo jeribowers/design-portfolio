@@ -334,6 +334,41 @@ figcaption {
   line-height: 1.6;
 }
 
+.img-shadow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.img-shadow img {
+  position: absolute;
+  width: 44%;
+  border-radius: 4px;
+  box-shadow:
+    0 -8px 16px rgba(0,0,0,0.08),
+    0 4px 12px rgba(0,0,0,0.10),
+    0 12px 32px rgba(0,0,0,0.14),
+    0 24px 64px rgba(0,0,0,0.12);
+}
+
+.img-shadow img:nth-child(1) {
+  transform: translateX(40%) translateY(-36px);
+  z-index: 1;
+}
+
+.img-shadow img:nth-child(2) {
+  transform: translateX(0%) translateY(-18px);
+  z-index: 3;
+}
+
+.img-shadow img:nth-child(3) {
+  transform: translateX(-40%) translateY(0px);
+  z-index: 2;
+}
+
+
 /* Photo border */
 .polaroid {
   display: inline-block;
@@ -778,7 +813,7 @@ figcaption {
   background-color: var(--color-bg-neutral);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8% 40px 8% 8%;
+  padding: 6%;
   margin-bottom: 1em;
   display: flex;
   overflow: hidden;
@@ -809,8 +844,8 @@ figcaption {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 0;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
 .screenshot-panel--bottom-center.screenshot-panel .screenshot-panel__img {
@@ -830,6 +865,9 @@ figcaption {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
+  min-height: 200px;
+  object-fit: contain;
+  object-position: bottom;
   box-shadow:
     0 -8px 16px rgba(0, 0, 0, 0.08),
     0 4px 12px rgba(0, 0, 0, 0.10),
@@ -849,6 +887,18 @@ figcaption {
 
 .screenshot-panel--bottom-left .screenshot-panel__img {
   border-radius: 0 6px 0 6px;
+}
+
+/* Screenshot Detail */
+.screenshot-detail__text h5 {
+  margin-bottom: 0.5rem;
+}
+
+.screenshot-detail__text p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 /* =============================================================================
