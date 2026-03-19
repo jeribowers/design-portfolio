@@ -41,8 +41,8 @@
               <div class="dropdown">
                 <a href="index.html" class="dropbtn">My Work<span class="carat">&#9660;</span></a>
                 <div class="dropdown-content">
-                  <a href="customs.html">Customs Clearance Automation</a>
                   <a href="senior-services.html">Senior Services Training Portal</a>
+                  <a href="customs.html">Customs Clearance Automation</a>
                   <a href="booking-vision.html">Booking.com North Star</a>
                 </div>
               </div>
@@ -59,8 +59,8 @@
     <div class="container">
       <div class="row">
         <div class="eight offset-by-two columns">
-          <h1>Staff Training Portal Built for Audit-Ready Compliance</h1>
-          <h2 class="subtitle">I designed and built a training compliance platform for a lean non-profit that automates compliance tracking and runs at $0/month.</h2>
+          <h1>Staff Training Portal: Automating a Manual Compliance Process</h1>
+          <h2 class="subtitle">A lean nonprofit had real audit risk, zero budget, and no technical team. I identified the gap, defined the solution, and shipped a production-ready system end-to-end using AI-assisted development.</h2>
         </div>
       </div>
 
@@ -74,10 +74,18 @@
         <div class="eight offset-by-two columns card">
           <h3>Project at a Glance</h3>
           <p><strong>Problem:</strong> Manual training management created 12 workdays of unnecessary overhead annually and a real compliance liability with no centralized system to demonstrate audit readiness. The solution had to meet compliance standards, run at zero cost, and be maintainable by a non-technical team.</p>
-          <p><strong>My Role:</strong> Solo product lead and designer on a learning management platform for a lean nonprofit. I owned the full process from requirements and user research through interaction design, usability testing, and production launch, designing for two distinct user types with fundamentally different needs.</p>
-          <p><strong>Action:</strong> Built a custom training portal with AI-assisted development, featuring automated compliance guardrails and a handover-ready architecture.</p>
-          <p><strong>Result (Projected):</strong> ~70% reduction in time spent managing employee compliance training, a full audit-ready record exportable at any time, and $0/month operating cost.</p>
+          <p><strong>My Role:</strong> Solo product lead and designer on a training management platform for a lean nonprofit. I owned the full process from requirements and user research through interaction design, usability testing, and production launch, designing for two distinct user types with fundamentally different needs.</p>
+          <p><strong>Action:</strong> Designed and built a custom training portal with AI-assisted development, featuring role-based access, automated compliance guardrails, audit logging, and a handover-ready architecture designed for a non-technical team to maintain.</p>
+          <p><strong>Result (Projected):</strong> ~70% reduction in compliance admin time, a full audit-ready record exportable on demand, and $0/month operating cost.</p>
         </div>
+      </div>
+
+      <div class="row">
+        <figure class="twelve columns">
+          <div class="screenshot-panel screenshot-panel--bottom-center">
+            <img src="images/senior-services/employee_dash.png" class="screenshot-panel__img u-full-width" loading="eager" alt="Employee dashboard" />
+          </div>
+        </figure>
       </div>
 
       <div class="row">
@@ -86,10 +94,11 @@
           <p>Senior Services of South Sound is a non-profit dedicated to improving the lives of seniors through essential services and community connection. With a lean staff and no dedicated tech team, internal processes have to be efficient and largely self-sufficient.</p>
 
           <h3>The Challenge</h3>
-          <p>This is a learning management platform designed for two distinct user types with fundamentally different needs. Administrators needed centralized control: the ability to build and manage training content, assign it to staff, and track completion across the team. Employees needed an experience intuitive enough to complete on their own, without adding friction to already demanding jobs. The design challenge was making a system that served both without compromising either, built within tight constraints: zero budget, no engineering team, and no existing infrastructure to build on.</p>
+          <p>Managing staff training manually had created two compounding problems: wasted administrative capacity and real compliance risk. The solution had to meet compliance standards, run at zero cost, and serve two distinct user types with fundamentally different needs.</p>
           <ul>
             <li><strong>Wasted Capacity:</strong> The HR Director, who also serves as Deputy Executive Director, was spending 8 hours a month managing staff training manually, time that could not be justified given her broader responsibilities.</li>
             <li><strong>Compliance Risk:</strong> Training records were scattered across folders and email threads with no centralized system to demonstrate audit readiness, creating real liability risk if records were found incomplete during a state audit.</li>
+            <li><strong>Two User Types:</strong> Administrators needed centralized control over content, assignments, and compliance tracking. Employees needed an experience simple enough to complete independently, without adding friction to already demanding jobs. The design had to serve both without compromising either.</li>
           </ul>
 
           <h3>The Constraints</h3>
@@ -104,13 +113,14 @@
       </div>
 
       <div class="row">
-        <div class="eight offset-by-two columns">
+        <div class="eight offset-by-two columns divider_top">
           <h2>The Approach</h2>
           <p>I started by spending time with the HR Director to understand her existing workflow in detail: how she was currently managing training assignments, where time was being lost, and what she actually needed from a system day-to-day. That research directly shaped the feature set and interaction model. The admin portal was designed around her real tasks: creating and editing training content, assigning it to staff, and checking completion status at a glance. The employee portal was designed for simplicity and clarity first. Staff needed to be able to open a training, complete it, and move on without any guidance or hand-holding.</p>
 
+          <p>The organization had no budget for software, which meant off-the-shelf platforms were not an option. Every architectural decision had to work within free-tier limits without compromising on quality or compliance. Supporting multiple content types turned out to be more complex than expected. Delegating hosting to YouTube for video and Google Drive for presentations solved both problems while keeping costs at zero.</p>
+
           <h3>The Build</h3>
           <p>I used an AI-assisted development workflow, moving from Lovable to Claude Code as the project's complexity grew. The result was a production-ready system delivered end-to-end.</p>
-          <p>A formal IT handover document was also a core deliverable. It covers the compliance rationale behind each design decision, step-by-step troubleshooting procedures, cost management guidance, and developer notes written for whoever maintains the system next. Building something stable and well-documented was a priority from the start, knowing the system needed to run reliably without me.</p>
         </div>
       </div>
 
@@ -234,6 +244,18 @@
           <figcaption>Timers, attestation, and quizzes combined to ensure every training is genuinely completed, not just opened.</figcaption>
         </figure>
       </div>
+
+      <div class="row">
+        <div class="eight offset-by-two columns">
+          <h3>The Handover</h3>
+          <p>A formal IT handover document was a core deliverable from the start. It covers the compliance rationale behind each design decision, step-by-step troubleshooting procedures, cost management guidance, and developer notes written for whoever maintains the system next. Building something stable and well-documented was a priority — the system needed to run reliably without me.</p>
+          <figure>
+            <img class="img-shadow" src="images/senior-services/handover_guide.png" alt="IT handover guide" />
+            <figcaption>IT handover documentation covering compliance rationale, troubleshooting procedures, cost management guidance, and developer notes for the incoming team.</figcaption>
+          </figure>
+        </div>
+      </div>
+
       <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
         <img class="modal-content" id="fullImage">
@@ -244,7 +266,7 @@
           <h2>Projected Impact</h2>
           <p>The system is pre-launch. These projections are based on the HR Director's previous manual workload of 8 hours a month.</p>
           <ul>
-            <li><strong>70-80% reduction in administrative time:</strong> Automating tracking, notifications, and record-keeping eliminates the manual follow-up cycle, freeing up an estimated 12 workdays a year for higher-impact work.</li>
+            <li><strong>70% reduction in administrative time:</strong> Automating tracking, notifications, and record-keeping eliminates the manual follow-up cycle, freeing up an estimated 12 workdays a year for higher-impact work.</li>
             <li><strong>Improved audit readiness:</strong> Every completion is automatically recorded with a timestamp, date, and quiz result. A full compliance report can be exported at any time, replacing a process that previously relied on scattered spreadsheets and email threads.</li>
             <li><strong>$0/month operating cost:</strong> The system runs entirely on free tiers, bypassing the ongoing software fees that a comparable off-the-shelf LMS would require.</li>
           </ul>
@@ -254,7 +276,8 @@
       <div class="row">
         <div class="eight offset-by-two columns divider_top">
           <h2>Final Reflection</h2>
-          <p>Building an LMS from scratch, without a team, budget, or off-the-shelf platform, was an exercise in prioritization. The MVP was deliberately scoped to what mattered most: ease of use for staff, efficiency for the administrator, and a system stable enough to run without ongoing technical support. Starting with research meant I could make those tradeoffs with confidence, knowing which features were essential and which could wait. Working within tight limits made the design decisions clearer, not harder.</p>
+          <p>This project shifted how I think about what's possible working solo. Using AI-assisted development, I was able to design, build, and ship a production-ready system end-to-end, something that would have required an entire engineering team in a traditional workflow. Building while designing was a big part of what made that work: vetting decisions in a working system surfaces logic gaps and edge cases much faster than static visuals do.</p>
+          <p>It's also changed what I think is possible working at staff level. The reach that used to require a full engineering team is now something a single designer can own, and I want to keep developing that capability alongside a team already pushing in the same direction.</p>
         </div>
       </div>                
 
