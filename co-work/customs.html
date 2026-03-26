@@ -5,7 +5,7 @@
     <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8" />
-    <title>Jeri Bowers | Staff Product Designer | Enterprise Automation & Internal Tools</title>
+    <title>Jeri Bowers | Staff Product Designer | End-to-End Design & AI-Assisted Development</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="robots" content="noindex, nofollow">
@@ -39,7 +39,7 @@
             <a class="name" href="index.html">Jeri Bowers</a>
             <nav>
               <div class="dropdown">
-                <a href="index.html" class="dropbtn">My Work<span class="carat">&#9660;</span></a>
+                <a href="index.html" class="dropbtn">My Work<span class="carat"></span></a>
                 <div class="dropdown-content">
                   <a href="senior-services.html">Senior Services Training Portal</a>
                   <a href="customs.html">Customs Clearance Automation</a>
@@ -60,7 +60,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">
           <h1>From Manual Filings to Automated Customs Clearance</h1>
-          <h2 class="subtitle">How I helped Flexport move from a labor-intensive, manual filing operation toward a fully automated customs clearance system.</h2>
+          <h2 class="subtitle">How I led the 0→1 redesign of Flexport's customs clearance platform, replacing manual broker workflows with an automation-first task system.</h2>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
           <p><strong>Problem:</strong> Flexport's customs brokers spent the majority of their time on manual data verification rather than high-value client work. Without automation or prioritization, filings were slow, costly, and dependent on individual broker knowledge. Late or incorrect filings resulted in real consequences for importers.</p>
           <p><strong>My Role:</strong> Design lead across the full lifecycle, from vision and strategy through execution, working cross-functionally with engineers, product, and stakeholders.</p>
           <p><strong>Action:</strong> Led the 0→1 transition from a legacy platform to an automation-first, task-based system. Designed the core task framework and interaction model that defined how brokers experience and complete every task in the system. Extended the design system to support a team of roughly twenty engineers as the sole designer. Planned and facilitated a week-long onsite UAT in Amsterdam to resolve issues and prepare for scale.</p>
-          <p><strong>Result:</strong> A significant portion of Importer Security Filings are now processed automatically, with a long-term target to automate the majority of US entry volume. Cost-to-serve and document transcription time both saw meaningful reductions, and the system was built to scale from a small pilot to thousands of entries per year.</p>
+          <p><strong>Result:</strong> Piloted with a large European apparel retailer, the Task Manager drove measurable gains across 2024–2025: invoice digitization time dropped from 23 to 17 hours, operator capacity more than doubled, and "commercial invoice not keyed" exceptions fell 71% year-over-year. ISF filings began processing automatically, saving 11.5 minutes per shipment, with the pilot client's full volume enrolled in CI digitization by mid-2025.</p>
         </div>
       </div>
 
@@ -146,7 +146,7 @@
           <h2>The Tasks</h2>
           <p>Each task type represents a distinct validation failure that automation could not resolve on its own. The task framework had to accommodate a wide range of failure modes, from missing data to conflicting sources to regulatory determinations that require client-specific judgment. The examples below show four task types, each with a different interaction pattern, selected to illustrate the range of complexity the system had to handle.</p>
           <h4>CMQ Mismatch Task</h4>
-          <p>This surfaces when shipment route data in the entry conflicts with carrier tracking data. Rather than blocking the broker, the system flags the specific fields in conflict and keeps Save active, allowing the broker to make an informed decision on how to proceed.</p>      
+          <p>This task is triggered when shipment data conflicts across multiple sources and the system cannot resolve the discrepancy automatically. Rather than blocking the broker, the system flags the specific fields in conflict, allowing the broker to make an informed decision on how to proceed.</p>      
         </div>
       </div>
 
@@ -176,7 +176,7 @@
       <div class="row">
         <div class="eight offset-by-two columns">      
           <h4>ISF Missing Data Task</h4>
-          <p>This surfaces when required Importer Security Filing data is missing or incomplete. The action panel surfaces only the fields that need resolving, while the reference panel surfaces an exception thread where the broker can communicate directly with a third party to request the missing information without leaving the task.</p>
+          <p>This surfaces when required data is missing, incomplete, or invalid and cannot be resolved automatically. The action panel surfaces only the fields that need resolving. Brokers sometimes can't resolve these on their own and need to reach out to a third party. The exception thread in the reference panel keeps that communication inside the task.</p>
         </div>            
       </div>
 
@@ -239,11 +239,12 @@
         <div class="eight offset-by-two columns divider_top">
           <h2>Impact &amp; Outcomes</h2>
           <p>By shifting brokers from manual verification to exception-based oversight, the Task Manager freed them to focus on the strategic client work that actually requires their expertise, while giving the business a foundation to scale without growing headcount.</p>
+          <p>Piloted with a large European apparel retailer handling thousands of ocean and air shipments into the US annually, the results across 2024-2025:</p>
           <ul>
-            <li><strong>Automated Filing:</strong> A significant portion of Importer Security Filings are now processed automatically, with a long-term target to handle the majority of US entry volume through automation.</li>
-            <li><strong>Reduced Cost-to-Serve:</strong> Meaningful reductions in operational overhead through task routing and automation.</li>
-            <li><strong>Efficiency Gains:</strong> Commercial document transcription saw significant improvements through AI-assisted digitization.</li>
-            <li><strong>Scalability:</strong> The system was built to scale from a small pilot to thousands of entries per year.</li>
+            <li><strong>Digitization Speed:</strong> The average time to digitize a commercial invoice, from upload to completion, dropped from 23 hours to 17 hours, while the team doing that work shrank by 50%. The same output, half the people, faster.</li>
+            <li><strong>Operator Productivity:</strong> Daily digitization capacity per person more than doubled, from around 50 commercial invoices to 110.</li>
+            <li><strong>Exception Reduction:</strong> "Commercial invoice not keyed" exceptions, cases the system couldn't resolve automatically and escalated for human review, fell from 526 in May 2024 to 152 in May 2025, a 71% reduction year-over-year.</li>
+            <li><strong>Automated Filing:</strong> ISF filings began processing automatically in 2024, saving 11.5 minutes of broker time per shipment. By mid-2025, the pilot client's full volume was enrolled in CI digitization on the Task Manager, with broader platform adoption ongoing across all clients.</li>
           </ul>
         </div>
       </div>

@@ -152,9 +152,9 @@ em {font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Var
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #FE0A7D; text-decoration: none; border-bottom: 2px dotted #FE0A7D;}
+  color: #69fbc8; text-decoration: none; border-bottom: none;}
 a:hover {
-  color: rgb(69, 70, 70); background-color: #69fbc8; border: none;}
+  color: #69fbc8; background-color: transparent; border: none; text-decoration: underline; text-underline-offset: 3px;}
 
 
 /* Buttons
