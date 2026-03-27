@@ -932,6 +932,7 @@ figcaption {
   margin-bottom: 1em;
   display: flex;
   overflow: hidden;
+  min-height: 320px;
 }
 
 .screenshot-panel--center {
@@ -994,13 +995,22 @@ figcaption {
 }
 
 .screenshot-panel--bottom-right .screenshot-panel__img {
-  border-radius: 6px 0 6px 0;
+  width: 100%;
+  height: auto;
+  border-radius: 6px 0 0 0;
   margin-bottom: -1px;
   margin-right: -1px;
 }
 
+.screenshot-panel--bottom-left {
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
 .screenshot-panel--bottom-left .screenshot-panel__img {
-  border-radius: 0 6px 0 6px;
+  border-radius: 0 6px 0 0;
+  margin-bottom: -1px;
+  margin-left: -1px;
 }
 
 /* Screenshot Detail */
