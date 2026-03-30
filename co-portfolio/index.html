@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8" />
     <title>Jeri Bowers | Staff Product Designer | Enterprise Automation & Internal Tools</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="robots" content="noindex, nofollow">
-
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- FONT
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:700,400" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />
-    <!-- CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/skeleton.css" />
     <link rel="stylesheet" href="css/custom.css" />
-
-    <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="../images/favicon.png" />
   </head>
+
   <body class="home">
-    <!-- Header
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <div class="background-gradient"></div>
+
     <header>
       <div class="container">
         <div class="row">
-          <div class="eight offset-by-two columns">
+          <div class="twelve columns header-inner">
             <a class="name" href="index.html">Jeri Bowers</a>
-            <nav>
+            <nav class="header-nav">
               <div class="dropdown">
                 <a href="index.html" class="dropbtn">My Work<span class="carat"></span></a>
                 <div class="dropdown-content">
@@ -46,74 +33,113 @@
                   <a href="booking-vision.html">Booking.com North Star</a>
                 </div>
               </div>
-              <a href="../about.html">About Me</a>
+              <a href="about.html">About Me</a>
               <a href="resume/_Jeri_Bowers_CV_2026.pdf">CV / Resume</a>
+              <a href="https://www.linkedin.com/in/jeri-bowers" target="_blank" rel="noopener" class="nav-cta">Let's talk</a>
             </nav>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="background-gradient"></div>
+    <section class="home-hero">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <span class="badge badge-dark hero-role-tag">Staff Product Designer &nbsp;·&nbsp; Amsterdam</span>
+            <h1><em>0→1 product design.</em> I turn complex workflows into experiences that feel surprisingly simple.</h1>
+            <p class="hero-sub">I design complex, multi-user products end-to-end: problem framing, direction, execution, ship. My background is high-stakes systems where clarity matters more than decoration and direction has to be found, not waited for. I care about craft, I care about impact, and I'm drawn to teams where that standard is shared.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="container">
-      <div class="row">
-        <div class="eight offset-by-two columns intro">
-            <div class="row">
-              <div class="eight columns">
-                <h1>Hello, I'm Jeri</h1>
-                <h2>I design <strong>complex, multi-user products</strong> end-to-end: problem framing, direction, execution, ship. My background is high-stakes systems where <strong>clarity matters more than decoration</strong> and direction has to be found, not waited for. I care about craft, I care about impact, and I'm drawn to teams where that standard is shared.</h2>          
-              </div>
-              <figure class="four columns profile-container">
-                <img class="profile-image" src="../images/people/jeri.JPG" alt="Jeri" />
-                <img class="circle-overlay" src="../images/homepage/transparent-circle.png" alt="Circle Overlay" />
-              </figure>
+    <section class="projects-section" id="work">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <p class="section-label">Selected work</p>
+
+            <div class="project-grid">
+
+              <a href="senior-services.html" class="project-card">
+                <div class="project-card__inner">
+                  <div class="project-card__body">
+                    <div class="project-card__content">
+                      <div class="project-card__meta">
+                        <span class="project-card__company">Senior Services</span>
+                      </div>
+                      <h2 class="project-card__title">Staff Training &amp; Compliance Portal</h2>
+                      <p class="project-card__desc">Designed and shipped a production compliance portal end-to-end using AI-assisted development. Replaced manual HR tracking with automated compliance guardrails at $0/month.</p>
+                      <div class="project-card__tags">
+                        <span class="badge badge-dark">Design &amp; Build</span>
+                        <span class="badge badge-dark">Solo</span>
+                      </div>
+                      <div class="project-card__metric">
+                        <span class="project-card__metric-num">70%</span>
+                        <span class="project-card__metric-label">projected reduction in admin overhead</span>
+                      </div>
+                      <span class="project-card__arrow">View case study →</span>
+                    </div>
+                  </div>
+                  <div class="project-card__image project-card__image--bottom-right">
+                    <img src="../images/senior-services/employee_dash.png" alt="Senior Services training portal admin dashboard" loading="lazy" />
+                  </div>
+                </div>
+              </a>
+
+              <a href="customs.html" class="project-card">
+                <div class="project-card__inner">
+                  <div class="project-card__body">
+                    <div class="project-card__content">
+                      <div class="project-card__meta">
+                        <span class="project-card__company">Flexport</span>
+                      </div>
+                      <h2 class="project-card__title">Customs Clearance Automation</h2>
+                      <p class="project-card__desc">Redesigned how customs brokers work, from manual verification queues to an automation-first task system. Sole designer with ~20 engineers.</p>
+                      <div class="project-card__tags">
+                        <span class="badge badge-dark">Internal Tooling</span>
+                        <span class="badge badge-dark">0→1</span>
+                      </div>
+                      <div class="project-card__metric">
+                        <span class="project-card__metric-num">2X</span>
+                        <span class="project-card__metric-label">increase in daily invoice capacity per operator</span>
+                      </div>
+                      <span class="project-card__arrow">View case study →</span>
+                    </div>
+                  </div>
+                  <div class="project-card__image project-card__image--bottom-right">
+                    <img src="../images/customs/portfolio_CMQ.png" alt="Flexport customs clearance task manager UI" loading="eager" />
+                  </div>
+                </div>
+              </a>
+
+              <a href="booking-vision.html" class="project-card">
+                <div class="project-card__inner">
+                  <div class="project-card__body">
+                    <div class="project-card__content">
+                      <div class="project-card__meta">
+                        <span class="project-card__company">Booking.com</span>
+                      </div>
+                      <h2 class="project-card__title">North Star: Guest Experience Vision</h2>
+                      <p class="project-card__desc">Led a cross-functional task force to create the North Star vision for a newly formed product org, directly informing the multi-year roadmap.</p>
+                      <div class="project-card__tags">
+                        <span class="badge badge-dark">Vision &amp; Strategy</span>
+                      </div>
+                      <span class="project-card__arrow">View case study →</span>
+                    </div>
+                  </div>
+                  <div class="project-card__image project-card__image--bottom-right">
+                    <img src="../images/booking/vision_hub.png" alt="Booking.com North Star vision illustration" loading="lazy" />
+                  </div>
+                </div>
+              </a>
+
             </div>
           </div>
-      </div>
-
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <div class="portfolio-cards">
-
-            <a href="senior-services.html" class="portfolio-card">
-              <div class="portfolio-card__body">
-                <h3 class="portfolio-card__title">Senior Services Training Portal</h3>
-                <p class="portfolio-card__desc">Solo design and build of a compliance portal using AI-assisted development.</p>
-                <span class="portfolio-card__link">View Case Study →</span>
-              </div>
-            </a>
-
-            <a href="customs.html" class="portfolio-card">
-              <div class="portfolio-card__body">
-                <h3 class="portfolio-card__title">Customs Clearance Automation</h3>
-                <p class="portfolio-card__desc">0→1 automation-first customs clearance, replacing manual workflows.</p>
-                <span class="portfolio-card__link">View Case Study →</span>
-              </div>
-            </a>
-
-            <a href="booking-vision.html" class="portfolio-card">
-              <div class="portfolio-card__body">
-                <h3 class="portfolio-card__title">Booking.com North Star</h3>
-                <p class="portfolio-card__desc">Vision that shaped Booking.com's roadmap for a newly formed organisation.</p>
-                <span class="portfolio-card__link">View Case Study →</span>
-              </div>
-            </a>
-
-          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="eight offset-by-two columns">
-          <p class="intro-contact">Get in touch: Connect on <a href="https://www.linkedin.com/in/jeri-bowers">LinkedIn</a> or at <span class="email-protection">jeri.bowers<span style="display:none;">REMOVE-THIS</span>&#64;gmail.com</span>.</p>
-        </div>
-      </div>
-    </div>
-    <!-- /.container -->
+    </section>
 
-    <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
 </html>

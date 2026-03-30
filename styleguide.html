@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Style Guide — Jeri Bowers Portfolio Redesign</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <style>
+      :root {
+        --sg-bg:      #f4f4f2;
+        --sg-surface: #ffffff;
+        --sg-border:  #e2e2df;
+        --sg-label:   #6b6b68;
+        --sg-text:    #1a1a18;
+        --sg-mono:    "Courier New", monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      body { background-color: var(--sg-bg); color: var(--sg-text); margin: 0; padding: 0; }
+
+      .sg-topbar {
+        background-color: #1c2126;
+        padding: 14px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .sg-topbar__title {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.75);
+        margin: 0;
+      }
+
+      .sg-topbar__title span { color: #69fbc8; }
+
+      .sg-topbar__back {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        color: rgba(255,255,255,0.65);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .sg-topbar__back:hover { color: #69fbc8; }
+
+      .sg-layout { display: flex; min-height: 100vh; }
+
+      .sg-sidebar {
+        width: 220px;
+        flex-shrink: 0;
+        padding: 32px 0;
+        position: sticky;
+        top: 49px;
+        height: calc(100vh - 49px);
+        overflow-y: auto;
+        border-right: 1px solid var(--sg-border);
+        background-color: var(--sg-surface);
+      }
+
+      .sg-sidebar__section { padding: 0 24px 24px; }
+
+      .sg-sidebar__heading {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sg-label);
+        margin: 0 0 10px;
+      }
+
+      .sg-sidebar__nav { list-style: none; margin: 0; padding: 0; }
+      .sg-sidebar__nav li { margin: 0; }
+
+      .sg-sidebar__nav a {
+        display: block;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: #444;
+        text-decoration: none;
+        padding: 5px 0;
+        border-bottom: none;
+        transition: color 0.15s;
+      }
+
+      .sg-sidebar__nav a:hover { color: #0a8f68; }
+
+      .sg-main { flex: 1; min-width: 0; padding: 48px 56px 80px; }
+
+      .sg-section { margin-bottom: 72px; }
+
+      .sg-section__header {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 32px;
+        padding-bottom: 14px;
+        border-bottom: 2px solid var(--sg-border);
+      }
+
+      .sg-section__title {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sg-label);
+        margin: 0;
+      }
+
+      .sg-section__name {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--sg-text);
+        margin: 0;
+      }
+
+      .sg-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+
+      .sg-token { background: var(--sg-surface); border: 1px solid var(--sg-border); border-radius: 10px; overflow: hidden; min-width: 160px; }
+      .sg-token__swatch { height: 64px; width: 100%; }
+      .sg-token__info { padding: 10px 14px 12px; }
+      .sg-token__name { font-family: var(--sg-mono); font-size: 15px; font-weight: 700; color: var(--sg-text); display: block; margin-bottom: 3px; }
+      .sg-token__value { font-family: var(--sg-mono); font-size: 15px; color: var(--sg-label); display: block; }
+
+      .sg-preview { background: var(--sg-surface); border: 1px solid var(--sg-border); border-radius: 12px; padding: 32px; margin-bottom: 12px; }
+
+      .sg-preview--dark {
+        background: #2c333a;
+        border-color: rgba(255,255,255,0.08);
+        background-image:
+          radial-gradient(at 15% 15%, rgba(44,204,150,0.18) 0px, transparent 50%),
+          radial-gradient(at 85% 85%, rgba(0,163,136,0.14) 0px, transparent 50%);
+      }
+
+      .sg-code {
+        font-family: var(--sg-mono);
+        font-size: 15px;
+        color: var(--sg-label);
+        background: #f0f0ee;
+        border: 1px solid var(--sg-border);
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-top: 8px;
+        display: block;
+        white-space: pre;
+        overflow-x: auto;
+      }
+
+      /* ─── Staircase label layout ──────────────────────────────────── */
+      .sg-stair-label { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+      .sg-stair-name { font-family: var(--sg-mono); font-size: 15px; font-weight: 700; color: #6b6b68; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .sg-stair-px { font-family: var(--sg-mono); font-size: 15px; font-weight: 700; color: #1a7a57; background: rgba(105,251,200,0.15); border: 1px solid rgba(26,122,87,0.3); border-radius: 3px; padding: 1px 5px; white-space: nowrap; }
+      .sg-stair-meta { font-family: var(--sg-mono); font-size: 15px; color: #767673; letter-spacing: 0.02em; white-space: nowrap; }
+
+      /* ─── Scale table ─────────────────────────────────────────────── */
+      .sg-scale-table { width: 100%; border-collapse: collapse; }
+      .sg-scale-table th { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sg-label); text-align: left; padding: 10px 14px 12px; border-bottom: 2px solid var(--sg-border); white-space: nowrap; }
+      .sg-scale-table td { padding: 4px 14px; vertical-align: middle; border-bottom: 1px solid var(--sg-border); }
+      .sg-scale-table tr:last-child td { border-bottom: none; }
+      .sg-scale-table .col-step { font-family: var(--sg-mono); font-size: 15px; font-weight: 700; color: var(--sg-label); white-space: nowrap; width: 120px; }
+      .sg-scale-table .col-size { font-family: var(--sg-mono); font-size: 15px; color: #333; white-space: nowrap; width: 180px; }
+      .sg-scale-table .col-weight { font-family: var(--sg-mono); font-size: 15px; color: #555; white-space: nowrap; width: 80px; }
+      .sg-scale-table .col-lh { font-family: var(--sg-mono); font-size: 15px; color: #555; white-space: nowrap; width: 60px; }
+      .sg-scale-table .col-family { font-family: var(--sg-mono); font-size: 15px; color: #6b6b68; white-space: nowrap; width: 160px; }
+      .sg-scale-table .col-usage { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; color: #767673; }
+
+      /* ─── Spacing ─────────────────────────────────────────────────── */
+      .sg-space-row { display: flex; align-items: center; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--sg-border); }
+      .sg-space-row:last-child { border-bottom: none; }
+      .sg-space-bar { background: #69fbc8; height: 8px; border-radius: 2px; flex-shrink: 0; }
+      .sg-space-label { font-family: var(--sg-mono); font-size: 15px; color: var(--sg-label); width: 80px; flex-shrink: 0; }
+      .sg-space-value { font-family: var(--sg-mono); font-size: 15px; color: #767673; }
+
+      /* ─── Component re-declarations ───────────────────────────────── */
+      .section-label-demo { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); display: block; }
+      .project-card-demo { position: relative; border-radius: 14px; overflow: hidden; background-color: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; max-width: 680px; }
+      .project-card-demo__body { padding: 24px 28px 26px; }
+      .project-card-demo__content { flex: 1; min-width: 0; }
+      .project-card-demo__meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+      .card-company { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+      .card-title { margin: 0 0 8px; padding: 0; font-family: "Libre Baskerville", Georgia, serif; font-size: 2rem; font-weight: 700; line-height: 1.25; color: #fff; }
+      .card-desc { margin: 0 0 16px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.7); }
+      .card-metric { margin-bottom: 16px; }
+      .card-metric__num { display: block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 5px; }
+      .card-metric__label { display: block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.5rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
+      .card-arrow { display: inline-block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.5rem; color: #69fbc8; }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="sg-topbar">
+      <p class="sg-topbar__title">Jeri Bowers Portfolio &nbsp;/&nbsp; <span>Style Guide</span></p>
+      <a href="index.html" class="sg-topbar__back">← Back to homepage</a>
+    </div>
+
+    <div class="sg-layout">
+
+      <nav class="sg-sidebar">
+        <div class="sg-sidebar__section">
+          <p class="sg-sidebar__heading">Foundations</p>
+          <ul class="sg-sidebar__nav">
+            <li><a href="#colors">Color tokens</a></li>
+            <li><a href="#type-scale">Type scale</a></li>
+            <li><a href="#spacing">Spacing</a></li>
+          </ul>
+        </div>
+        <div class="sg-sidebar__section">
+          <p class="sg-sidebar__heading">Components</p>
+          <ul class="sg-sidebar__nav">
+            <li><a href="#tags">Role tag</a></li>
+            <li><a href="#buttons">Buttons &amp; CTAs</a></li>
+            <li><a href="#badges">Badges</a></li>
+            <li><a href="#section-label">Section label</a></li>
+            <li><a href="#project-card">Project card</a></li>
+            <li><a href="#info-card">Info card</a></li>
+            <li><a href="#screenshot-panel">Screenshot panel</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+            <li><a href="#nav">Navigation</a></li>
+          </ul>
+        </div>
+        <div class="sg-sidebar__section">
+          <p class="sg-sidebar__heading">Surfaces</p>
+          <ul class="sg-sidebar__nav">
+            <li><a href="#dark-surface">Dark (homepage)</a></li>
+            <li><a href="#light-surface">Light (case studies)</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="sg-main">
+
+        <!-- 01 Colors -->
+        <section class="sg-section" id="colors">
+          <div class="sg-section__header">
+            <span class="sg-section__title">01</span>
+            <h2 class="sg-section__name">Color tokens</h2>
+          </div>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#555;margin:0 0 24px;">All colors are defined as CSS custom properties on <code style="font-family:monospace;background:#eee;padding:2px 5px;border-radius:3px;">:root</code> in <code style="font-family:monospace;background:#eee;padding:2px 5px;border-radius:3px;">custom.css</code>.</p>
+          <div class="sg-row">
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#69fbc8;"></div><div class="sg-token__info"><span class="sg-token__name">--color-brand</span><span class="sg-token__value">#69fbc8</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#0a8f68;"></div><div class="sg-token__info"><span class="sg-token__name">--color-brand-dark</span><span class="sg-token__value">#0a8f68</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#363f48;"></div><div class="sg-token__info"><span class="sg-token__name">--color-dark</span><span class="sg-token__value">#363f48</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#2c333a;"></div><div class="sg-token__info"><span class="sg-token__name">bg-gradient base</span><span class="sg-token__value">#2c333a</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#333;"></div><div class="sg-token__info"><span class="sg-token__name">--color-text</span><span class="sg-token__value">#333</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:rgba(69,70,70,0.6);"></div><div class="sg-token__info"><span class="sg-token__name">--color-text-muted</span><span class="sg-token__value">rgba(69,70,70,0.6)</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:#e1e1e1;border-top:1px solid #ccc;"></div><div class="sg-token__info"><span class="sg-token__name">--color-border</span><span class="sg-token__value">#e1e1e1</span></div></div>
+            <div class="sg-token"><div class="sg-token__swatch" style="background:rgba(107,107,107,0.1);"></div><div class="sg-token__info"><span class="sg-token__name">--color-bg-neutral</span><span class="sg-token__value">rgba(107,107,107,0.1)</span></div></div>
+          </div>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:8px 0 0;">Dark surface transparency variants — see <a href="#dark-surface" style="color:#0a8f68;">Dark surface</a>.</p>
+        </section>
+
+        <!-- 02 Type scale -->
+        <section class="sg-section" id="type-scale">
+          <div class="sg-section__header">
+            <span class="sg-section__title">02</span>
+            <h2 class="sg-section__name">Type scale</h2>
+          </div>
+
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#555;margin:0 0 24px;">Base: 10px (Skeleton). 1rem = 10px. Two faces — <strong>Libre Baskerville</strong> for display/headings/metrics; <strong>Droid Sans</strong> for UI/labels/descriptions. Minimum body text: 15px. Only badges use 12px.</p>
+
+          <div class="sg-preview" style="padding:0;overflow:hidden;margin-bottom:32px;">
+            <table class="sg-scale-table">
+              <thead>
+                <tr><th>Step</th><th>rem</th><th>px</th><th>Weight</th><th>L/H</th><th>Family</th><th>Usage</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="col-step">Display</td><td class="col-size">clamp(3→5.2rem)</td><td class="col-size">30–52px</td><td class="col-weight">700</td><td class="col-lh">1.12</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Homepage H1</td></tr>
+                <tr><td class="col-step">H1</td><td class="col-size">~3.6rem</td><td class="col-size">~36px</td><td class="col-weight">700</td><td class="col-lh">1.3</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Case study page title</td></tr>
+                <tr><td class="col-step">Metric</td><td class="col-size">2.6rem</td><td class="col-size">26px</td><td class="col-weight">700</td><td class="col-lh">1.0</td><td class="col-family">Droid Sans</td><td class="col-usage">Card stat callout</td></tr>
+                <tr><td class="col-step">H2</td><td class="col-size">~2.4rem</td><td class="col-size">~24px</td><td class="col-weight">400</td><td class="col-lh">1.35</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Case study section heading</td></tr>
+                <tr><td class="col-step">Card title</td><td class="col-size">clamp(1.8→2.4rem)</td><td class="col-size">18–24px</td><td class="col-weight">700</td><td class="col-lh">1.25</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Project card heading</td></tr>
+                <tr><td class="col-step">Subtitle</td><td class="col-size">2.2rem</td><td class="col-size">22px</td><td class="col-weight">400</td><td class="col-lh">1.4</td><td class="col-family">Droid Sans</td><td class="col-usage">Case study subtitle</td></tr>
+                <tr><td class="col-step">Hero sub</td><td class="col-size">1.75rem</td><td class="col-size">17.5px</td><td class="col-weight">400</td><td class="col-lh">1.65</td><td class="col-family">Droid Sans</td><td class="col-usage">Homepage intro paragraph</td></tr>
+                <tr><td class="col-step">H3</td><td class="col-size">~1.8rem</td><td class="col-size">~18px</td><td class="col-weight">400</td><td class="col-lh">1.4</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Case study sub-section</td></tr>
+                <tr><td class="col-step">Body</td><td class="col-size">~1.5rem</td><td class="col-size">~15px</td><td class="col-weight">400</td><td class="col-lh">1.6</td><td class="col-family">Libre Baskerville</td><td class="col-usage">Case study prose</td></tr>
+                <tr><td class="col-step">Card desc</td><td class="col-size">1.5rem</td><td class="col-size">15px</td><td class="col-weight">400</td><td class="col-lh">1.6</td><td class="col-family">Droid Sans</td><td class="col-usage">Project card description</td></tr>
+                <tr><td class="col-step">Nav / UI</td><td class="col-size">—</td><td class="col-size">15px</td><td class="col-weight">400</td><td class="col-lh">1.4</td><td class="col-family">Droid Sans</td><td class="col-usage">Header nav links, UI labels</td></tr>
+                <tr><td class="col-step">Badge</td><td class="col-size">—</td><td class="col-size">12px</td><td class="col-weight">500</td><td class="col-lh">1.0</td><td class="col-family">Droid Sans</td><td class="col-usage">Badges only — minimum exception</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:0 0 16px;">Visual staircase</p>
+          <div class="sg-preview" style="padding:32px 40px;">
+
+            <div style="margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Display</span><span class="sg-stair-px">30–52px</span><span class="sg-stair-meta">clamp(3rem → 5.2rem) · Libre Baskerville Bold · lh 1.12</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.8rem,5vw,5.2rem);font-weight:700;line-height:1.12;color:#1a1a18;display:block;">Internal tools &amp; automation</span>
+            </div>
+
+            <div style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">H1</span><span class="sg-stair-px">36px</span><span class="sg-stair-meta">3.6rem · Libre Baskerville Bold · lh 1.3</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:3.6rem;font-weight:700;line-height:1.3;color:#1a1a18;display:block;">From Manual Filings to Automated Customs Clearance</span>
+            </div>
+
+            <div style="margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Metric</span><span class="sg-stair-px">26px</span><span class="sg-stair-meta">2.6rem · Droid Sans Bold · lh 1.0</span></div>
+              <span style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:2.6rem;font-weight:700;line-height:1.0;color:#1a1a18;display:block;">71%</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">H2</span><span class="sg-stair-px">24px</span><span class="sg-stair-meta">2.4rem · Libre Baskerville Regular · lh 1.35</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:2.4rem;font-weight:400;line-height:1.35;color:#1a1a18;display:block;">The Shift to Automation</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Card title</span><span class="sg-stair-px">18–24px</span><span class="sg-stair-meta">clamp(1.8rem → 2.4rem) · Libre Baskerville Bold · lh 1.25</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:2.2rem;font-weight:700;line-height:1.25;color:#1a1a18;display:block;">Customs Clearance Automation</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Subtitle</span><span class="sg-stair-px">22px</span><span class="sg-stair-meta">2.2rem · Droid Sans Regular · lh 1.4</span></div>
+              <span style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:2.2rem;font-weight:400;line-height:1.4;color:#555;display:block;">How I led the 0→1 redesign of Flexport's customs clearance platform.</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Hero sub</span><span class="sg-stair-px">17.5px</span><span class="sg-stair-meta">1.75rem · Droid Sans Regular · lh 1.65</span></div>
+              <span style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:1.75rem;font-weight:400;line-height:1.65;color:#555;display:block;">I design enterprise systems where accuracy matters and mistakes have real consequences — from concept to production.</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">H3</span><span class="sg-stair-px">18px</span><span class="sg-stair-meta">1.8rem · Libre Baskerville Regular · lh 1.4</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:1.8rem;font-weight:400;line-height:1.4;color:#1a1a18;display:block;">Designing the Task Structure</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Body</span><span class="sg-stair-px">15px</span><span class="sg-stair-meta">1.5rem · Libre Baskerville Regular · lh 1.6</span></div>
+              <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.6;color:#333;display:block;">Customs clearance is a critical step in global trade, requiring accurate documentation to ensure goods move across borders compliantly and on time. At Flexport, customs brokers relied on a legacy system to manage, edit, and file import entries.</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Card desc</span><span class="sg-stair-px">15px</span><span class="sg-stair-meta">1.5rem · Droid Sans Regular · lh 1.6</span></div>
+              <span style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:1.5rem;font-weight:400;line-height:1.6;color:#444;display:block;">Redesigned how customs brokers work — from manual verification queues to an automation-first task system.</span>
+            </div>
+
+            <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;">
+              <div class="sg-stair-label"><span class="sg-stair-name">Nav / UI</span><span class="sg-stair-px">15px</span><span class="sg-stair-meta">Droid Sans Regular · lh 1.4</span></div>
+              <span style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:400;line-height:1.4;color:#1a1a18;display:block;">My Work &nbsp;·&nbsp; About Me &nbsp;·&nbsp; CV / Resume</span>
+            </div>
+
+            <div>
+              <div class="sg-stair-label"><span class="sg-stair-name">Badge</span><span class="sg-stair-px">12px</span><span class="sg-stair-meta">Droid Sans Medium · uppercase · exception only</span></div>
+              <span class="badge badge-neutral">Internal Tooling</span>&nbsp;<span class="badge badge-success">Shipped</span>&nbsp;<span class="badge badge-dark">0→1</span>
+            </div>
+
+          </div>
+
+          <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="sg-preview" style="padding:24px;">
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:0 0 12px;">Display face</p>
+              <p style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;font-weight:700;color:#1a1a18;margin:0 0 4px;">Libre Baskerville</p>
+              <p style="font-family:'Libre Baskerville',Georgia,serif;font-size:15px;font-style:italic;color:#555;margin:0 0 12px;">Aa Bb Cc Dd Ee Ff 0123</p>
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0;">H1–H3, card titles, body prose, captions</p>
+            </div>
+            <div class="sg-preview" style="padding:24px;">
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:0 0 12px;">UI face</p>
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:22px;font-weight:700;color:#1a1a18;margin:0 0 4px;">Droid Sans</p>
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#555;margin:0 0 12px;">Aa Bb Cc Dd Ee Ff 0123</p>
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0;">Subtitles, hero sub, nav, metrics, labels, card descriptions</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 03 Spacing -->
+        <section class="sg-section" id="spacing">
+          <div class="sg-section__header">
+            <span class="sg-section__title">03</span>
+            <h2 class="sg-section__name">Spacing scale</h2>
+          </div>
+          <div class="sg-preview">
+            <div class="sg-space-row"><span class="sg-space-label">4px</span><div class="sg-space-bar" style="width:4px;"></div><span class="sg-space-value">icon gaps, tight inline</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">8px</span><div class="sg-space-bar" style="width:8px;"></div><span class="sg-space-value">meta row gap, card inner</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">14px</span><div class="sg-space-bar" style="width:14px;"></div><span class="sg-space-value">section label padding-bottom</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">18px</span><div class="sg-space-bar" style="width:18px;"></div><span class="sg-space-value">card grid gap</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">22px</span><div class="sg-space-bar" style="width:22px;"></div><span class="sg-space-value">hero h1 margin-bottom</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">24px</span><div class="sg-space-bar" style="width:24px;"></div><span class="sg-space-value">section label margin-bottom, card body padding</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">28px</span><div class="sg-space-bar" style="width:28px;"></div><span class="sg-space-value">hero-role-tag margin-bottom</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">32px</span><div class="sg-space-bar" style="width:32px;"></div><span class="sg-space-value">card body gap (content ↔ metric)</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">40px</span><div class="sg-space-bar" style="width:40px;"></div><span class="sg-space-value">hero sub margin-bottom</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">48px</span><div class="sg-space-bar" style="width:48px;"></div><span class="sg-space-value">home-contact padding-bottom</span></div>
+            <div class="sg-space-row"><span class="sg-space-label">72–80px</span><div class="sg-space-bar" style="width:80px;"></div><span class="sg-space-value">section vertical padding</span></div>
+          </div>
+        </section>
+
+        <!-- 04 Role tag -->
+        <section class="sg-section" id="tags">
+          <div class="sg-section__header">
+            <span class="sg-section__title">04</span>
+            <h2 class="sg-section__name">Role tag</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="padding:32px;">
+            <span class="badge badge-dark hero-role-tag">Staff Product Designer &nbsp;·&nbsp; Amsterdam</span>
+          </div>
+          <code class="sg-code">&lt;span class="badge badge-dark hero-role-tag"&gt;Staff Product Designer &amp;nbsp;·&amp;nbsp; Amsterdam&lt;/span&gt;</code>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:10px 0 0;">Uses shared badge base + badge-dark variant. hero-role-tag adds margin-bottom and letter-spacing only.</p>
+        </section>
+
+        <!-- 05 Buttons -->
+        <section class="sg-section" id="buttons">
+          <div class="sg-section__header">
+            <span class="sg-section__title">05</span>
+            <h2 class="sg-section__name">Buttons &amp; CTAs</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+            <a href="#" class="hero-cta-primary" onclick="return false;">View my work</a>
+            <a href="#" class="hero-cta-secondary" onclick="return false;">Connect on LinkedIn →</a>
+            <a href="#" class="nav-cta" onclick="return false;">Let's talk</a>
+          </div>
+          <code class="sg-code">Primary:    &lt;a href="#work" class="hero-cta-primary"&gt;View my work&lt;/a&gt;
+Secondary:  &lt;a href="..." class="hero-cta-secondary"&gt;Connect on LinkedIn →&lt;/a&gt;
+Ghost (nav): &lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;</code>
+          <div style="margin-top:24px;">
+            <div class="sg-preview" style="padding:24px;">
+              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 16px;">Light-context link style (case study pages)</p>
+              <p style="margin:0;color:#333;">The platform lacked automation, forcing brokers to spend the majority of their time on <a href="#" onclick="return false;" style="color:#0a8f68;text-decoration:underline;text-underline-offset:3px;padding:0 3px;">manual data verification</a> rather than strategic work.</p>
+            </div>
+            <code class="sg-code">body:not(.home) a  →  color: --color-brand-dark, underline
+                 :hover →  color: --color-dark, bg: --color-brand</code>
+          </div>
+        </section>
+
+        <!-- 06 Badges -->
+        <section class="sg-section" id="badges">
+          <div class="sg-section__header">
+            <span class="sg-section__title">06</span>
+            <h2 class="sg-section__name">Badges</h2>
+          </div>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#555;margin:0 0 16px;">The only element permitted below 15px. Badges use 12px / 500 weight.</p>
+          <div class="sg-preview" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <span class="badge badge-neutral">Internal Tooling</span>
+            <span class="badge badge-neutral">0→1</span>
+            <span class="badge badge-success">Shipped</span>
+            <span class="badge badge-success">Live</span>
+            <span class="badge badge-dark">Vision &amp; Strategy</span>
+          </div>
+          <code class="sg-code">&lt;span class="badge badge-neutral"&gt;Internal Tooling&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Shipped&lt;/span&gt;
+&lt;span class="badge badge-dark"&gt;Vision &amp; Strategy&lt;/span&gt;</code>
+        </section>
+
+        <!-- 07 Section label -->
+        <section class="sg-section" id="section-label">
+          <div class="sg-section__header">
+            <span class="sg-section__title">07</span>
+            <h2 class="sg-section__name">Section label</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="padding:32px;">
+            <span class="section-label-demo">Selected work</span>
+          </div>
+          <code class="sg-code">&lt;p class="section-label"&gt;Selected work&lt;/p&gt;</code>
+        </section>
+
+        <!-- 08 Project card -->
+        <section class="sg-section" id="project-card">
+          <div class="sg-section__header">
+            <span class="sg-section__title">08</span>
+            <h2 class="sg-section__name">Project card</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="padding:32px;">
+            <div class="project-card-demo">
+              <div class="project-card-demo__body">
+                <div class="project-card-demo__content">
+                  <div class="project-card-demo__meta">
+                    <span class="card-company">Flexport</span>
+                  </div>
+                  <p class="card-title">Customs Clearance Automation</p>
+                  <p class="card-desc">Redesigned how customs brokers work — from manual verification queues to an automation-first task system. Sole designer with ~20 engineers.</p>
+                  <div style="display:flex;gap:8px;margin-bottom:20px;">
+                    <span class="badge badge-dark">Internal Tooling</span>
+                    <span class="badge badge-dark">0→1</span>
+                  </div>
+                  <div class="card-metric">
+                    <span class="card-metric__num">71%</span>
+                    <span class="card-metric__label">reduction in manual exceptions YoY</span>
+                  </div>
+                  <span class="card-arrow">View case study →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <code class="sg-code">&lt;a href="customs.html" class="project-card"&gt;
+  &lt;div class="project-card__inner"&gt;
+    &lt;div class="project-card__body"&gt;
+      &lt;div class="project-card__content"&gt;
+        &lt;div class="project-card__meta"&gt;
+          &lt;span class="project-card__company"&gt;Flexport&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h2 class="project-card__title"&gt;...&lt;/h2&gt;
+        &lt;p class="project-card__desc"&gt;...&lt;/p&gt;
+        &lt;div class="project-card__tags"&gt;
+          &lt;span class="badge badge-dark"&gt;Internal Tooling&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="project-card__metric"&gt;
+          &lt;span class="project-card__metric-num"&gt;71%&lt;/span&gt;
+          &lt;span class="project-card__metric-label"&gt;...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span class="project-card__arrow"&gt;View case study →&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="project-card__image"&gt;&lt;img ... /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code>
+        </section>
+
+        <!-- 09 Info card -->
+        <section class="sg-section" id="info-card">
+          <div class="sg-section__header">
+            <span class="sg-section__title">09</span>
+            <h2 class="sg-section__name">Info card</h2>
+          </div>
+          <div class="sg-preview">
+            <div class="card">
+              <h3>Project at a Glance</h3>
+              <p><strong>Problem:</strong> Flexport's customs brokers spent the majority of their time on manual data verification rather than high-value client work.</p>
+              <p><strong>My Role:</strong> Design lead across the full lifecycle, from vision and strategy through execution.</p>
+              <p style="margin-bottom:0;"><strong>Result:</strong> ISF filings began processing automatically, saving 11.5 minutes of broker time per shipment.</p>
+            </div>
+          </div>
+          <code class="sg-code">&lt;div class="card"&gt;
+  &lt;h3&gt;Project at a Glance&lt;/h3&gt;
+  &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; ...&lt;/p&gt;
+&lt;/div&gt;</code>
+        </section>
+
+        <!-- 10 Screenshot panel -->
+        <section class="sg-section" id="screenshot-panel">
+          <div class="sg-section__header">
+            <span class="sg-section__title">10</span>
+            <h2 class="sg-section__name">Screenshot panel</h2>
+          </div>
+          <div class="sg-preview" style="padding:24px;">
+            <div class="screenshot-panel screenshot-panel--bottom-right" style="min-height:200px;">
+              <img src="images/customs/portfolio_CMQ.png" class="screenshot-panel__img" alt="CMQ task" style="max-height:180px;" />
+            </div>
+          </div>
+          <code class="sg-code">Modifiers:
+  .screenshot-panel--center        centered (x + y)
+  .screenshot-panel--bottom-left   pinned bottom-left
+  .screenshot-panel--bottom-center pinned bottom-center (rounded top corners)
+  .screenshot-panel--bottom-right  pinned bottom-right (bleeds to edges)</code>
+        </section>
+
+        <!-- 11 Testimonial -->
+        <section class="sg-section" id="testimonial">
+          <div class="sg-section__header">
+            <span class="sg-section__title">11</span>
+            <h2 class="sg-section__name">Testimonial</h2>
+          </div>
+          <div class="sg-preview">
+            <div class="testimonial-container">
+              <div class="quote-bubble">
+                <p>Jeri excels at zooming out to understand the high-level system and zooming in to execute the finer details. I would jump at the chance to work with her again.</p>
+              </div>
+              <div class="user-info">
+                <img src="images/people/alexa.jpeg" alt="Alexa" class="user-avatar" />
+                <div class="user-details">
+                  <div class="user-name">Alexa Kaminsky</div>
+                  <div class="user-title user-title-current">Director of Product Design at bol</div>
+                  <div class="user-title user-title-former">(Former Product Design Manager at Flexport)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <code class="sg-code">&lt;div class="testimonial-container"&gt;
+  &lt;div class="quote-bubble"&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="user-info"&gt;
+    &lt;img class="user-avatar" ... /&gt;
+    &lt;div class="user-details"&gt;
+      &lt;div class="user-name"&gt;...&lt;/div&gt;
+      &lt;div class="user-title user-title-current"&gt;...&lt;/div&gt;
+      &lt;div class="user-title user-title-former"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+        </section>
+
+        <!-- 12 Navigation -->
+        <section class="sg-section" id="nav">
+          <div class="sg-section__header">
+            <span class="sg-section__title">12</span>
+            <h2 class="sg-section__name">Navigation</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="padding:0;">
+            <header style="position:relative;z-index:1;background-color:rgba(255,255,255,0.04);padding:1em 1.5em 0.7em;margin-bottom:0;border-radius:12px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;">Jeri Bowers</a>
+                <nav style="display:flex;gap:24px;align-items:center;">
+                  <span style="color:#fff;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">My Work ▾</span>
+                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">About Me</a>
+                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">CV / Resume</a>
+                </nav>
+              </div>
+            </header>
+          </div>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:12px 0 0;">Transparent on <code style="font-family:monospace;background:#eee;padding:2px 4px;border-radius:3px;">.home</code>, --color-dark on all other pages. Name far left, nav far right. Hover: --color-brand.</p>
+        </section>
+
+        <!-- 13 Dark surface -->
+        <section class="sg-section" id="dark-surface">
+          <div class="sg-section__header">
+            <span class="sg-section__title">13</span>
+            <h2 class="sg-section__name">Dark surface — homepage</h2>
+          </div>
+          <div class="sg-preview sg-preview--dark" style="padding:32px;">
+            <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:rgba(255,255,255,0.75);margin:0 0 16px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;">Color usage on dark</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+              <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;"><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.7);">Card base</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">rgba(255,255,255,0.04)<br>border: rgba(255,255,255,0.08)</span></div>
+              <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(105,251,200,0.4);border-radius:8px;padding:12px;"><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.7);">Card hover</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">border: rgba(105,251,200,0.4)</span></div>
+              <div style="background:rgba(0,0,0,0);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:12px;"><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.7);">Dividers</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">rgba(255,255,255,0.07–0.15)</span></div>
+              <div style="padding:12px;"><span style="font-family:monospace;font-size:15px;color:#69fbc8;">Brand accent</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">#69fbc8 — links, CTAs, hover states</span></div>
+              <div style="padding:12px;"><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.7);">Body text</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">rgba(255,255,255,0.65–0.7)</span></div>
+              <div style="padding:12px;"><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.7);">Muted / labels</span><br><span style="font-family:monospace;font-size:15px;color:rgba(255,255,255,0.55);">rgba(255,255,255,0.5)</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 14 Light surface -->
+        <section class="sg-section" id="light-surface">
+          <div class="sg-section__header">
+            <span class="sg-section__title">14</span>
+            <h2 class="sg-section__name">Light surface — case studies</h2>
+          </div>
+          <div class="sg-preview">
+            <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#555;margin:0 0 20px;">Case study pages use a white background. Key style differences from the dark homepage:</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+              <div>
+                <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#6b6b68;margin:0 0 8px;">Body links</p>
+                <p style="margin:0;color:#333;">Visit the <a href="#" onclick="return false;" style="color:#0a8f68;text-decoration:underline;text-underline-offset:3px;padding:0 3px;">case study</a> for details.</p>
+              </div>
+              <div>
+                <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#6b6b68;margin:0 0 8px;">Link hover</p>
+                <p style="margin:0;color:#333;">Hover: <span style="color:#363f48;background:#69fbc8;padding:0 3px;">highlighted text</span> with teal background.</p>
+              </div>
+              <div>
+                <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#6b6b68;margin:0 0 8px;">Section divider</p>
+                <div style="border-top:1px solid #e1e1e1;padding-top:16px;"><p style="margin:0;color:#333;">New section after .divider_top</p></div>
+              </div>
+              <div>
+                <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#6b6b68;margin:0 0 8px;">Text highlight</p>
+                <p style="margin:0;color:#333;">Key term: <span class="highlight">zero-touch experience</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+  </body>
+</html>
