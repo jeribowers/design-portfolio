@@ -113,6 +113,10 @@ li {
   font-weight: 500;
 }
 
+h1 {
+  font-family: var(--font-display);
+}
+
 
 /* =============================================================================
    3. Header & Navigation
