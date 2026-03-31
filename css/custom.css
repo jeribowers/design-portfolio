@@ -106,6 +106,8 @@ li {
   line-height: 28px;
   letter-spacing: 0;
   color: #6b6b6b;
+  padding-top: 0;
+  margin-bottom: 2em;
 }
 
 .role {
@@ -1590,5 +1592,71 @@ body #scrollTopBtn:hover {
   .nav-cta {
     font-size: 13px;
     padding: 5px 10px;
+  }
+}
+
+/* =============================================================================
+   20. Case Study — Hero & Metrics
+   ============================================================================= */
+
+.glance-metrics {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.glance-metric {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--color-bg-neutral);
+  border-radius: 8px;
+}
+
+.glance-metric__headline {
+  font-family: var(--font-ui);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.glance-metric__body {
+  font-family: var(--font-ui);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.case-study-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 8rem 0 3.5rem;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-study-divider::before,
+.case-study-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+@media (max-width: 700px) {
+  .glance-metrics {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.4rem;
   }
 }
