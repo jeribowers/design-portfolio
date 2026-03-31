@@ -1021,7 +1021,8 @@ figcaption {
 }
 
 .screenshot-panel--bottom-right .screenshot-panel__img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   border-radius: 6px 0 0 0;
   margin-bottom: -1px;
