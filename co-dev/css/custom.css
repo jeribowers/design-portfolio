@@ -1482,12 +1482,19 @@ body #scrollTopBtn:hover {
 }
 
 .project-card__image--bottom-right {
-  padding: 40px 0 0 40px;
+  padding: 5% 0 0 5%;
   box-sizing: border-box;
 }
 
+.project-card__image--bottom-center {
+  padding: 5% 5% 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .project-card__image--mobile {
-  padding: 0 100px;
+  padding: 0 10%;
   align-items: center;
   justify-content: center;
 }
@@ -1508,6 +1515,10 @@ body #scrollTopBtn:hover {
   border-radius: 6px 0 0 0;
 }
 
+.project-card__image--bottom-center img {
+  border-radius: 6px 6px 0 0;
+}
+
 .project-card:hover .project-card__image img {
   transform: scale(1.03);
 }
@@ -1517,7 +1528,7 @@ body #scrollTopBtn:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 6px;
   padding: 6px 14px;
@@ -1526,8 +1537,8 @@ body #scrollTopBtn:hover {
 }
 
 .nav-cta:hover {
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  color: #fff;
+  border: 1px solid var(--color-brand);
+  color: var(--color-brand);
   background: transparent;
   text-decoration: none;
 }
@@ -1561,5 +1572,27 @@ body #scrollTopBtn:hover {
 
   .home-hero h1 {
     font-size: 3rem;
+  }
+}
+
+/* Nav label visibility */
+.nav-label--short { display: none; }
+
+@media (max-width: 700px) {
+  .dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-label--full { display: none; }
+  .nav-label--short { display: inline; }
+
+  header nav {
+    gap: 1em;
+  }
+
+  .nav-cta {
+    font-size: 13px;
+    padding: 5px 10px;
   }
 }

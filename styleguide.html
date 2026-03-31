@@ -205,6 +205,17 @@
       .card-metric__num { display: block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 5px; }
       .card-metric__label { display: block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.5rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
       .card-arrow { display: inline-block; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.5rem; color: #69fbc8; }
+
+      .nav-cta--hover-demo {
+        border-color: #69fbc8;
+        color: #69fbc8;
+      }
+
+      .sg-nav-demo {
+        margin-bottom: 0;
+        border-radius: 12px;
+        overflow: hidden;
+      }
     </style>
   </head>
 
@@ -428,10 +439,14 @@
             <a href="#" class="hero-cta-primary" onclick="return false;">View my work</a>
             <a href="#" class="hero-cta-secondary" onclick="return false;">Connect on LinkedIn →</a>
             <a href="#" class="nav-cta" onclick="return false;">Let's talk</a>
+            <a href="#" class="nav-cta nav-cta--hover-demo" onclick="return false;">Let's talk (hover)</a>
           </div>
           <code class="sg-code">Primary:    &lt;a href="#work" class="hero-cta-primary"&gt;View my work&lt;/a&gt;
 Secondary:  &lt;a href="..." class="hero-cta-secondary"&gt;Connect on LinkedIn →&lt;/a&gt;
-Ghost (nav): &lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;</code>
+Ghost (nav): &lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;
+
+Default: white text, muted white border
+Hover:   mint text + mint border (--color-brand)</code>
           <div style="margin-top:24px;">
             <div class="sg-preview" style="padding:24px;">
               <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 16px;">Light-context link style (case study pages)</p>
@@ -609,8 +624,8 @@ Ghost (nav): &lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;</code>
                 <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;">Jeri Bowers</a>
                 <nav style="display:flex;gap:24px;align-items:center;">
                   <span style="color:#fff;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">My Work ▾</span>
-                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">About Me</a>
-                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">CV / Resume</a>
+                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;">About</a>
+                  <a href="#" onclick="return false;" style="color:#fff;text-decoration:none;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;"><span class="nav-label--full">CV / Resume</span><span class="nav-label--short">CV</span></a>
                 </nav>
               </div>
             </header>
