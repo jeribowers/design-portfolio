@@ -115,7 +115,9 @@ li {
   font-weight: 500;
 }
 
-h1 {
+h1,
+h2:not(.subtitle),
+h3 {
   font-family: var(--font-display);
 }
 
