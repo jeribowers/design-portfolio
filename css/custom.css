@@ -221,6 +221,7 @@ header a.active:hover {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
   z-index: 100;
   min-width: 260px;
   background-color: #ffffff;
@@ -791,6 +792,14 @@ figcaption {
   max-width: calc(min(80vw, 960px) * 0.653);
 }
 
+@media (max-width: 700px) {
+  .full-bleed__content--ten,
+  .full-bleed__content--eight {
+    max-width: 85%;
+    padding-top: 3%;
+  }
+}
+
 /* =============================================================================
    17. Screenshot Panel
    ============================================================================= */
@@ -929,7 +938,7 @@ figcaption {
   }
 
   .polaroid::after {
-    font-size: 14px;
+    font-size: 12px;
     bottom: 8px;
   }
 
@@ -1024,7 +1033,7 @@ body #scrollTopBtn {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, filter 0.2s;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 body #scrollTopBtn.is-visible {
@@ -1253,7 +1262,7 @@ em.brand-dark {
   margin: 0 0 10px;
   padding: 0;
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  font-size: clamp(2.3rem, 2vw, 2.4rem);
   font-weight: 700;
   line-height: 1.25;
   color: #fff;
@@ -1410,6 +1419,10 @@ em.brand-dark {
   .project-card__arrow {
     margin-top: 16px;
   }
+
+  .project-card__image {
+    border-radius: 0 0 13px 13px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1441,6 +1454,10 @@ em.brand-dark {
   .nav-cta {
     font-size: 13px;
     padding: 5px 10px;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
   }
 }
 
@@ -1508,6 +1525,21 @@ em.brand-dark {
     gap: 1rem;
     margin-top: 2.4rem;
   }
+
+  .container h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
+
+  .screenshot-panel {
+    padding: 4% 4% 0;
+    min-height: 180px;
+  }
 }
 
 /* =============================================================================
@@ -1553,6 +1585,16 @@ em.brand-dark {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
+}
+
+@media (max-width: 700px) {
+  .about-cta-btn {
+    margin-bottom: 2.4rem;
+  }
+
+  .about-cards-row {
+    flex-direction: column;
+  }
 }
 
 /* em.brand-dark utility handles about h1 emphasis — no scoped rule needed */

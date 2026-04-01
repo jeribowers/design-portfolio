@@ -172,5 +172,25 @@
     </section>
 
 
+    <script>
+    (function () {
+      var btn = document.querySelector('.dropbtn');
+      if (!btn) return;
+      btn.addEventListener('click', function (e) {
+        if (window.matchMedia('(hover: none)').matches) {
+          e.preventDefault();
+          btn.closest('.dropdown').classList.toggle('open');
+        }
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown.open').forEach(function (d) {
+            d.classList.remove('open');
+          });
+        }
+      });
+    })();
+    </script>
+
   </body>
 </html>
