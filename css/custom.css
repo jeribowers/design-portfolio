@@ -313,6 +313,10 @@ header a.active:hover {
   padding: 1em 1.5em;
 }
 
+.card--no-margin {
+  margin-bottom: 0;
+}
+
 
 /* =============================================================================
    8. Images & Figures
@@ -781,7 +785,7 @@ figcaption {
   width: 100%;
   height: auto;
   border-radius: 6px 6px 0 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .full-bleed__content--ten {
@@ -1519,6 +1523,46 @@ em.brand-dark {
   background-color: var(--color-border);
 }
 
+.glance-dl {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.6rem 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.card h3 {
+  font-family: var(--font-ui);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.glance-dl dt {
+  font-family: var(--font-ui);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 0.2rem;
+}
+
+.glance-dl dd {
+  font-family: var(--font-ui);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.glance-dl dd:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 @media (max-width: 700px) {
   .glance-metrics {
     flex-direction: column;
@@ -1539,6 +1583,19 @@ em.brand-dark {
   .screenshot-panel {
     padding: 4% 4% 0;
     min-height: 180px;
+  }
+
+  .glance-dl {
+    grid-template-columns: 1fr;
+    gap: 0.2rem 0;
+  }
+
+  .glance-dl dt {
+    padding-top: 1rem;
+  }
+
+  .glance-dl dd {
+    padding-top: 0.4rem;
   }
 }
 
