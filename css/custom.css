@@ -757,6 +757,41 @@ figcaption {
 }
 
 /* =============================================================================
+   Full Bleed
+   ============================================================================= */
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 2em;
+  background-color: var(--color-bg-neutral);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.full-bleed__content {
+  margin: 0 auto;
+  padding-top: 4%;
+}
+
+.full-bleed__content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.full-bleed__content--ten {
+  max-width: calc(min(80vw, 960px) * 0.826);
+}
+
+.full-bleed__content--eight {
+  max-width: calc(min(80vw, 960px) * 0.653);
+}
+
+/* =============================================================================
    17. Screenshot Panel
    ============================================================================= */
 
