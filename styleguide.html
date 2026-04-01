@@ -435,26 +435,64 @@
             <span class="sg-section__title">05</span>
             <h2 class="sg-section__name">Buttons &amp; CTAs</h2>
           </div>
-          <div class="sg-preview sg-preview--dark" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
-            <a href="#" class="hero-cta-primary" onclick="return false;">View my work</a>
-            <a href="#" class="hero-cta-secondary" onclick="return false;">Connect on LinkedIn →</a>
+
+          <!-- Primary CTA -->
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:0 0 12px;">Primary — .hero-cta-primary</p>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 12px;">Solid mint fill. Used for primary actions. Works on both dark and light backgrounds.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;">
+            <div class="sg-preview sg-preview--dark" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+              <a href="#" class="hero-cta-primary" onclick="return false;">View my work</a>
+              <a href="#" class="hero-cta-primary" onclick="return false;" style="opacity:0.85;">Hover state</a>
+            </div>
+            <div class="sg-preview" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+              <a href="#" class="hero-cta-primary" onclick="return false;">View my work</a>
+              <a href="#" class="hero-cta-primary" onclick="return false;" style="opacity:0.85;">Hover state</a>
+            </div>
+          </div>
+          <code class="sg-code">&lt;a href="..." class="hero-cta-primary"&gt;View my work&lt;/a&gt;
+
+Default: mint bg (#69fbc8), dark text (#1a2024), 6px radius, 12px 22px padding
+Hover:   opacity 0.85</code>
+
+          <!-- Ghost CTA -->
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:24px 0 12px;">Ghost / Nav CTA — .nav-cta</p>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 12px;">White border, white text. For use on dark surfaces only — nav and dark backgrounds.</p>
+          <div class="sg-preview sg-preview--dark" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:8px;">
             <a href="#" class="nav-cta" onclick="return false;">Let's talk</a>
             <a href="#" class="nav-cta nav-cta--hover-demo" onclick="return false;">Let's talk (hover)</a>
           </div>
-          <code class="sg-code">Primary:    &lt;a href="#work" class="hero-cta-primary"&gt;View my work&lt;/a&gt;
-Secondary:  &lt;a href="..." class="hero-cta-secondary"&gt;Connect on LinkedIn →&lt;/a&gt;
-Ghost (nav): &lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;
+          <code class="sg-code">&lt;a href="..." class="nav-cta"&gt;Let's talk&lt;/a&gt;
 
-Default: white text, muted white border
-Hover:   mint text + mint border (--color-brand)</code>
-          <div style="margin-top:24px;">
-            <div class="sg-preview" style="padding:24px;">
-              <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 16px;">Light-context link style (case study pages)</p>
-              <p style="margin:0;color:#333;">The platform lacked automation, forcing brokers to spend the majority of their time on <a href="#" onclick="return false;" style="color:#0a8f68;text-decoration:underline;text-underline-offset:3px;padding:0 3px;">manual data verification</a> rather than strategic work.</p>
-            </div>
-            <code class="sg-code">body:not(.home) a  →  color: --color-brand-dark, underline
-                 :hover →  color: --color-dark, bg: --color-brand</code>
+Default: white text, rgba(255,255,255,0.4) border
+Hover:   mint text + mint border (--color-brand)
+Dark surface only — do not use on light backgrounds</code>
+
+          <!-- Secondary / text link CTA -->
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:24px 0 12px;">Secondary / Text — .hero-cta-secondary</p>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 12px;">Underline link style. For use on dark surfaces as a paired secondary action alongside primary.</p>
+          <div class="sg-preview sg-preview--dark" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:8px;">
+            <a href="#" class="hero-cta-secondary" onclick="return false;">Connect on LinkedIn →</a>
+            <a href="#" class="hero-cta-secondary" onclick="return false;" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.5);">Hover state</a>
           </div>
+          <code class="sg-code">&lt;a href="..." class="hero-cta-secondary"&gt;Connect on LinkedIn →&lt;/a&gt;
+
+Default: rgba(255,255,255,0.65) text, rgba(255,255,255,0.3) underline border
+Hover:   rgba(255,255,255,0.85) text, rgba(255,255,255,0.5) border
+Dark surface only</code>
+
+          <!-- Prose links -->
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b6b68;margin:24px 0 12px;">Prose link — p a, li a, figcaption a</p>
+          <p style="font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;color:#6b6b68;margin:0 0 12px;">Teal underline. Scoped to paragraph, list, and figcaption content on light surfaces only.</p>
+          <div class="sg-preview" style="margin-bottom:8px;">
+            <p style="margin:0;color:#333;">Brokers spent the majority of their time on <a href="#" onclick="return false;" style="color:#0a8f68;text-decoration:underline;text-underline-offset:3px;padding:0 3px;">manual data verification</a> rather than strategic work.</p>
+            <p style="margin:12px 0 0;color:#333;">On hover: <span style="color:#363f48;background:#69fbc8;padding:0 3px;">highlighted text</span> with mint background.</p>
+          </div>
+          <code class="sg-code">p a, li a, figcaption a
+
+Default: color-brand-dark (#0a8f68), underline, 3px offset
+Hover:   color-dark text, mint bg (#69fbc8)
+Light surface only — scoped to prose contexts</code>
+
         </section>
 
         <!-- 06 Badges -->

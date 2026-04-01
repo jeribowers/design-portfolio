@@ -21,6 +21,9 @@
    16. Animations
    17. Screenshot Panel
    18. Media Queries
+   19. Homepage
+   20. Case Study — Hero & Metrics
+   21. About Page
    ============================================================================= */
 
 
@@ -52,19 +55,22 @@
 }
 
 
-/* Light-background page link overrides */
-body:not(.home) a:not(header a):not(.dropdown-content a):not(.portfolio-card):not(.portfolio-cards a) {
+/* Prose link styles — scoped to paragraph and list content only */
+p a,
+li a,
+figcaption a {
   color: var(--color-brand-dark);
   text-decoration: underline;
   text-underline-offset: 3px;
   padding: 0 3px;
 }
 
-body:not(.home) a:not(header a):not(.dropdown-content a):not(.portfolio-card):not(.portfolio-cards a):hover {
+p a:hover,
+li a:hover,
+figcaption a:hover {
   color: var(--color-dark);
   background-color: var(--color-brand);
   text-decoration: none;
-  border: none;
   padding: 0 3px;
 }
 
@@ -108,11 +114,6 @@ li {
   color: #6b6b6b;
   padding-top: 0;
   margin-bottom: 2em;
-}
-
-.role {
-  font-size: 0.9em;
-  font-weight: 500;
 }
 
 h1,
@@ -336,45 +337,6 @@ figcaption {
   text-align: center;
 }
 
-.figure-tight {
-  margin-top: -1.5em;
-}
-
-.portfolio-screenshot {
-  max-width: 100%;
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Profile image (About page) */
-.profile-container {
-  display: inline-block;
-  position: relative;
-  line-height: 0;
-  max-width: 200px;
-  max-height: 200px;
-}
-
-.profile-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.circle-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 110%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 2;
-}
-
 /* Zoomable image container */
 .image-container {
   position: relative;
@@ -427,21 +389,21 @@ figcaption {
 
 /* Photo border */
 .polaroid {
-  display: inline-block;
+  display: block;
+  width: 100%;
   position: relative;
   background-color: #fff;
   margin-bottom: 3em;
   padding: 12px 12px 40px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.polaroid--left {
   transform: rotate(-2deg);
 }
 
-.polaroid--flat {
-  transform: none;
-}
-
 .polaroid--right {
-  transform: rotate(1deg);
+  transform: rotate(2deg);
 }
 
 .polaroid::after {
@@ -590,150 +552,6 @@ figcaption {
   pointer-events: none;
   animation: breathe 6s ease-in-out infinite alternate;
 }
-
-.intro h1 {
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 3.6rem;
-  color: #fff;
-}
-
-.intro h2 {
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 2rem;
-  font-weight: 200;
-  line-height: 1.5em;
-  color: #fff;
-}
-
-.intro p       { color: rgba(255, 255, 255, 0.6); }
-.intro p strong { color: #fff; }
-
-.intro .eight {
-  padding-right: 2em;
-}
-
-.intro a {
-  color: var(--color-brand);
-  border-bottom: none;
-  text-decoration: none;
-}
-
-.intro a:hover {
-  color: var(--color-brand);
-  background-color: transparent;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.intro-contact {
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 1.5em;
-}
-
-.intro-contact a {
-  color: var(--color-brand);
-  text-decoration: none;
-}
-
-.intro-contact a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Portfolio cards */
-.portfolio-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  margin-top: 2em;
-}
-
-.portfolio-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
-  padding: 1em;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.portfolio-card:hover {
-  background-color: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  text-decoration: none;
-  color: inherit;
-}
-
-.portfolio-card:hover .portfolio-card__desc {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.portfolio-card__img {
-  flex-shrink: 0;
-  width: 200px;
-  height: 100px;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-card__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portfolio-card__body {
-  flex: 1;
-  min-width: 0;
-  padding: 0;
-}
-
-.portfolio-card__title {
-  margin: 0 0 0.2em;
-  padding-top: 0;
-  font-size: 1.9rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #fff;
-  line-height: 1.3;
-}
-
-.portfolio-card__desc {
-  margin: 0 0 0.3em;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
-}
-
-.portfolio-card__link {
-  display: inline-block;
-  font-size: 1.7rem;
-  color: var(--color-brand);
-  text-decoration: none;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease;
-  margin-bottom: 0;
-}
-
-.portfolio-card:hover .portfolio-card__title {
-  color: #fff;
-}
-
-.portfolio-card:hover .portfolio-card__link {
-  color: #fff;
-  text-decoration: underline;
-}
-
-
 
 /* =============================================================================
    12. Testimonial
@@ -972,16 +790,6 @@ figcaption {
   align-items: center;
 }
 
-.screenshot-panel--left {
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.screenshot-panel--right {
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .screenshot-panel--bottom-left {
   justify-content: flex-start;
   align-items: flex-end;
@@ -1059,10 +867,6 @@ figcaption {
    ============================================================================= */
 
 @media (max-width: 950px) {
-  .intro h1 {
-    font-size: 3rem;
-  }
-
   .name {
     font-size: 0;
   }
@@ -1073,19 +877,6 @@ figcaption {
     visibility: visible;
   }
 
-}
-
-@media (max-width: 660px) {
-  .portfolio-card {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .portfolio-card__img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
 }
 
 /* Mobile callout system */
@@ -1544,6 +1335,16 @@ body #scrollTopBtn:hover {
   text-decoration: none;
 }
 
+.nav-cta--light {
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.nav-cta--light:hover {
+  color: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+}
+
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 700px) {
@@ -1662,4 +1463,49 @@ body #scrollTopBtn:hover {
     gap: 1rem;
     margin-top: 2.4rem;
   }
+}
+
+/* =============================================================================
+   21. About Page
+   ============================================================================= */
+
+.about-cards-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-cards-row .card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.about-intro .subtitle {
+  margin-bottom: 2rem;
+}
+
+.about-card {
+  margin-bottom: 0;
+}
+
+.about-card h3 {
+  margin-top: 0;
+  font-family: var(--font-ui);
+  font-size: 2.2rem;
+}
+
+.about-card p {
+  margin-bottom: 0;
+}
+
+.about-cta-btn {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
 }
