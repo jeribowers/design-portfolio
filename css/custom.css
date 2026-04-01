@@ -1079,10 +1079,19 @@ body #scrollTopBtn:hover {
   max-width: 820px;
 }
 
-.home-hero h1 em {
-  font-family: "Libre Baskerville", Georgia, serif;
+/* Display emphasis utilities — use em.brand on dark backgrounds, em.brand-dark on light */
+em.brand {
+  font-family: var(--font-display);
   font-style: italic;
+  font-weight: 700;
   color: var(--color-brand);
+}
+
+em.brand-dark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-brand-dark);
 }
 
 .home-hero .hero-sub {
@@ -1355,29 +1364,30 @@ body #scrollTopBtn:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-brand);
+  border: 1px solid var(--color-brand);
   border-radius: 6px;
   padding: 6px 14px;
   text-decoration: none;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
 .nav-cta:hover {
   border: 1px solid var(--color-brand);
   color: var(--color-brand);
-  background: transparent;
+  background: rgba(105, 251, 200, 0.1);
   text-decoration: none;
 }
 
 .nav-cta--light {
-  color: var(--color-dark);
-  border-color: var(--color-dark);
+  color: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
 }
 
 .nav-cta--light:hover {
   color: var(--color-brand-dark);
-  border-color: var(--color-brand-dark);
+  border-color: var(--color-brand);
+  background-color: rgba(105, 251, 200, 0.08);
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
@@ -1544,3 +1554,5 @@ body #scrollTopBtn:hover {
   object-fit: cover;
   object-position: center top;
 }
+
+/* em.brand-dark utility handles about h1 emphasis — no scoped rule needed */
